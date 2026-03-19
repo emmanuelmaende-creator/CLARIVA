@@ -516,93 +516,16 @@ nav{padding:0 20px;}.nav-links{display:none;}
 
       <!-- FORM -->
       <div>
-        <div style="background:rgba(10,10,20,0.85);border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px);padding:48px;">
-
-          <div style="font-family:'Instrument Serif',serif;font-size:32px;color:#FAFAF8;margin-bottom:8px;letter-spacing:-0.5px;">Apply to Partner</div>
-          <div style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:32px;line-height:1.7;">Fill in your details below. We personally review every application and reach out within 24 hours with your free creator audit.</div>
-
-          <div style="display:flex;flex-direction:column;gap:14px;">
-
-            <div>
-              <label style="display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:7px;">Your Name</label>
-              <input id="f-name" type="text" placeholder="First and last name"
-                style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,0.12);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;color:#FAFAF8;background:rgba(255,255,255,0.06);outline:none;transition:border-color 0.2s;"
-                onfocus="this.style.borderColor='#E05C20'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
-            </div>
-
-            <div>
-              <label style="display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:7px;">Your Email Address</label>
-              <input id="f-email" type="email" placeholder="yourname@email.com"
-                style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,0.12);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;color:#FAFAF8;background:rgba(255,255,255,0.06);outline:none;transition:border-color 0.2s;"
-                onfocus="this.style.borderColor='#E05C20'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
-            </div>
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-              <div>
-                <label style="display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:7px;">Instagram Handle</label>
-                <input id="f-insta" type="text" placeholder="@yourhandle"
-                  style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,0.12);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;color:#FAFAF8;background:rgba(255,255,255,0.06);outline:none;transition:border-color 0.2s;"
-                  onfocus="this.style.borderColor='#E05C20'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
-              </div>
-              <div>
-                <label style="display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:7px;">Follower Count</label>
-                <input id="f-followers" type="text" placeholder="e.g. 45K"
-                  style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,0.12);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;color:#FAFAF8;background:rgba(255,255,255,0.06);outline:none;transition:border-color 0.2s;"
-                  onfocus="this.style.borderColor='#E05C20'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
-              </div>
-            </div>
-
-            <div>
-              <label style="display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:7px;">Your Niche</label>
-              <select id="f-niche"
-                style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,0.12);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,0.5);background:#0A0A1A;outline:none;cursor:pointer;transition:border-color 0.2s;"
-                onfocus="this.style.borderColor='#E05C20'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
-                <option value="" disabled selected>Select your niche</option>
-                <option value="Fitness">Fitness</option>
-                <option value="Lifestyle">Lifestyle</option>
-                <option value="Beauty & Skincare">Beauty and Skincare</option>
-                <option value="Fashion">Fashion</option>
-                <option value="Food & Recipes">Food and Recipes</option>
-                <option value="Parenting">Parenting</option>
-                <option value="Travel">Travel</option>
-                <option value="Finance">Finance</option>
-                <option value="Business">Business</option>
-                <option value="Faith & Motivation">Faith and Motivation</option>
-                <option value="Mental Health & Wellness">Mental Health and Wellness</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <div>
-              <label style="display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:7px;">What has stopped you from monetizing your audience so far?</label>
-              <textarea id="f-why" rows="3" placeholder="Be honest — this helps us build the right plan for you"
-                style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,0.12);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;color:#FAFAF8;background:rgba(255,255,255,0.06);outline:none;resize:vertical;transition:border-color 0.2s;"
-                onfocus="this.style.borderColor='#E05C20'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'"></textarea>
-            </div>
-
-            <button id="submit-btn" onclick="submitApp()"
-              style="width:100%;padding:16px;background:#E05C20;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:3px;text-transform:uppercase;border:none;border-radius:8px;cursor:pointer;transition:background 0.2s;"
-              onmouseover="this.style.background='#FF7A3D'" onmouseout="this.style.background='#E05C20'">
-              Submit Application →
-            </button>
-
-            <div id="form-success" style="display:none;background:rgba(22,163,74,0.1);border:1px solid rgba(22,163,74,0.3);border-radius:10px;padding:20px;text-align:center;">
-              <p style="color:#4ade80;font-weight:600;font-size:15px;margin-bottom:4px;">Application received.</p>
-              <p style="color:rgba(255,255,255,0.5);font-size:13px;">We will personally review your account and reach out within 24 hours with your free audit.</p>
-            </div>
-
-            <div id="form-error" style="display:none;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);border-radius:10px;padding:16px;text-align:center;">
-              <p style="color:#f87171;font-size:13px;">Please fill in all fields before submitting.</p>
-            </div>
-
-          </div>
-
-          <div style="margin-top:20px;display:flex;gap:16px;flex-wrap:wrap;">
-            <span style="font-size:12px;color:rgba(255,255,255,0.3);display:flex;gap:6px;align-items:center;"><span style="color:#E05C20;font-weight:700;">✓</span>Zero upfront investment</span>
-            <span style="font-size:12px;color:rgba(255,255,255,0.3);display:flex;gap:6px;align-items:center;"><span style="color:#E05C20;font-weight:700;">✓</span>Free audit within 24hrs</span>
-            <span style="font-size:12px;color:rgba(255,255,255,0.3);display:flex;gap:6px;align-items:center;"><span style="color:#E05C20;font-weight:700;">✓</span>No commitment required</span>
-          </div>
-
+        <div style="background:rgba(10,10,20,0.85);border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px);">
+          <iframe src="https://docs.google.com/forms/d/1je7jKC3Qlqr_pwbEPMsxzCyKCwB6o4qnFljygIQxFUM/viewform?embedded=true"
+            width="100%"
+            height="950"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            style="border-radius:20px;background:#0A0A1A;">
+            Loading…
+          </iframe>
         </div>
       </div>
     </div>
@@ -660,7 +583,6 @@ var prog=document.getElementById("prog");
 window.addEventListener("scroll",function(){
   if(prog) prog.style.width=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100)+"%";
 });
-
 var u="emmanuelmaende";
 var d="gmail.com";
 var full=u+"@"+d;
@@ -668,68 +590,6 @@ var e1=document.getElementById("em1");
 var e2=document.getElementById("em2");
 if(e1) e1.textContent=full;
 if(e2) e2.textContent=full;
-
-function submitApp(){
-  var name=document.getElementById("f-name").value.trim();
-  var email=document.getElementById("f-email").value.trim();
-  var insta=document.getElementById("f-insta").value.trim();
-  var followers=document.getElementById("f-followers").value.trim();
-  var niche=document.getElementById("f-niche").value;
-  var why=document.getElementById("f-why").value.trim();
-  var err=document.getElementById("form-error");
-  var ok=document.getElementById("form-success");
-  var btn=document.getElementById("submit-btn");
-
-  err.style.display="none";
-  ok.style.display="none";
-
-  if(!name||!email||!insta||!followers||!niche||!why){
-    err.style.display="block";
-    err.querySelector("p").textContent="Please fill in all fields before submitting.";
-    return;
-  }
-
-  btn.textContent="Sending...";
-  btn.disabled=true;
-  btn.style.opacity="0.7";
-
-  var data=new FormData();
-  data.append("name",name);
-  data.append("email",email);
-  data.append("instagram",insta);
-  data.append("followers",followers);
-  data.append("niche",niche);
-  data.append("message",why);
-  data.append("_subject","CLARIVA Partner Application - "+name);
-  data.append("_captcha","false");
-  data.append("_template","table");
-
-  fetch("https://formsubmit.co/ajax/689571ad9ccffbe51163e7a107c42c82",{
-    method:"POST",
-    body:data,
-    headers:{"Accept":"application/json"}
-  })
-  .then(function(res){return res.json();})
-  .then(function(data){
-    ok.style.display="block";
-    document.getElementById("f-name").value="";
-    document.getElementById("f-email").value="";
-    document.getElementById("f-insta").value="";
-    document.getElementById("f-followers").value="";
-    document.getElementById("f-niche").value="";
-    document.getElementById("f-why").value="";
-    btn.textContent="Submit Application →";
-    btn.disabled=false;
-    btn.style.opacity="1";
-  })
-  .catch(function(){
-    err.style.display="block";
-    err.querySelector("p").textContent="Something went wrong. Email us directly at emmanuelmaende@gmail.com";
-    btn.textContent="Submit Application →";
-    btn.disabled=false;
-    btn.style.opacity="1";
-  });
-}
 </script>
 </body>
 </html>
