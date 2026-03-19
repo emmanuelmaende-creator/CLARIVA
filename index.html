@@ -181,10 +181,16 @@ footer{background:var(--black);padding:80px 0 40px;}
 .fb-left,.fb-right{font-size:12px;color:rgba(255,255,255,0.2);}
 @media(max-width:768px){
 nav{padding:0 20px;}.nav-links{display:none;}
-.hero-inner,.hiw-header,.split-inner,.calc-inner,.testi-hd{grid-template-columns:1fr;}
+.hero-inner,.hiw-header,.split-inner,.calc-inner,.testi-hd,.apply-grid{grid-template-columns:1fr !important;}
 .hero-right{display:none;}.section-wrap{padding:0 20px;}
 .hiw-steps,.wyg-grid,.testi-grid{grid-template-columns:1fr;}
-.ft{grid-template-columns:1fr;gap:32px;}footer{padding:60px 0 32px;}}
+.apply-grid{gap:40px !important;}
+.ft{grid-template-columns:1fr;gap:32px;}
+footer{padding:60px 0 32px;}
+iframe{height:700px !important;min-height:700px !important;}
+#apply{padding:60px 0 !important;}
+.cs-row{grid-template-columns:1fr !important;gap:8px !important;}
+}
 </style>
 </head>
 <body>
@@ -469,7 +475,7 @@ nav{padding:0 20px;}.nav-links{display:none;}
 <section id="apply" style="padding:100px 0;position:relative;background-image:url('https://images.pexels.com/photos/2387877/pexels-photo-2387877.jpeg?auto=compress&cs=tinysrgb&w=1920');background-size:cover;background-position:center;background-attachment:fixed;">
   <div style="position:absolute;inset:0;background:rgba(4,4,20,0.75);z-index:0;pointer-events:none;"></div>
   <div class="section-wrap" style="position:relative;z-index:1;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+    <div class="apply-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
       <div>
         <div class="s-tag" style="color:#FF7A3D;">Partner Application</div>
         <h2 class="s-title" style="color:#FAFAF8;">Your audience is ready.<br><em style="color:#FF7A3D;">Are you?</em></h2>
@@ -523,7 +529,7 @@ nav{padding:0 20px;}.nav-links{display:none;}
             frameborder="0"
             marginheight="0"
             marginwidth="0"
-            style="border-radius:20px;background:#0A0A1A;">
+            style="display:block;border-radius:20px;background:#0A0A1A;min-height:700px;">
             Loading…
           </iframe>
         </div>
