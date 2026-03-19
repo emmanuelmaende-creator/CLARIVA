@@ -580,7 +580,7 @@ nav{padding:0 20px;}.nav-links{display:none;}
                 onfocus="this.style.borderColor='#E05C20'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'"></textarea>
             </div>
 
-            <button onclick="submitApp()"
+            <button id="submit-btn" onclick="submitApp()"
               style="width:100%;padding:16px;background:#E05C20;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:3px;text-transform:uppercase;border:none;border-radius:8px;cursor:pointer;transition:background 0.2s;"
               onmouseover="this.style.background='#FF7A3D'" onmouseout="this.style.background='#E05C20'">
               Submit Application →
@@ -661,7 +661,6 @@ window.addEventListener("scroll",function(){
   if(prog) prog.style.width=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100)+"%";
 });
 
-// Write email addresses via JS to prevent Cloudflare obfuscation
 var u="emmanuelmaende";
 var d="gmail.com";
 var full=u+"@"+d;
@@ -679,34 +678,39 @@ function submitApp(){
   var why=document.getElementById("f-why").value.trim();
   var err=document.getElementById("form-error");
   var ok=document.getElementById("form-success");
+  var btn=document.getElementById("submit-btn");
+
   err.style.display="none";
   ok.style.display="none";
+
   if(!name||!email||!insta||!followers||!niche||!why){
     err.style.display="block";
+    err.querySelector("p").textContent="Please fill in all fields before submitting.";
     return;
   }
-  var sub=encodeURIComponent("CLARIVA Partner Application - "+name);
-  var bod=encodeURIComponent(
-    "New Partner Application"+
-    "
 
-Name: "+name+
-    "
-Email: "+email+
-    "
-Instagram: "+insta+
-    "
-Followers: "+followers+
-    "
-Niche: "+niche+
-    "
+  btn.textContent="Sending...";
+  btn.disabled=true;
+  btn.style.opacity="0.7";
 
-What stopped them:
-"+why
-  );
-  var dest="mailto:"+full+"?subject="+sub+"&body="+bod;
-  window.location.href=dest;
-  setTimeout(function(){
+  var data=new FormData();
+  data.append("name",name);
+  data.append("email",email);
+  data.append("instagram",insta);
+  data.append("followers",followers);
+  data.append("niche",niche);
+  data.append("message",why);
+  data.append("_subject","CLARIVA Partner Application - "+name);
+  data.append("_captcha","false");
+  data.append("_template","table");
+
+  fetch("https://formsubmit.co/ajax/"+full,{
+    method:"POST",
+    body:data,
+    headers:{"Accept":"application/json"}
+  })
+  .then(function(res){return res.json();})
+  .then(function(data){
     ok.style.display="block";
     document.getElementById("f-name").value="";
     document.getElementById("f-email").value="";
@@ -714,7 +718,17 @@ What stopped them:
     document.getElementById("f-followers").value="";
     document.getElementById("f-niche").value="";
     document.getElementById("f-why").value="";
-  },800);
+    btn.textContent="Submit Application →";
+    btn.disabled=false;
+    btn.style.opacity="1";
+  })
+  .catch(function(){
+    err.style.display="block";
+    err.querySelector("p").textContent="Something went wrong. Email us directly at emmanuelmaende@gmail.com";
+    btn.textContent="Submit Application →";
+    btn.disabled=false;
+    btn.style.opacity="1";
+  });
 }
 </script>
 </body>
