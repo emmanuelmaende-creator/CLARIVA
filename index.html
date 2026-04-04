@@ -204,10 +204,30 @@ nav.nav-open .nav-toggle span:nth-child(3){transform:translateY(-8px) rotate(-45
 .wp-tiedown{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7;}
 .wp-proof{display:inline-block;margin-top:14px;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:2px;text-transform:uppercase;}
 
+/* Premium moving backgrounds — Process, Results, Apply (shared motion) */
+@keyframes premiumSectionBg{
+  0%{transform:scale(1.07) translate(0.6%,0.35%);}
+  100%{transform:scale(1.13) translate(-1.6%,-0.95%);}
+}
+.hiw-bg-motion,.testi-bg-motion,.apply-bg-motion{
+  position:absolute;
+  inset:-12%;
+  background-size:cover;
+  background-position:center;
+  z-index:0;
+  will-change:transform;
+  backface-visibility:hidden;
+  animation:premiumSectionBg 38s cubic-bezier(0.42,0.01,0.58,0.99) infinite alternate;
+  pointer-events:none;
+}
+.hiw-bg-motion{background-image:url('https://images.pexels.com/photos/6138017/pexels-photo-6138017.jpeg?auto=compress&cs=tinysrgb&w=1920');}
+.testi-bg-motion{background-image:url("https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=1920");}
+.apply-bg-motion{background-image:url('https://images.pexels.com/photos/2387877/pexels-photo-2387877.jpeg?auto=compress&cs=tinysrgb&w=1920');}
+
 /* HOW IT WORKS */
-.hiw{padding:100px 0;position:relative;background-image:url('https://images.pexels.com/photos/6138017/pexels-photo-6138017.jpeg?auto=compress&cs=tinysrgb&w=1920');background-size:cover;background-position:center;background-attachment:fixed;}
-.hiw::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,0.55);}
-.hiw .section-wrap{position:relative;z-index:1;}
+.hiw{padding:100px 0;position:relative;overflow:hidden;background:var(--black);}
+.hiw::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,0.55);z-index:1;pointer-events:none;}
+.hiw .section-wrap{position:relative;z-index:2;}
 .hiw-header{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:72px;}
 .hiw-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);}
 .hiw-step{background:rgba(255,255,255,0.82);padding:48px 32px;position:relative;backdrop-filter:blur(4px);}
@@ -318,8 +338,8 @@ nav.nav-open .nav-toggle span:nth-child(3){transform:translateY(-8px) rotate(-45
 .gc-text{font-family:'Instrument Serif',serif;font-size:18px;color:var(--white);font-style:italic;}
 
 /* TESTIMONIALS */
-.testi{padding:100px 0;position:relative;overflow:hidden;background-image:url("https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=1920");background-size:cover;background-position:center;background-attachment:fixed;}
-.testi::before{content:'';position:absolute;inset:0;background:rgba(4,4,12,0.85);}
+.testi{padding:100px 0;position:relative;overflow:hidden;background:var(--black);}
+.testi::before{content:'';position:absolute;inset:0;background:rgba(4,4,12,0.85);z-index:1;pointer-events:none;}
 .testi .section-wrap{position:relative;z-index:2;}
 .testi-hd{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:64px;}
 .testi-hd .s-title{color:white;}
@@ -333,9 +353,9 @@ nav.nav-open .nav-toggle span:nth-child(3){transform:translateY(-8px) rotate(-45
 .tc-role{font-size:11px;color:rgba(255,255,255,0.3);}
 
 /* APPLY */
-.apply{padding:100px 0;position:relative;background-image:url('https://images.pexels.com/photos/2387877/pexels-photo-2387877.jpeg?auto=compress&cs=tinysrgb&w=1920');background-size:cover;background-position:center;background-attachment:fixed;}
-.apply::before{content:'';position:absolute;inset:0;background:rgba(4,4,20,0.80);}
-.apply .section-wrap{position:relative;z-index:1;}
+.apply{padding:100px 0;position:relative;overflow:hidden;background:var(--black);}
+.apply::before{content:'';position:absolute;inset:0;background:rgba(4,4,20,0.80);z-index:1;pointer-events:none;}
+.apply .section-wrap{position:relative;z-index:2;}
 .apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
 .after-apply{background:rgba(8,8,8,0.88);border-radius:16px;padding:32px;margin-bottom:24px;border:1px solid rgba(255,255,255,0.06);}
 .after-step{background:rgba(255,255,255,0.04);border-radius:12px;padding:18px 20px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.06);}
@@ -396,7 +416,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 
 /* MOBILE */
 @media(max-width:768px){
-  .hiw,.testi,.apply{background-attachment:scroll!important;}
+  .hiw-bg-motion,.testi-bg-motion,.apply-bg-motion{inset:-18%;}
   nav{padding:0 max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right));}
   .nav-toggle{display:flex;}
   .nav-mobile-backdrop{display:block;position:fixed;inset:0;top:68px;background:rgba(0,0,0,0.55);opacity:0;visibility:hidden;transition:opacity 0.3s,visibility 0.3s;z-index:999;}
@@ -434,6 +454,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
   .card-trace::after{animation:none!important;}
   .apply-form-skeleton{animation:none!important;}
   .hero-particles{display:none!important;}
+  .hiw-bg-motion,.testi-bg-motion,.apply-bg-motion{animation:none!important;transform:none!important;inset:0;}
 }
 </style>
 </head>
@@ -613,6 +634,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 
 <!-- HOW IT WORKS -->
 <section class="hiw scroll-reveal" id="how">
+  <div class="hiw-bg-motion" aria-hidden="true"></div>
   <div class="section-wrap">
     <div class="hiw-header">
       <div>
@@ -820,6 +842,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 
 <!-- TESTIMONIALS -->
 <section class="testi scroll-reveal" id="results">
+  <div class="testi-bg-motion" aria-hidden="true"></div>
   <div class="section-wrap">
     <div class="testi-hd">
       <div>
@@ -838,6 +861,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 
 <!-- APPLY -->
 <section class="apply scroll-reveal" id="apply">
+  <div class="apply-bg-motion" aria-hidden="true"></div>
   <div class="section-wrap">
     <div class="apply-grid">
       <div>
