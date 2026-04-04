@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CLARIVA is the premium shadow operator agency for Instagram creators. We build your digital product, ghostwrite your launch in your voice, and earn only when you do — zero upfront, zero risk.">
+<meta property="og:title" content="CLARIVA — The Shadow Operator for Creators">
+<meta property="og:description" content="Premium shadow operating for creators: product built for you, launch written in your voice, 14-day sequence, revenue share only. Partner or get the $99 blueprint at clariva.tech.">
+<meta property="og:image" content="https://clariva.tech/clariva-logo.jpg">
+<meta property="og:url" content="https://clariva.tech/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://clariva.tech/">
 <title>CLARIVA — The Shadow Operator for Creators</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -16,7 +23,28 @@
 }
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;}
-#prog{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--orange),var(--gold));z-index:9999;transition:width 0.1s;}
+body.nav-menu-open{overflow:hidden;}
+#prog{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold2),#F0D78C,var(--gold));z-index:9999;transition:width 0.12s ease-out;box-shadow:0 0 12px rgba(201,168,76,0.35);}
+
+/* Scroll reveal — sections */
+@keyframes reveal-section{from{opacity:0;transform:translateY(36px);}to{opacity:1;transform:translateY(0);}}
+.scroll-reveal{opacity:0;transform:translateY(36px);will-change:opacity,transform;}
+.scroll-reveal.is-in-view{animation:reveal-section 0.9s cubic-bezier(0.22,1,0.36,1) forwards;}
+
+/* Hero title gold shimmer */
+@keyframes heroTitleShimmer{0%{background-position:0% 50%;}100%{background-position:200% 50%;}}
+
+/* CTA subtle pulse */
+@keyframes ctaPulseOrange{0%,100%{box-shadow:0 0 0 0 rgba(224,92,32,0.35);}50%{box-shadow:0 0 0 10px rgba(224,92,32,0);}}
+@keyframes ctaPulseGold{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,0.4);}50%{box-shadow:0 0 0 10px rgba(201,168,76,0);}}
+.btn-primary,.nav-cta,.path-btn-1{animation:ctaPulseOrange 2.8s ease-in-out infinite;}
+.btn-gold,.path-btn-2,.float-cta a{animation:ctaPulseGold 2.8s ease-in-out infinite;}
+
+/* Card hover lift */
+.earnings-card,.mc,.why3-point,.hiw-step,.path,.wyg-card,.tc,.gallery-item,.split-visual,.cs-row,.sv-tier,.paths-unifier,.after-apply,.who-list,.calc-total,.seq-day,.seq-locked{transition:transform 0.38s cubic-bezier(0.22,1,0.36,1),box-shadow 0.38s ease;}
+.earnings-card:hover,.mc:hover,.why3-point:hover,.hiw-step:hover,.path:hover,.wyg-card:hover,.tc:hover,.gallery-item:hover,.split-visual:hover,.cs-row:hover,.sv-tier:hover,.paths-unifier:hover,.after-apply:hover,.who-list:hover,.calc-total:hover,.seq-day:hover,.seq-locked:hover{transform:translateY(-8px);box-shadow:0 24px 48px rgba(0,0,0,0.22);}
+.hiw-step:hover{box-shadow:0 24px 48px rgba(0,0,0,0.12);}
+.split .split-visual:hover{box-shadow:0 24px 48px rgba(0,0,0,0.35);}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,8,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);}
@@ -29,8 +57,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 48px;height:68px;
 .nav-links{list-style:none;display:flex;gap:32px;align-items:center;}
 .nav-links a{text-decoration:none;color:rgba(255,255,255,0.5);font-size:14px;font-weight:500;transition:color 0.2s;}
 .nav-links a:hover{color:white;}
-.nav-cta{background:var(--orange) !important;color:white !important;padding:10px 22px;border-radius:6px;font-weight:600 !important;transition:all 0.2s !important;}
+.nav-actions{display:flex;align-items:center;gap:14px;}
+.nav-cta{background:var(--orange) !important;color:white !important;padding:10px 22px;border-radius:6px;font-weight:600 !important;transition:background 0.2s,transform 0.2s !important;}
 .nav-cta:hover{background:var(--orange2) !important;transform:translateY(-1px);}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;padding:10px;border:none;border-radius:8px;background:rgba(255,255,255,0.06);cursor:pointer;z-index:1002;transition:background 0.2s;}
+.nav-toggle:hover{background:rgba(255,255,255,0.1);}
+.nav-toggle span{display:block;height:2px;width:100%;background:var(--white);border-radius:2px;transition:transform 0.25s ease,opacity 0.2s;}
+nav.nav-open .nav-toggle span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+nav.nav-open .nav-toggle span:nth-child(2){opacity:0;}
+nav.nav-open .nav-toggle span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+.nav-mobile-backdrop{display:none;}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:68px;}
@@ -40,8 +76,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 48px;height:68px;
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(224,92,32,0.1);border:1px solid rgba(224,92,32,0.2);border-radius:100px;padding:8px 16px;font-size:12px;font-weight:600;color:var(--orange);letter-spacing:1px;text-transform:uppercase;margin-bottom:28px;}
 .hero-dot{width:6px;height:6px;background:var(--orange);border-radius:50%;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.3);}}
-.hero-title{font-family:'Instrument Serif',serif;font-size:clamp(40px,5vw,72px);line-height:1.0;letter-spacing:-2px;margin-bottom:20px;}
-.hero-title em{font-style:italic;color:var(--orange);}
+.hero-title{font-family:'Instrument Serif',serif;font-size:clamp(40px,5vw,72px);line-height:1.0;letter-spacing:-2px;margin-bottom:20px;background:linear-gradient(105deg,#FAFAF8 0%,#FAFAF8 38%,var(--gold2) 48%,#FFEFB8 52%,var(--gold) 55%,#FAFAF8 65%,#FAFAF8 100%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:heroTitleShimmer 5.5s ease-in-out infinite;}
+.hero-title em{font-style:italic;-webkit-text-fill-color:var(--orange);background:none;color:var(--orange);}
 .hero-desc{font-size:17px;color:rgba(255,255,255,0.45);line-height:1.8;margin-bottom:36px;max-width:480px;}
 .hero-desc strong{color:rgba(255,255,255,0.8);font-weight:600;}
 .hero-actions{display:flex;gap:14px;align-items:center;margin-bottom:48px;flex-wrap:wrap;}
@@ -272,7 +308,16 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 
 /* MOBILE */
 @media(max-width:768px){
-  nav{padding:0 20px;}.nav-links{display:none;}
+  nav{padding:0 20px;}
+  .nav-toggle{display:flex;}
+  .nav-mobile-backdrop{display:block;position:fixed;inset:0;top:68px;background:rgba(0,0,0,0.55);opacity:0;visibility:hidden;transition:opacity 0.3s,visibility 0.3s;z-index:999;}
+  nav.nav-open .nav-mobile-backdrop{opacity:1;visibility:visible;}
+  .nav-links{position:fixed;top:68px;left:0;right:0;bottom:0;flex-direction:column;align-items:stretch;gap:0;padding:24px 20px 40px;background:rgba(8,8,8,0.98);backdrop-filter:blur(24px);border-bottom:1px solid rgba(201,168,76,0.12);z-index:1001;transform:translateY(-8px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.3s,visibility 0.3s,transform 0.3s;}
+  .nav-links li{width:100%;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .nav-links a{display:block;padding:16px 8px;font-size:16px;color:rgba(255,255,255,0.85);}
+  .nav-links a:hover{color:var(--gold);}
+  nav.nav-open .nav-links{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto;display:flex;}
+  .nav-cta{margin-left:auto;margin-right:10px;padding:8px 14px;font-size:13px;}
   .hero-inner,.split-inner,.calc-inner,.testi-hd,.apply-grid,.hiw-header{grid-template-columns:1fr;}
   .hero-right{display:none;}
   .section-wrap{padding:0 20px;}
@@ -302,11 +347,15 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
     <li><a href="#earnings">Earnings</a></li>
     <li><a href="#apply">Apply</a></li>
   </ul>
-  <a href="#apply" class="nav-cta">Apply to Partner →</a>
+  <div class="nav-actions">
+    <a href="#apply" class="nav-cta">Apply to Partner →</a>
+    <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile-backdrop" aria-hidden="true"></div>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="home">
+<section class="hero scroll-reveal" id="home">
   <div class="hero-bg"></div>
   <div class="hero-grain"></div>
   <div class="hero-inner">
@@ -355,14 +404,14 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 </section>
 
 <!-- TICKER -->
-<div class="ticker-wrap">
+<div class="ticker-wrap scroll-reveal">
   <div class="ticker-track">
     <span class="ticker-item">Zero Upfront</span><span class="ticker-item">Creator Audit</span><span class="ticker-item">Product Strategy</span><span class="ticker-item">Ghostwritten Launch</span><span class="ticker-item">14-Day Sequence</span><span class="ticker-item">Revenue Share</span><span class="ticker-item">Shadow Operating</span><span class="ticker-item">Digital Products</span><span class="ticker-item">Zero Upfront</span><span class="ticker-item">Creator Audit</span><span class="ticker-item">Product Strategy</span><span class="ticker-item">Ghostwritten Launch</span><span class="ticker-item">14-Day Sequence</span><span class="ticker-item">Revenue Share</span><span class="ticker-item">Shadow Operating</span><span class="ticker-item">Digital Products</span>
   </div>
 </div>
 
 <!-- THE 3x3 — WHY SECTION -->
-<section class="why3" id="why">
+<section class="why3 scroll-reveal" id="why">
   <div class="section-wrap">
     <div class="why3-header">
       <div class="s-tag" style="color:rgba(255,255,255,0.25);">Why The Gap Exists</div>
@@ -451,7 +500,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="hiw" id="how">
+<section class="hiw scroll-reveal" id="how">
   <div class="section-wrap">
     <div class="hiw-header">
       <div>
@@ -494,7 +543,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 </section>
 
 <!-- TWO PATHS -->
-<section class="two-paths" id="paths">
+<section class="two-paths scroll-reveal" id="paths">
   <div class="section-wrap">
     <div class="two-paths-header">
       <div class="s-tag" style="color:var(--gold);display:flex;align-items:center;justify-content:center;gap:10px;">Two Ways To Work With CLARIVA</div>
@@ -547,7 +596,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 </section>
 
 <!-- WHAT WE BUILD -->
-<section class="wyg" id="deliver">
+<section class="wyg scroll-reveal" id="deliver">
   <div class="section-wrap">
     <div class="wyg-header">
       <div class="s-tag">What CLARIVA Builds</div>
@@ -566,7 +615,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 </section>
 
 <!-- REVENUE SPLIT -->
-<section class="split" id="split">
+<section class="split scroll-reveal" id="split">
   <div class="section-wrap">
     <div class="split-inner">
       <div>
@@ -593,7 +642,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 </section>
 
 <!-- EARNINGS -->
-<section class="calc" id="earnings">
+<section class="calc scroll-reveal" id="earnings">
   <div class="section-wrap">
     <div class="calc-inner">
       <div>
@@ -641,7 +690,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 </section>
 
 <!-- GALLERY -->
-<section class="gallery" id="standard">
+<section class="gallery scroll-reveal" id="standard">
   <div class="section-wrap">
     <div style="text-align:center;margin-bottom:48px;">
       <div class="s-tag" style="justify-content:center;">The CLARIVA Standard</div>
@@ -657,7 +706,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testi" id="results">
+<section class="testi scroll-reveal" id="results">
   <div class="section-wrap">
     <div class="testi-hd">
       <div>
@@ -675,7 +724,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 </section>
 
 <!-- APPLY -->
-<section class="apply" id="apply">
+<section class="apply scroll-reveal" id="apply">
   <div class="section-wrap">
     <div class="apply-grid">
       <div>
@@ -716,7 +765,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="scroll-reveal">
   <div class="section-wrap">
     <div class="ft">
       <div>
@@ -766,24 +815,57 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 </div>
 
 <script>
-// Progress bar + float CTA
-window.addEventListener('scroll',function(){
-  var pct=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;
-  document.getElementById('prog').style.width=pct+'%';
-  var cta=document.getElementById('floatCta');
-  if(window.scrollY>500){cta.classList.add('visible');}else{cta.classList.remove('visible');}
-});
-// Animate on scroll
-var observer=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}
+(function(){
+  var nav=document.querySelector('nav');
+  var toggle=document.querySelector('.nav-toggle');
+  var backdrop=document.querySelector('.nav-mobile-backdrop');
+  function setMenuOpen(open){
+    if(!nav||!toggle)return;
+    nav.classList.toggle('nav-open',open);
+    document.body.classList.toggle('nav-menu-open',open);
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+    toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+    if(backdrop)backdrop.setAttribute('aria-hidden',open?'false':'true');
+  }
+  function closeMenu(){setMenuOpen(false);}
+  if(toggle){
+    toggle.addEventListener('click',function(){setMenuOpen(!nav.classList.contains('nav-open'));});
+  }
+  if(backdrop){
+    backdrop.addEventListener('click',closeMenu);
+  }
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click',function(){
+      if(window.matchMedia('(max-width:768px)').matches)closeMenu();
+    });
   });
-},{threshold:0.08});
-document.querySelectorAll('.why3-point,.wyg-card,.tc,.hiw-step,.cs-row,.path').forEach(function(el){
-  el.style.opacity='0';el.style.transform='translateY(20px)';
-  el.style.transition='opacity 0.5s ease,transform 0.5s ease';
-  observer.observe(el);
-});
+  window.addEventListener('resize',function(){
+    if(window.innerWidth>768)closeMenu();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')closeMenu();
+  });
+
+  function onScroll(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    var pct=h>0?(window.scrollY/h)*100:0;
+    document.getElementById('prog').style.width=pct+'%';
+    var cta=document.getElementById('floatCta');
+    if(window.scrollY>500){cta.classList.add('visible');}else{cta.classList.remove('visible');}
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  var revealObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.1,rootMargin:'0px 0px -24px 0px'});
+  document.querySelectorAll('.scroll-reveal').forEach(function(el){revealObserver.observe(el);});
+})();
 </script>
 </body>
 </html>
