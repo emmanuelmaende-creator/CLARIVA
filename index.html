@@ -3,15 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#080808">
 <meta name="description" content="CLARIVA is the premium shadow operator agency for Instagram creators. We build your digital product, ghostwrite your launch in your voice, and earn only when you do — zero upfront, zero risk.">
 <meta property="og:title" content="CLARIVA — The Shadow Operator for Creators">
 <meta property="og:description" content="Premium shadow operating for creators: product built for you, launch written in your voice, 14-day sequence, revenue share only. Partner or get the $99 blueprint at clariva.tech.">
 <meta property="og:image" content="https://clariva.tech/clariva-logo.jpg">
 <meta property="og:url" content="https://clariva.tech/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="CLARIVA">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CLARIVA — The Shadow Operator for Creators">
+<meta name="twitter:description" content="Zero-upfront digital launches for creators. Product built for you, ghostwritten in your voice, revenue share only.">
+<meta name="twitter:image" content="https://clariva.tech/clariva-logo.jpg">
 <link rel="canonical" href="https://clariva.tech/">
+<link rel="icon" href="clariva-logo.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="clariva-logo.jpg">
+<meta name="format-detection" content="telephone=no">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://docs.google.com">
+<link rel="dns-prefetch" href="https://images.pexels.com">
 <title>CLARIVA — The Shadow Operator for Creators</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://clariva.tech/#org","name":"CLARIVA","url":"https://clariva.tech/","logo":"https://clariva.tech/clariva-logo.jpg","description":"Premium shadow operator agency for Instagram creators — digital products, ghostwritten launches, revenue share partnerships.","sameAs":["https://instagram.com/clariva.tech"],"email":"emmanuelmaende@gmail.com"},{"@type":"WebSite","@id":"https://clariva.tech/#website","url":"https://clariva.tech/","name":"CLARIVA","publisher":{"@id":"https://clariva.tech/#org"},"inLanguage":"en-US"},{"@type":"FAQPage","@id":"https://clariva.tech/#faq","mainEntity":[{"@type":"Question","name":"How does CLARIVA earn on the partnership path?","acceptedAnswer":{"@type":"Answer","text":"On the full partnership path there is zero upfront from the creator. CLARIVA earns via revenue share only after you earn, on a sliding scale by launch size as shown in the Revenue Share section."}},{"@type":"Question","name":"What is included in the $99 blueprint?","acceptedAnswer":{"@type":"Answer","text":"Path Two includes your digital product built for your audience, a personalised launch roadmap, a revenue projection, delivery within 24 hours, and you keep 100% of every sale — as described in the Two Paths section."}},{"@type":"Question","name":"How fast do you respond to applications?","acceptedAnswer":{"@type":"Answer","text":"Applications are personally reviewed with a response within 24 hours, including a free creator audit when you proceed, as stated in the Apply section."}},{"@type":"Question","name":"Who is the right fit for CLARIVA?","acceptedAnswer":{"@type":"Answer","text":"Creators with roughly 20,000 to 600,000+ followers across major platforms, consistent posting, and genuine engagement. CLARIVA does not partner with purchased followers or fake engagement."}},{"@type":"Question","name":"What happens on discovery and blueprint calls?","acceptedAnswer":{"@type":"Answer","text":"After applying you receive a free creator audit, a 30-minute discovery call with no commitment required, and a blueprint call that maps your product and 14-day launch sequence on a shared screen."}}]}]}
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -22,7 +40,16 @@
   --border:#E8E4DE;
 }
 html{scroll-behavior:smooth;}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+}
 body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;}
+.skip-link{position:fixed;top:0;left:0;z-index:10000;padding:12px 20px;background:var(--gold);color:#080808;font-weight:700;font-size:14px;text-decoration:none;border-radius:0 0 10px 0;transform:translateY(-130%);transition:transform 0.2s ease,box-shadow 0.2s;}
+.skip-link:focus,.skip-link:focus-visible{transform:translateY(0);box-shadow:0 8px 32px rgba(0,0,0,0.4);}
+:focus{outline:none;}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px;}
+a:focus-visible,button:focus-visible{border-radius:6px;}
+.nav-toggle:focus-visible{border-radius:8px;}
 body.nav-menu-open{overflow:hidden;}
 #prog{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold2),#F0D78C,var(--gold));z-index:9999;transition:width 0.12s ease-out;box-shadow:0 0 12px rgba(201,168,76,0.35);}
 
@@ -337,6 +364,24 @@ nav.nav-open .nav-toggle span:nth-child(3){transform:translateY(-8px) rotate(-45
 .float-cta a{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#080808;padding:12px 22px;border-radius:100px;font-weight:700;font-size:13px;text-decoration:none;box-shadow:0 8px 32px rgba(201,168,76,0.4);transition:background 0.2s,box-shadow 0.35s;}
 .float-cta a:hover{animation:none;background:var(--gold2);box-shadow:0 10px 36px rgba(201,168,76,0.55),0 0 28px rgba(232,201,106,0.45);}
 
+/* FAQ */
+.faq{background:#060606;padding:96px 0;border-top:1px solid rgba(201,168,76,0.12);}
+.faq-inner{max-width:720px;margin:0 auto;}
+.faq-header{text-align:center;margin-bottom:48px;}
+.faq-header .s-tag{justify-content:center;color:var(--gold);}
+.faq-header .s-title{color:var(--white);}
+.faq-list{display:flex;flex-direction:column;gap:10px;}
+.faq-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;overflow:hidden;transition:border-color 0.25s,box-shadow 0.25s;}
+.faq-item:hover{border-color:rgba(201,168,76,0.2);}
+.faq-item[open]{border-color:rgba(201,168,76,0.28);box-shadow:0 0 0 1px rgba(201,168,76,0.08);}
+.faq-item summary{list-style:none;cursor:pointer;padding:20px 24px;font-size:15px;font-weight:600;color:var(--white);display:flex;align-items:center;justify-content:space-between;gap:16px;user-select:none;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:'+';font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--gold);line-height:1;transition:transform 0.25s;}
+.faq-item[open] summary::after{transform:rotate(45deg);}
+.faq-item summary:focus-visible{outline:none;box-shadow:inset 0 0 0 2px var(--gold);}
+.faq-a{padding:0 24px 20px;font-size:14px;color:rgba(255,255,255,0.5);line-height:1.75;border-top:1px solid rgba(255,255,255,0.04);padding-top:16px;margin:0 24px 20px;}
+.earn-disclaimer{font-size:12px;color:rgba(255,255,255,0.28);line-height:1.6;margin-top:20px;max-width:640px;}
+
 /* FOOTER */
 footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);padding:80px 0 40px;}
 .ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,0.05);}
@@ -381,14 +426,24 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
   .scroll-reveal{filter:none;transform:translateY(28px);}
   .scroll-reveal.is-in-view{animation:reveal-section-m 0.95s cubic-bezier(0.22,1,0.36,1) forwards;}
 }
+@media(prefers-reduced-motion:reduce){
+  .scroll-reveal,.card-reveal-init{opacity:1!important;transform:none!important;filter:none!important;}
+  .scroll-reveal.is-in-view,.card-reveal-init.is-in-view{animation:none!important;}
+  .ticker-track{animation:none!important;transform:none!important;}
+  .hero-title,.hero-scroll-line,.hero-dot,.float-cta.visible a,.btn-primary,.btn-gold,.nav-cta,.path-btn-1,.path-btn-2{animation:none!important;}
+  .card-trace::after{animation:none!important;}
+  .apply-form-skeleton{animation:none!important;}
+  .hero-particles{display:none!important;}
+}
 </style>
 </head>
 <body>
 <div id="prog"></div>
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- NAV -->
-<nav>
-  <a href="#" class="logo">
+<nav aria-label="Primary navigation">
+  <a href="#home" class="logo">
     <span class="logo-icon"><img src="clariva-logo.jpg" alt="CLARIVA" style="width:36px;height:36px;object-fit:cover;border-radius:4px;display:block;"/></span>
     <span class="logo-sep"></span>
     <span class="logo-text"><span class="logo-name">CLARIVA</span><span class="logo-tag">Shadow Operator</span></span>
@@ -398,15 +453,17 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
     <li><a href="#how">How It Works</a></li>
     <li><a href="#paths">Two Paths</a></li>
     <li><a href="#earnings">Earnings</a></li>
-    <li><a href="#apply">Apply</a></li>
+    <li><a href="#apply" data-track="nav_apply">Apply</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ul>
   <div class="nav-actions">
-    <a href="#apply" class="nav-cta">Apply to Partner →</a>
+    <a href="#apply" class="nav-cta" data-track="cta_apply_nav">Apply to Partner →</a>
     <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
   <div class="nav-mobile-backdrop" aria-hidden="true"></div>
 </nav>
 
+<main id="main">
 <!-- HERO -->
 <section class="hero scroll-reveal" id="home">
   <div class="hero-bg"></div>
@@ -418,8 +475,8 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
       <h1 class="hero-title">Your Audience<br>Trusts You.<br>Brands Are Getting<br><em>Paid For It.</em></h1>
       <p class="hero-desc">CLARIVA is your <strong>silent business partner.</strong> We identify what your audience will invest in, build the product completely, write your entire launch in your voice — and only earn <strong>when you do.</strong> Zero upfront. Zero risk.</p>
       <div class="hero-actions">
-        <a href="#apply" class="btn-primary">Apply to Partner →</a>
-        <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" class="btn-gold">Get $99 Blueprint →</a>
+        <a href="#apply" class="btn-primary" data-track="cta_apply_hero">Apply to Partner →</a>
+        <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener noreferrer" class="btn-gold" data-track="cta_blueprint_hero">Get $99 Blueprint →</a>
       </div>
       <div class="hero-stats">
         <div class="hs"><div class="hs-n">20K–600K+</div><div class="hs-l">Creator range we work with</div></div>
@@ -621,7 +678,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
           <div class="path-price-num path-price-num-1">$0 upfront</div>
           <div class="path-price-sub">Revenue share only — after you earn</div>
         </div>
-        <a href="#apply" class="path-btn-1">Apply for a Partnership →</a>
+        <a href="#apply" class="path-btn-1" data-track="cta_apply_path">Apply for a Partnership →</a>
         <p class="path-note">By selection only. 5 spots per month.</p>
       </div>
       <div class="path path-2">
@@ -639,7 +696,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
           <div class="path-price-num path-price-num-2">$99 — one payment</div>
           <div class="path-price-sub">Delivered to your inbox within 24 hours</div>
         </div>
-        <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" class="path-btn-2">Get My Blueprint Now →</a>
+        <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener noreferrer" class="path-btn-2" data-track="cta_blueprint_path">Get My Blueprint Now →</a>
         <p class="path-note">Secure payment via Paystack. Card only.</p>
       </div>
     </div>
@@ -704,6 +761,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
         <div class="s-tag">Earnings Potential</div>
         <h2 class="s-title" style="color:white;">What your audience<br><em style="color:var(--orange);">is actually worth.</em></h2>
         <p style="color:rgba(255,255,255,0.4);font-size:15px;line-height:1.8;margin-bottom:32px;">Every month you post without a product is a month your audience's trust earns you nothing directly. Here is what creators at different sizes earned on their first CLARIVA launch. No ads. No experience.</p>
+        <p class="earn-disclaimer">Figures shown are illustrative examples from the scenarios described — not guarantees. Every audience, offer, and launch performs differently.</p>
         <div class="cs-row" style="border-left:3px solid rgba(224,92,32,0.3);">
           <div><div class="cs-c">Creator Size</div><div class="cs-v">25K followers</div></div>
           <div><div class="cs-c">Product</div><div class="cs-v">$49 Guide · 100 sales</div></div>
@@ -813,7 +871,9 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
             height="960"
             frameborder="0"
             marginheight="0"
-            marginwidth="0">
+            marginwidth="0"
+            loading="eager"
+            referrerpolicy="strict-origin-when-cross-origin">
             Loading…
           </iframe>
         </div>
@@ -822,12 +882,46 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq scroll-reveal" id="faq" aria-labelledby="faq-heading">
+  <div class="section-wrap faq-inner">
+    <div class="faq-header">
+      <div class="s-tag">Quick answers</div>
+      <h2 class="s-title" id="faq-heading">Straight questions.<br><em style="color:var(--gold);">Clear terms.</em></h2>
+    </div>
+    <div class="faq-list" id="faqList">
+      <details class="faq-item">
+        <summary>How does CLARIVA earn on the partnership path?</summary>
+        <p class="faq-a">There is <strong style="color:rgba(255,255,255,0.85);">zero upfront</strong> from you on Path One. We earn through <strong style="color:rgba(255,255,255,0.85);">revenue share only after you earn</strong>, on the sliding scale shown in the Revenue Share section (Starter, Growth, and Scale tiers).</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is included in the $99 blueprint?</summary>
+        <p class="faq-a">Path Two delivers your <strong style="color:rgba(255,255,255,0.85);">digital product built</strong> for your audience, your <strong style="color:rgba(255,255,255,0.85);">personalised launch roadmap</strong>, a <strong style="color:rgba(255,255,255,0.85);">revenue projection</strong>, and delivery <strong style="color:rgba(255,255,255,0.85);">within 24 hours</strong> — you keep <strong style="color:rgba(255,255,255,0.85);">100% of every sale</strong>, as stated under Two Paths. Payment is processed securely via Paystack.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How fast do you respond after I apply?</summary>
+        <p class="faq-a">We <strong style="color:rgba(255,255,255,0.85);">personally review</strong> every application and respond <strong style="color:rgba(255,255,255,0.85);">within 24 hours</strong>, including your <strong style="color:rgba(255,255,255,0.85);">free creator audit</strong> when you move forward — as described in the Apply section.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Who is the right fit — and who is not?</summary>
+        <p class="faq-a">We partner with creators in the <strong style="color:rgba(255,255,255,0.85);">20,000–600,000+</strong> follower range (Instagram, TikTok, YouTube, or similar) who post consistently with <strong style="color:rgba(255,255,255,0.85);">genuine engagement</strong>. We do <strong style="color:rgba(255,255,255,0.85);">not</strong> work with purchased followers or fake engagement — we verify authentic trust before partnerships, as listed under Who we partner with.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens on the discovery and blueprint calls?</summary>
+        <p class="faq-a">After you apply, you receive your audit and a <strong style="color:rgba(255,255,255,0.85);">30-minute discovery call</strong> to see what is possible — no commitment required. A <strong style="color:rgba(255,255,255,0.85);">blueprint call</strong> maps your product and full 14-day sequence on a shared screen so you know exactly what the next two weeks look like — as outlined in What happens after you apply.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
 <!-- FOOTER -->
 <footer class="scroll-reveal">
   <div class="section-wrap">
     <div class="ft">
       <div>
-        <a href="#" class="logo">
+        <a href="#home" class="logo">
           <span class="logo-icon"><img src="clariva-logo.jpg" alt="CLARIVA" style="width:36px;height:36px;object-fit:cover;border-radius:4px;"/></span>
           <span class="logo-sep"></span>
           <span class="logo-text"><span class="logo-name">CLARIVA</span><span class="logo-tag">Shadow Operator</span></span>
@@ -841,21 +935,22 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
           <li><a href="#how">How It Works</a></li>
           <li><a href="#paths">Two Paths</a></li>
           <li><a href="#earnings">Earnings</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
         <div class="f-col-t">Partner</div>
         <ul class="f-links">
-          <li><a href="#apply">Apply Now</a></li>
-          <li><a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank">Get $99 Blueprint</a></li>
-          <li><a href="https://instagram.com/clariva.tech" target="_blank">Instagram</a></li>
+          <li><a href="#apply" data-track="cta_apply_footer">Apply Now</a></li>
+          <li><a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener noreferrer" data-track="cta_blueprint_footer">Get $99 Blueprint</a></li>
+          <li><a href="https://instagram.com/clariva.tech" target="_blank" rel="noopener noreferrer" data-track="social_instagram">Instagram</a></li>
         </ul>
       </div>
       <div>
         <div class="f-col-t">Contact</div>
         <ul class="f-links">
-          <li><a href="mailto:emmanuelmaende@gmail.com">emmanuelmaende@gmail.com</a></li>
-          <li><a href="https://instagram.com/clariva.tech" target="_blank">@clariva.tech</a></li>
+          <li><a href="mailto:emmanuelmaende@gmail.com" data-track="contact_email">emmanuelmaende@gmail.com</a></li>
+          <li><a href="https://instagram.com/clariva.tech" target="_blank" rel="noopener noreferrer" data-track="social_instagram_handle">@clariva.tech</a></li>
           <li><span style="color:rgba(255,255,255,0.4);font-size:14px;">Response within 24 hours</span></li>
         </ul>
       </div>
@@ -869,11 +964,27 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 
 <!-- FLOATING CTA -->
 <div class="float-cta" id="floatCta">
-  <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank">Get $99 Blueprint ↗</a>
+  <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener noreferrer" data-track="cta_blueprint_float">Get $99 Blueprint ↗</a>
 </div>
 
 <script>
 (function(){
+  window.clarivaTrack=function(name,detail){
+    var d=detail&&typeof detail==='object'?detail:{};
+    try{
+      window.dispatchEvent(new CustomEvent('clariva:track',{detail:Object.assign({event:name},d)}));
+      if(typeof window.clarivaAnalytics==='function')window.clarivaAnalytics(name,d);
+    }catch(e){}
+  };
+  document.addEventListener('click',function(e){
+    var el=e.target&&e.target.closest&&e.target.closest('[data-track]');
+    if(!el)return;
+    var ev=el.getAttribute('data-track');
+    if(!ev)return;
+    window.clarivaTrack(ev,{href:el.getAttribute('href')||null,tag:el.tagName});
+  },true);
+
+  var scrollMarks={25:0,50:0,75:0,100:0};
   var nav=document.querySelector('nav');
   var toggle=document.querySelector('.nav-toggle');
   var backdrop=document.querySelector('.nav-mobile-backdrop');
@@ -906,10 +1017,16 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 
   function onScroll(){
     var h=document.documentElement.scrollHeight-window.innerHeight;
-    var pct=h>0?(window.scrollY/h)*100:0;
+    var pct=h>0?(window.scrollY/h)*100:100;
     document.getElementById('prog').style.width=pct+'%';
     var cta=document.getElementById('floatCta');
     if(window.scrollY>500){cta.classList.add('visible');}else{cta.classList.remove('visible');}
+    [25,50,75,100].forEach(function(m){
+      if(pct>=m&&!scrollMarks[m]){
+        scrollMarks[m]=1;
+        window.clarivaTrack('scroll_depth',{percent:m});
+      }
+    });
   }
   window.addEventListener('scroll',onScroll,{passive:true});
   onScroll();
@@ -952,12 +1069,26 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
     });
   });
 
+  var reduceMotion=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var faqList=document.getElementById('faqList');
+  if(faqList){
+    faqList.querySelectorAll('.faq-item').forEach(function(d){
+      d.addEventListener('toggle',function(){
+        if(d.open){
+          var sum=d.querySelector('summary');
+          window.clarivaTrack('faq_open',{q:sum?sum.textContent.trim().slice(0,120):''});
+          faqList.querySelectorAll('.faq-item').forEach(function(o){if(o!==d)o.open=false;});
+        }
+      });
+    });
+  }
+
   var canvas=document.getElementById('heroParticles');
-  if(canvas){
+  if(canvas&&!reduceMotion){
     var ctx=canvas.getContext('2d');
     var particles=[];
     var dpr=Math.min(window.devicePixelRatio||1,2);
-    var running=true;
+    var running=!document.hidden;
     function heroSize(){
       var sec=canvas.closest('.hero');
       if(!sec)return{width:window.innerWidth,height:window.innerHeight};
@@ -972,7 +1103,10 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
       canvas.style.height=s.height+'px';
       ctx.setTransform(dpr,0,0,dpr,0,0);
       if(particles.length===0){
-        var n=Math.min(48,Math.floor((s.width*s.height)/28000));
+        var mob=window.innerWidth<=768;
+        var dens=mob?48000:28000;
+        var cap=mob?20:48;
+        var n=Math.min(cap,Math.floor((s.width*s.height)/dens));
         for(var i=0;i<n;i++){
           particles.push({
             x:Math.random()*s.width,
@@ -1009,10 +1143,15 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
         ctx.arc(p.x,p.y,p.r*3,0,Math.PI*2);
         ctx.fill();
       }
-      requestAnimationFrame(tick);
+      if(running)requestAnimationFrame(tick);
     }
+    document.addEventListener('visibilitychange',function(){
+      var v=!document.hidden;
+      running=v;
+      if(v)requestAnimationFrame(tick);
+    });
     resizeParticles();
-    tick();
+    if(running)tick();
     if(window.ResizeObserver&&canvas.closest('.hero')){
       var ro=new ResizeObserver(function(){resizeParticles();});
       ro.observe(canvas.closest('.hero'));
@@ -1022,8 +1161,13 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 
   var formShell=document.getElementById('applyFormShell');
   var gform=document.getElementById('gformIframe');
+  var formLoadTracked=0;
   function markFormLoaded(){
     if(formShell)formShell.classList.add('is-loaded');
+    if(!formLoadTracked){
+      formLoadTracked=1;
+      window.clarivaTrack('apply_form_loaded',{});
+    }
   }
   if(gform){
     gform.addEventListener('load',markFormLoaded);
