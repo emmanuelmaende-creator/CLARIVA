@@ -204,20 +204,21 @@ nav.nav-open .nav-toggle span:nth-child(3){transform:translateY(-8px) rotate(-45
 .wp-tiedown{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7;}
 .wp-proof{display:inline-block;margin-top:14px;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:2px;text-transform:uppercase;}
 
-/* Premium moving backgrounds — Process, Results, Apply (shared motion) */
+/* Premium moving backgrounds — Process, Results, Apply (bold, visible, still luxe) */
 @keyframes premiumSectionBg{
-  0%{transform:scale(1.07) translate(0.6%,0.35%);}
-  100%{transform:scale(1.13) translate(-1.6%,-0.95%);}
+  0%{transform:scale(1.045) translate(2.4%,1.15%);}
+  100%{transform:scale(1.165) translate(-3.4%,-2.05%);}
 }
 .hiw-bg-motion,.testi-bg-motion,.apply-bg-motion{
   position:absolute;
-  inset:-12%;
+  inset:-20%;
   background-size:cover;
   background-position:center;
   z-index:0;
   will-change:transform;
   backface-visibility:hidden;
-  animation:premiumSectionBg 38s cubic-bezier(0.42,0.01,0.58,0.99) infinite alternate;
+  transform-origin:50% 45%;
+  animation:premiumSectionBg 16s cubic-bezier(0.33,0.02,0.25,1) infinite alternate;
   pointer-events:none;
 }
 .hiw-bg-motion{background-image:url('https://images.pexels.com/photos/6138017/pexels-photo-6138017.jpeg?auto=compress&cs=tinysrgb&w=1920');}
@@ -416,7 +417,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 
 /* MOBILE */
 @media(max-width:768px){
-  .hiw-bg-motion,.testi-bg-motion,.apply-bg-motion{inset:-18%;}
+  .hiw-bg-motion,.testi-bg-motion,.apply-bg-motion{inset:-26%;}
   nav{padding:0 max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right));}
   .nav-toggle{display:flex;}
   .nav-mobile-backdrop{display:block;position:fixed;inset:0;top:68px;background:rgba(0,0,0,0.55);opacity:0;visibility:hidden;transition:opacity 0.3s,visibility 0.3s;z-index:999;}
