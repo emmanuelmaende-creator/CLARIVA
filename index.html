@@ -3,1095 +3,1298 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="CLARIVA — The shadow operator for creators. We build your digital product, ghostwrite your launch, and earn only when you do. Zero upfront.">
-<meta property="og:title" content="CLARIVA — The Shadow Operator">
-<meta property="og:description" content="Your audience trusts you. Brands collect that trust for free. We give it back to you — as direct income. Zero upfront.">
-<meta property="og:url" content="https://clariva.tech/">
-<meta property="og:image" content="https://clariva.tech/clariva-logo.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://clariva.tech/">
-<link rel="icon" href="clariva-logo.jpg" type="image/jpeg">
-<title>CLARIVA &#8212; The Shadow Operator</title>
+<meta name="description" content="CLARIVA — The Shadow Operator. We build your digital product, ghostwrite your 14-day launch in your voice, and earn only after you do. Zero upfront. You keep 80%.">
+<meta property="og:title" content="CLARIVA — You Built The Audience. We Build The Income.">
+<meta property="og:description" content="Partner or Blueprint. No third option.">
+<link rel="canonical" href="https://emmanuelmaende-creator.github.io/CLARIVA/">
+<title>CLARIVA — The Shadow Operator</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ================================================================
-   CLARIVA SILVER BULLET — CMO EDITION
-   Every pixel is a conversion argument.
-   Every section creates pressure toward Apply.
-   ================================================================ */
+/* ══════════════════════════════════════════════
+   THE TWO ROYAL COLOURS — AND NOTHING ELSE
+   Burgundy  #7D1635  (exclusivity, Rolls, power)
+   Gold      #C9A84C  (permanence, prestige, wealth)
+══════════════════════════════════════════════ */
 :root{
-  --void:#040203;
-  --deep:#090507;
-  --surface:#100810;
-  --lift:#180E18;
-  --card:#1F1220;
-  --border:#301828;
-  --rim:#40223A;
-  --muted:#7A5068;
-  --dim:#A07888;
-  --text:#D4B8C8;
-  --bright:#ECD8E8;
-  --white:#FAF0F6;
-  --burg:#8B1A42;
-  --burg2:#A82058;
-  --burg3:#C4306E;
-  --gold:#B8901E;
-  --gold2:#CFA82C;
-  --gold3:#E4C84A;
-  --gold4:#F2DC80;
-  --serif:'Cormorant Garamond',Georgia,serif;
-  --cond:'Barlow Condensed',sans-serif;
-  --body:'Barlow',sans-serif;
-  --ease:cubic-bezier(.16,1,.3,1);
-  --ease-in:cubic-bezier(.7,0,.84,0);
+  /* VOID — the canvas */
+  --v0:#030202;--v1:#080505;--v2:#0E0808;--v3:#150B0B;
+  --v4:#1C1010;--v5:#261515;--v6:#321B1B;--v7:#3E2020;
+  /* BURGUNDY — the fire */
+  --b0:#4A0D20;--b1:#5E1028;--b2:#7D1635;--b3:#9B1C42;
+  --b4:#B82250;--b5:#CC3D65;--b6:#E05A7E;--b7:#F0A3B8;
+  /* GOLD — the authority */
+  --g0:#6B5520;--g1:#8A6E28;--g2:#A88832;--g3:#C9A84C;
+  --g4:#DEC06A;--g5:#EDD48A;--g6:#F7E8B5;--g7:#FDF6E0;
+  /* TEXT */
+  --t0:#8A6A6A;--t1:#B89898;--t2:#D4B8B8;--t3:#EDE0E0;--t4:#FDF8F8;
+  /* TYPE */
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mono:'DM Mono',monospace;
+  /* SPACE */
+  --max:1320px;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{background:var(--void);color:var(--text);font-family:var(--body);font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+body{background:var(--v0);color:var(--t1);font-family:var(--sans);
+     overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(125,22,53,.4);color:var(--t4)}
 a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%;object-fit:cover}
+img{display:block;width:100%;height:100%;object-fit:cover}
 ::-webkit-scrollbar{width:2px}
-::-webkit-scrollbar-track{background:var(--void)}
-::-webkit-scrollbar-thumb{background:linear-gradient(to bottom,var(--burg),var(--gold))}
-@media(hover:none){body{cursor:auto}#cr{display:none}}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--b2),var(--g3))}
 
-/* PROGRESS */
-#sp{position:fixed;top:0;left:0;height:3px;width:0;z-index:3000;
-  background:linear-gradient(90deg,var(--burg),var(--gold3),var(--burg2));
-  box-shadow:0 0 10px rgba(139,26,66,.8);transition:width .08s linear}
+/* ── SCROLL PROGRESS ──────────────────────────── */
+#progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:9000;
+  background:linear-gradient(90deg,var(--b2),var(--g3),var(--b4));
+  box-shadow:0 0 10px rgba(201,168,76,.6);transition:width .05s}
 
-/* CURSOR */
-#cr{position:fixed;width:10px;height:10px;border-radius:50%;pointer-events:none;z-index:9999;
-  transform:translate(-50%,-50%);
-  background:radial-gradient(circle,var(--gold3) 0%,var(--burg) 100%);
-  box-shadow:0 0 10px rgba(184,144,30,.6);
-  transition:width .25s var(--ease),height .25s var(--ease),opacity .2s}
-#cr.lg{width:48px;height:48px;opacity:.18}
-#cr-ring{position:fixed;width:40px;height:40px;border-radius:50%;pointer-events:none;z-index:9998;
-  transform:translate(-50%,-50%);border:1px solid rgba(184,144,30,.3);
-  transition:width .4s var(--ease),height .4s var(--ease),border-color .3s}
-#cr.lg~#cr-ring,body.cr-hover #cr-ring{width:64px;height:64px;border-color:rgba(184,144,30,.5)}
+/* ── ANIMATED CANVAS BG ────────────────────────── */
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.45}
 
-/* GLOBAL CANVAS */
-#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.28}
+/* ── CUSTOM CURSOR ─────────────────────────────── */
+#cur{position:fixed;width:10px;height:10px;border-radius:50%;
+  background:var(--g3);pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);mix-blend-mode:screen;
+  transition:width .35s cubic-bezier(.16,1,.3,1),
+             height .35s cubic-bezier(.16,1,.3,1),
+             opacity .35s}
+#cur.big{width:48px;height:48px;opacity:.15;
+  background:radial-gradient(circle,var(--g4),var(--b3))}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;
-  padding:0 56px;height:72px;
-  background:rgba(4,2,3,.88);backdrop-filter:blur(32px) saturate(200%);
-  border-bottom:1px solid rgba(139,26,66,.1);transition:all .4s}
-nav.scrolled{background:rgba(4,2,3,.97);border-color:rgba(139,26,66,.2)}
-.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.nav-mark{width:36px;height:36px;border:1px solid rgba(184,144,30,.4);border-radius:3px;overflow:hidden;flex-shrink:0}
-.nav-mark img{width:100%;height:100%;object-fit:cover}
-.nav-name{font-family:var(--cond);font-size:20px;font-weight:700;letter-spacing:4px;color:var(--white);text-transform:uppercase;display:block;line-height:1}
-.nav-tag{font-family:var(--cond);font-size:9px;font-weight:500;letter-spacing:3px;color:var(--gold);text-transform:uppercase;display:block;margin-top:2px}
-.nav-links{display:flex;gap:32px;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
-.nav-links a{font-family:var(--cond);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--muted);transition:color .2s;position:relative;padding-bottom:4px}
-.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;
-  background:linear-gradient(90deg,var(--gold3),var(--burg));transition:width .35s var(--ease)}
-.nav-links a:hover{color:var(--white)}.nav-links a:hover::after{width:100%}
-.nav-cta{font-family:var(--cond);font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;
-  padding:10px 24px;color:var(--void);border-radius:2px;
-  background:linear-gradient(135deg,var(--gold),var(--gold3));
-  box-shadow:0 4px 20px rgba(184,144,30,.35);transition:all .3s}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 32px rgba(184,144,30,.5)}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;width:28px;padding:4px}
-.burger span{display:block;height:1.5px;background:var(--text);border-radius:1px;transition:.3s}
+/* ── GRAIN OVERLAY ─────────────────────────────── */
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.04'/%3E%3C/svg%3E");
+  opacity:.6}
 
-/* ===================================================
-   HERO — THE INCITING INCIDENT
-   Opens with the accusation, not the pitch.
-   =================================================== */
-.hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:72px}
-.hero-vl{position:absolute;left:56px;top:0;bottom:0;width:1px;z-index:1;pointer-events:none;
-  background:linear-gradient(to bottom,transparent,rgba(139,26,66,.2) 25%,rgba(184,144,30,.15) 75%,transparent)}
-.hero-grain{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.04;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:220px}
-.hero-inner{max-width:1340px;margin:0 auto;padding:80px 56px 100px 88px;
-  display:grid;grid-template-columns:1fr 480px;gap:80px;align-items:center;position:relative;z-index:2}
-.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:32px;opacity:0;animation:fadeUp .9s var(--ease) .1s forwards}
-.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--burg2);animation:pulse 2.5s ease-in-out infinite;flex-shrink:0}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.6)}}
-.hero-eyebrow-t{font-family:var(--cond);font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--burg2)}
-.hero-eyebrow-div{width:1px;height:14px;background:rgba(139,26,66,.3)}
-.hero-eyebrow-spots{font-family:var(--cond);font-size:10px;font-weight:500;letter-spacing:3px;color:var(--muted);text-transform:uppercase}
+/* ── NAV ───────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;
+  background:rgba(3,2,2,.85);backdrop-filter:blur(32px) saturate(160%);
+  border-bottom:1px solid rgba(125,22,53,.15)}
+nav.opaque{background:rgba(3,2,2,.97)}
+.nav-brand{display:flex;align-items:center;gap:11px}
+.nav-logo{width:36px;height:36px;border-radius:4px;overflow:hidden;
+  border:1px solid rgba(201,168,76,.3);flex-shrink:0}
+.nav-wordmark{font-family:var(--serif);font-size:22px;font-weight:700;
+  letter-spacing:.06em;color:var(--t4);text-transform:uppercase}
+.nav-sub{font-family:var(--mono);font-size:8px;letter-spacing:.25em;
+  color:var(--g3);text-transform:uppercase;display:block;margin-top:1px}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--t0);transition:color .25s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;
+  width:0;height:1px;background:var(--g3);transition:width .3s}
+.nav-links a:hover{color:var(--t3)}.nav-links a:hover::after{width:100%}
+.nav-apply{font-family:var(--mono);font-size:10px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;
+  padding:9px 22px;border-radius:2px;
+  background:linear-gradient(135deg,var(--b2),var(--b3));
+  color:var(--t4);border:none;cursor:pointer;
+  box-shadow:0 0 24px rgba(125,22,53,.35);
+  transition:all .3s}
+.nav-apply:hover{transform:translateY(-1px);
+  box-shadow:0 4px 32px rgba(125,22,53,.5);
+  background:linear-gradient(135deg,var(--b3),var(--b4))}
+.burger{display:none;flex-direction:column;gap:5px;
+  cursor:pointer;background:none;border:none;padding:4px}
+.burger span{display:block;width:26px;height:1.5px;
+  background:var(--t1);border-radius:2px;transition:.3s}
 
-/* THE HEADLINE — Accusation first */
-.hero-title{font-family:var(--serif);font-size:clamp(48px,5.5vw,84px);font-weight:300;line-height:.95;
-  letter-spacing:-2.5px;color:var(--white);margin-bottom:28px;overflow:hidden}
-.hero-title-line{display:block;overflow:hidden}
-.hero-title-line span{display:block;transform:translateY(105%);animation:lineSlide 1.1s var(--ease) forwards}
-.hero-title-line:nth-child(1) span{animation-delay:.3s}
-.hero-title-line:nth-child(2) span{animation-delay:.44s}
-.hero-title-line:nth-child(3) span{animation-delay:.58s}
-.hero-title-line:nth-child(4) span{animation-delay:.72s}
-@keyframes lineSlide{from{transform:translateY(105%)}to{transform:translateY(0)}}
-.hero-title em{font-style:italic;color:var(--gold3)}
-.hero-title strong{font-style:normal;font-weight:700;color:var(--burg2)}
+/* ── MOBILE NAV ────────────────────────────────── */
+.mnav{position:fixed;inset:0;top:72px;z-index:490;
+  background:rgba(3,2,2,.98);backdrop-filter:blur(40px);
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:40px;
+  transform:translateY(-100%);transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.mnav.open{transform:translateY(0)}
+.mnav a{font-family:var(--serif);font-size:36px;font-style:italic;
+  color:var(--t2);transition:color .2s}.mnav a:hover{color:var(--g3)}
+.mnav .mcta{font-family:var(--mono);font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;padding:14px 36px;
+  background:linear-gradient(135deg,var(--b2),var(--b3));
+  color:var(--t4);border-radius:2px}
 
-.hero-rule{width:0;height:2px;background:linear-gradient(90deg,var(--burg2),var(--gold3),transparent);
-  margin-bottom:24px;animation:ruleExpand 1s var(--ease) 1.1s forwards}
-@keyframes ruleExpand{to{width:72px}}
+/* ── HERO ───────────────────────────────────────── */
+.hero{min-height:100vh;display:flex;align-items:center;
+  position:relative;overflow:hidden;padding-top:72px}
+.hero-radial{position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 80% 70% at 65% 45%,rgba(125,22,53,.09) 0%,transparent 60%),
+    radial-gradient(ellipse 55% 55% at 10% 75%,rgba(201,168,76,.05) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 40% at 85% 10%,rgba(125,22,53,.04) 0%,transparent 55%)}
+/* Rotating ring */
+.hero-ring{position:absolute;right:calc(50% - 580px);top:50%;
+  transform:translateY(-50%);pointer-events:none;
+  width:580px;height:580px;border-radius:50%;
+  border:1px solid rgba(201,168,76,.06);
+  animation:ringRotate 120s linear infinite}
+.hero-ring::before{content:'';position:absolute;inset:60px;
+  border-radius:50%;border:1px solid rgba(125,22,53,.05)}
+.hero-ring::after{content:'';position:absolute;top:-4px;left:50%;
+  width:8px;height:8px;border-radius:50%;
+  background:var(--g3);transform:translateX(-50%);
+  box-shadow:0 0 16px var(--g3),0 0 40px rgba(201,168,76,.4)}
+@keyframes ringRotate{to{transform:translateY(-50%) rotate(360deg)}}
 
-.hero-sub{font-size:17px;font-weight:300;line-height:1.85;color:var(--muted);max-width:460px;
-  margin-bottom:44px;opacity:0;animation:fadeUp .9s var(--ease) 1s forwards}
-.hero-sub strong{color:var(--text);font-weight:500}
+.hero-inner{position:relative;z-index:2;
+  max-width:var(--max);margin:0 auto;padding:100px 48px 120px;
+  display:grid;grid-template-columns:1fr 480px;gap:80px;align-items:center}
+/* HERO LEFT */
+.hero-chip{display:inline-flex;align-items:center;gap:8px;
+  padding:5px 14px;border-radius:100px;margin-bottom:32px;
+  background:rgba(125,22,53,.12);border:1px solid rgba(125,22,53,.25);
+  font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--b4);
+  text-transform:uppercase;
+  opacity:0;animation:riseIn .8s cubic-bezier(.16,1,.3,1) .1s forwards}
+.hero-chip-dot{width:5px;height:5px;border-radius:50%;
+  background:var(--b4);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.4}}
 
-/* TRUST MICRO-PROOF */
-.hero-proof-line{display:flex;align-items:center;gap:16px;margin-bottom:32px;
-  opacity:0;animation:fadeUp .9s var(--ease) 1.2s forwards}
-.hpl-item{display:flex;align-items:center;gap:6px;font-family:var(--cond);font-size:9px;
-  font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
-.hpl-dot{width:4px;height:4px;border-radius:50%}
-.hpl-dot-g{background:var(--gold2)}
-.hpl-dot-b{background:var(--burg2)}
-.hpl-sep{width:1px;height:12px;background:rgba(255,255,255,.08)}
+.hero-h1{font-family:var(--serif);font-size:clamp(52px,5.5vw,84px);
+  font-weight:900;line-height:.95;letter-spacing:-.03em;
+  color:var(--t4);margin-bottom:20px;
+  opacity:0;animation:riseIn 1.1s cubic-bezier(.16,1,.3,1) .2s forwards}
+.hero-h1 .burg{color:var(--b3)} 
+.hero-h1 .gold{color:var(--g3);font-style:italic}
+.hero-h1 .sm{font-size:.6em;display:block;font-weight:400;
+  color:var(--t0);letter-spacing:.04em;font-style:normal;
+  margin-top:6px;font-family:var(--sans)}
 
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .9s var(--ease) 1.3s forwards}
-.btn-fire{display:inline-flex;align-items:center;gap:10px;padding:16px 34px;
-  background:linear-gradient(135deg,var(--burg),var(--burg2));color:var(--white);
-  font-family:var(--cond);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  border-radius:2px;transition:transform .2s,box-shadow .3s;
-  box-shadow:0 6px 24px rgba(139,26,66,.4);position:relative;overflow:hidden}
-.btn-fire::before{content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(255,255,255,.12),transparent);opacity:0;transition:opacity .3s}
-.btn-fire:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(139,26,66,.55)}
-.btn-fire:hover::before{opacity:1}
-.btn-outline{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;
-  background:transparent;color:var(--gold2);
-  font-family:var(--cond);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  border-radius:2px;border:1px solid rgba(184,144,30,.35);transition:all .3s}
-.btn-outline:hover{border-color:var(--gold3);color:var(--gold3);transform:translateY(-2px);
-  box-shadow:0 0 28px rgba(184,144,30,.2)}
-.arr{width:14px;height:14px;border-right:1.5px solid currentColor;border-top:1.5px solid currentColor;
-  transform:rotate(45deg);flex-shrink:0;transition:transform .2s}
-.btn-fire:hover .arr{transform:rotate(45deg) translate(2px,-2px)}
-.btn-outline:hover .arr{transform:rotate(45deg) translate(2px,-2px)}
+.hero-rule{width:72px;height:2px;margin-bottom:24px;
+  background:linear-gradient(90deg,var(--b2),var(--g3),transparent);
+  opacity:0;animation:riseIn .8s cubic-bezier(.16,1,.3,1) .45s forwards}
 
-/* Hero card — glassmorphism */
-.hero-card-wrap{opacity:0;animation:fadeIn 1.4s var(--ease) .9s forwards}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.hero-card{background:rgba(16,8,16,.7);border:1px solid rgba(139,26,66,.25);border-radius:4px;
-  padding:32px;position:relative;overflow:hidden;backdrop-filter:blur(16px)}
-.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--burg),var(--gold3),var(--burg2))}
-.hero-card::after{content:'';position:absolute;top:-80px;right:-80px;width:240px;height:240px;
-  border-radius:50%;background:radial-gradient(circle,rgba(139,26,66,.12) 0%,transparent 65%);pointer-events:none}
-.hc-lbl{font-family:var(--cond);font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  color:var(--muted);margin-bottom:18px;display:flex;align-items:center;gap:8px}
-.hc-live-dot{width:5px;height:5px;border-radius:50%;background:var(--gold2);animation:pulse 2s ease-in-out infinite}
-.hc-creator{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.hc-av{width:40px;height:40px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,var(--burg),var(--gold));
-  display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:17px;color:var(--void);font-weight:600}
-.hc-name{font-size:14px;font-weight:600;color:var(--white)}.hc-niche{font-size:11px;color:var(--muted);margin-top:2px}
-.hc-product{background:rgba(24,14,24,.8);border-radius:3px;padding:14px 16px;margin-bottom:14px;
-  border-left:2px solid var(--burg2)}
-.hc-prod-lbl{font-family:var(--cond);font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
-  color:var(--muted);margin-bottom:4px}
-.hc-prod-name{font-size:13px;font-weight:600;color:var(--white)}
-.hc-prod-price{font-family:var(--serif);font-size:28px;color:var(--burg2);font-style:italic;line-height:1;margin-top:2px}
-.hc-rows{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
-.hc-row{display:flex;justify-content:space-between;font-size:11px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.03)}
-.hc-row:last-child{border-bottom:none}
-.hc-rl{color:var(--muted)}.hc-rv{color:var(--text);font-weight:600}.hc-rv.gv{color:var(--gold2)}
-.hc-total{border-top:1px solid var(--border);padding-top:14px;display:flex;justify-content:space-between;align-items:flex-end}
-.hc-tl{font-family:var(--cond);font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--dim)}
-.hc-tv{font-family:var(--serif);font-size:40px;color:var(--gold2);font-style:italic;font-weight:700;line-height:1}
-.hero-minis{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
-.hero-mini{background:rgba(16,8,16,.6);border:1px solid var(--border);border-radius:3px;padding:16px;backdrop-filter:blur(8px)}
-.hm-val{font-family:var(--serif);font-size:24px;font-style:italic;color:var(--gold2);line-height:1;margin-bottom:4px}
-.hm-lbl{font-size:10px;color:var(--muted);line-height:1.4;font-weight:400}
+.hero-sub{font-size:16px;font-weight:300;line-height:1.9;
+  color:var(--t0);max-width:430px;margin-bottom:40px;
+  opacity:0;animation:riseIn .8s cubic-bezier(.16,1,.3,1) .55s forwards}
+.hero-sub b{color:var(--t2);font-weight:500}
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+/* HERO TRIGGER WORDS embedded */
+.hero-trigger{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px;
+  opacity:0;animation:riseIn .8s cubic-bezier(.16,1,.3,1) .65s forwards}
+.tw{font-family:var(--mono);font-size:8px;letter-spacing:.18em;
+  text-transform:uppercase;padding:4px 10px;border-radius:100px;
+  border:1px solid rgba(201,168,76,.2);color:var(--g3);
+  background:rgba(201,168,76,.04)}
 
-/* TICKER */
-.ticker{overflow:hidden;padding:14px 0;background:linear-gradient(90deg,var(--burg) 0%,#6B1030 50%,var(--burg) 100%);
-  position:relative}
-.ticker::before,.ticker::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
-.ticker::before{left:0;background:linear-gradient(90deg,var(--burg),transparent)}
-.ticker::after{right:0;background:linear-gradient(-90deg,var(--burg),transparent)}
-.ticker-t{display:inline-flex;white-space:nowrap;animation:tick 55s linear infinite;will-change:transform}
-.ticker-i{font-family:var(--cond);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
-  color:rgba(255,255,255,.85);padding:0 32px}
-.ticker-i::after{content:'\25C6';margin-left:32px;opacity:.4;color:var(--gold3)}
-@keyframes tick{to{transform:translateX(-50%)}}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;
+  opacity:0;animation:riseIn .8s cubic-bezier(.16,1,.3,1) .75s forwards}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;
+  padding:16px 36px;border-radius:2px;
+  background:linear-gradient(135deg,var(--b1),var(--b2),var(--b3));
+  color:var(--t4);font-family:var(--mono);font-size:10px;
+  font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  box-shadow:0 4px 24px rgba(125,22,53,.35),inset 0 1px 0 rgba(255,255,255,.08);
+  transition:all .35s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+.btn-primary::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.08),transparent);
+  opacity:0;transition:opacity .3s}
+.btn-primary:hover{transform:translateY(-2px);
+  box-shadow:0 12px 40px rgba(125,22,53,.5),inset 0 1px 0 rgba(255,255,255,.1)}
+.btn-primary:hover::before{opacity:1}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;
+  padding:16px 32px;border-radius:2px;
+  border:1px solid rgba(201,168,76,.35);color:var(--g3);
+  font-family:var(--mono);font-size:10px;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  transition:all .35s cubic-bezier(.16,1,.3,1)}
+.btn-secondary:hover{border-color:var(--g3);color:var(--g4);
+  transform:translateY(-2px);box-shadow:0 0 32px rgba(201,168,76,.2)}
+.arr-ic{width:16px;height:16px;border-right:1.5px solid currentColor;
+  border-top:1.5px solid currentColor;transform:rotate(45deg);flex-shrink:0}
 
-/* SHARED */
-.wrap{max-width:1280px;margin:0 auto;padding:0 56px}
-.s-tag{display:flex;align-items:center;gap:12px;font-family:var(--cond);font-size:10px;font-weight:700;
-  letter-spacing:4px;text-transform:uppercase;color:var(--burg2);margin-bottom:18px}
-.s-tag::before{content:'';width:22px;height:1px;background:currentColor;flex-shrink:0}
-.s-tag.gld{color:var(--gold2)}.s-tag.gld::before{background:var(--gold2)}
-.s-title{font-family:var(--serif);font-size:clamp(32px,4vw,54px);font-weight:300;line-height:1.05;
-  letter-spacing:-1.5px;color:var(--white);margin-bottom:18px}
-.s-title em{font-style:italic;color:var(--gold3)}.s-title strong{font-weight:700;font-style:normal;color:var(--burg2)}
-.s-desc{font-size:16px;font-weight:300;color:var(--muted);line-height:1.85;max-width:500px}
-.rv{opacity:0;transform:translateY(32px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.rv.in{opacity:1;transform:translateY(0)}
-.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+@keyframes riseIn{
+  from{opacity:0;transform:translateY(32px)}
+  to{opacity:1;transform:translateY(0)}
+}
 
-/* ===================================================
-   BRAND STATEMENT
-   =================================================== */
-.statement{padding:100px 0;background:var(--deep);
-  border-top:1px solid rgba(139,26,66,.15);border-bottom:1px solid rgba(184,144,30,.1);
-  position:relative;overflow:hidden}
-.statement::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:700px;height:700px;border-radius:50%;
-  background:radial-gradient(circle,rgba(139,26,66,.05) 0%,transparent 65%);pointer-events:none}
-.statement-inner{max-width:860px;margin:0 auto;padding:0 56px;text-align:center;position:relative;z-index:1}
-.statement-quote{font-family:var(--serif);font-size:clamp(22px,3vw,40px);font-weight:300;font-style:italic;
-  color:var(--white);line-height:1.4;letter-spacing:-.5px;margin-bottom:32px}
-.statement-quote em{color:var(--gold3)}.statement-quote strong{font-style:normal;font-weight:700;color:var(--burg2)}
-.statement-attr{font-family:var(--cond);font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--muted)}
-.statement-attr span{color:var(--gold2)}
-.brand-comps{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:48px;flex-wrap:wrap}
-.bc{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:default;transition:transform .25s}
-.bc:hover{transform:translateY(-3px)}
-.bc-name{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--border);letter-spacing:-.5px;transition:color .3s,text-shadow .3s}
-.bc:hover .bc-name{color:var(--dim);text-shadow:0 0 24px rgba(184,144,30,.3)}
-.bc-tag{font-family:var(--cond);font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--rim)}
-.bc-div{width:1px;height:32px;background:var(--rim)}
-.bc.clariva .bc-name{color:var(--gold2)}.bc.clariva .bc-tag{color:var(--gold)}
-
-/* ===================================================
-   COST OF INACTION — NEW CMO WEAPON
-   "What happens every month you do nothing"
-   This section has never appeared in any prior version.
-   It weaponizes time against hesitation.
-   =================================================== */
-.inaction{padding:100px 0;background:var(--void);border-top:1px solid var(--rim);position:relative}
-.inaction-inner{max-width:1280px;margin:0 auto;padding:0 56px}
-.inaction-hd{text-align:center;margin-bottom:64px}
-.inaction-hd .s-tag{justify-content:center}.inaction-hd .s-tag::before{display:none}
-.inaction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rim)}
-.ia-card{background:var(--deep);padding:44px 36px;position:relative;overflow:hidden;transition:background .3s}
-.ia-card:hover{background:var(--surface)}
-.ia-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--border);transition:background .4s}
-.ia-card:hover::before{background:linear-gradient(90deg,var(--burg),var(--gold))}
-.ia-num{font-family:var(--serif);font-size:clamp(48px,6vw,80px);font-style:italic;font-weight:700;
-  line-height:1;color:rgba(139,26,66,.2);position:absolute;top:16px;right:20px;transition:color .3s}
-.ia-card:hover .ia-num{color:rgba(139,26,66,.35)}
-.ia-month{font-family:var(--cond);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  color:var(--burg2);margin-bottom:16px;position:relative;z-index:1}
-.ia-loss{font-family:var(--serif);font-size:clamp(28px,3vw,42px);font-style:italic;font-weight:700;
-  color:var(--white);line-height:1;margin-bottom:12px;position:relative;z-index:1}
-.ia-desc{font-size:13px;font-weight:300;color:var(--muted);line-height:1.75;position:relative;z-index:1}
-.ia-what{margin-top:16px;padding:12px 16px;background:rgba(139,26,66,.08);border:1px solid rgba(139,26,66,.2);
-  border-radius:2px;font-family:var(--cond);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  color:var(--burg2);position:relative;z-index:1}
-.inaction-close{text-align:center;margin-top:56px;padding:40px;background:var(--surface);border:1px solid rgba(139,26,66,.2)}
-.ic-q{font-family:var(--serif);font-size:clamp(22px,2.5vw,32px);font-style:italic;color:var(--white);margin-bottom:12px}
-.ic-a{font-size:15px;color:var(--muted);max-width:560px;margin:0 auto 28px}
-.ic-cta{display:inline-flex;align-items:center;gap:10px;padding:15px 32px;
-  background:linear-gradient(135deg,var(--burg),var(--burg2));color:var(--white);
-  font-family:var(--cond);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  border-radius:2px;transition:transform .2s,box-shadow .3s;box-shadow:0 6px 24px rgba(139,26,66,.4)}
-.ic-cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(139,26,66,.55)}
-
-/* ===================================================
-   PAINKILLER vs VITAMIN — REDESIGNED WITH MORE BITE
-   =================================================== */
-.hook{padding:100px 0;background:var(--deep);border-top:1px solid rgba(139,26,66,.12);position:relative}
-.hook-inner{max-width:1280px;margin:0 auto;padding:0 56px}
-.hook-top{text-align:center;margin-bottom:64px}
-.hook-top .s-tag{justify-content:center}.hook-top .s-tag::before{display:none}
-.hook-vs{display:grid;grid-template-columns:1fr auto 1fr;gap:32px;align-items:start}
-.hook-side{border-radius:4px;padding:44px;position:relative;overflow:hidden}
-.hook-pain{background:var(--surface);border:1px solid var(--border)}
-.hook-kill{background:var(--lift);border:1px solid rgba(139,26,66,.3)}
-.hook-kill::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--burg),var(--gold3))}
-.hook-pain-title{font-family:var(--cond);font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;
-  color:var(--muted);margin-bottom:28px;display:flex;align-items:center;gap:10px}
-.hook-kill-title{font-family:var(--cond);font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;
-  color:var(--burg2);margin-bottom:28px;display:flex;align-items:center;gap:10px}
-.hook-item{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start}
-.hook-icon{font-size:15px;flex-shrink:0;margin-top:2px}
-.hook-item-body strong{display:block;font-size:14px;font-weight:600;color:var(--white);margin-bottom:4px}
-.hook-item-body p{font-size:13px;font-weight:300;color:var(--muted);line-height:1.65}
-.vs-divider{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding-top:44px}
-.vs-circle{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--burg),var(--gold));
+/* HERO CARD */
+.hero-card-wrap{opacity:0;animation:riseIn 1.2s cubic-bezier(.16,1,.3,1) .9s forwards}
+.hcard{background:var(--v3);border:1px solid rgba(125,22,53,.2);
+  border-radius:6px;padding:32px;position:relative;overflow:hidden}
+.hcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--b2),var(--g3),var(--b3))}
+.hcard::after{content:'';position:absolute;top:-50%;right:-30%;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(125,22,53,.15),transparent 65%);pointer-events:none}
+.hcard-label{font-family:var(--mono);font-size:8px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--t0);margin-bottom:20px}
+.hcard-user{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.hcard-av{width:40px;height:40px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--b2),var(--g3));
   display:flex;align-items:center;justify-content:center;
-  font-family:var(--serif);font-size:20px;font-weight:700;font-style:italic;color:var(--void)}
-.vs-line{width:1px;height:64px;background:linear-gradient(to bottom,var(--burg),var(--gold),transparent)}
+  font-family:var(--serif);font-size:17px;font-weight:700;color:var(--v0)}
+.hcard-name{font-size:14px;font-weight:600;color:var(--t3)}
+.hcard-niche{font-size:10px;color:var(--t0);margin-top:1px}
+.hcard-product{background:var(--v4);border-radius:3px;padding:14px 16px;
+  margin-bottom:16px;border-left:2px solid var(--b2)}
+.hcard-plabel{font-family:var(--mono);font-size:7.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--t0);margin-bottom:5px}
+.hcard-pname{font-size:13px;font-weight:600;color:var(--t3)}
+.hcard-pprice{font-family:var(--serif);font-size:28px;font-style:italic;
+  color:var(--b4);line-height:1;margin-top:4px}
+.hcard-rows{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.hcard-row{display:flex;justify-content:space-between;font-size:11px}
+.hcard-rl{color:var(--t0)}.hcard-rv{color:var(--t2);font-weight:500}
+.hcard-rv.g{color:var(--g3)}
+.hcard-total{border-top:1px solid var(--v6);padding-top:16px;
+  display:flex;justify-content:space-between;align-items:center}
+.hcard-tl{font-family:var(--mono);font-size:9px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--t0)}
+.hcard-tv{font-family:var(--serif);font-size:40px;font-style:italic;
+  font-weight:700;color:var(--b4);line-height:1}
+.hero-minis{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.hmini{background:var(--v3);border:1px solid var(--v5);border-radius:4px;padding:16px}
+.hmini-val{font-family:var(--serif);font-size:24px;font-style:italic;
+  color:var(--g3);line-height:1;margin-bottom:4px}
+.hmini-lbl{font-size:9px;color:var(--t0);line-height:1.5;font-weight:500;font-family:var(--mono)}
 
-/* ===================================================
-   3x3 MECHANISMS
-   =================================================== */
-.mech-wrap{padding:100px 0;background:var(--void);border-top:1px solid var(--rim)}
-.mech-hd{text-align:center;margin-bottom:64px}
-.mech-hd .s-tag{justify-content:center}.mech-hd .s-tag::before{display:none}
-.mech{margin-bottom:64px}
-.mech:last-child{margin-bottom:0}
-.mech-hdr{display:flex;align-items:center;gap:16px;margin-bottom:28px}
-.mech-num{font-family:var(--serif);font-size:15px;color:var(--gold);font-style:italic;font-weight:300;width:22px;flex-shrink:0}
-.mech-name{font-family:var(--serif);font-size:clamp(22px,2.5vw,28px);color:var(--white);font-weight:300;
-  letter-spacing:-.5px;flex:1}
-.mech-name em{font-style:italic;color:var(--burg2)}
-.mech-line{flex:1;height:1px;background:linear-gradient(90deg,rgba(139,26,66,.3),rgba(184,144,30,.15),transparent)}
-.mech-pts{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rim)}
-.mp{background:var(--deep);padding:36px 30px;border:1px solid transparent;
-  transition:background .35s,border-color .35s;cursor:default;position:relative;overflow:hidden}
-.mp::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
-  background:linear-gradient(to bottom,var(--gold),var(--burg));
-  transform:scaleY(0);transform-origin:top;transition:transform .4s var(--ease)}
-.mp:hover{background:var(--surface);border-color:rgba(139,26,66,.15)}
-.mp:hover::before{transform:scaleY(1)}
-.mp-setup{font-family:var(--cond);font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  color:var(--muted);margin-bottom:14px}
-.mp-po{font-family:var(--serif);font-size:20px;color:var(--white);font-weight:400;line-height:1.3;
-  margin-bottom:10px;letter-spacing:-.3px}
-.mp-td{font-size:13px;font-weight:300;color:var(--muted);line-height:1.75}
-.mp-proof{display:inline-block;margin-top:14px;font-family:var(--cond);font-size:8px;font-weight:700;
-  letter-spacing:2px;text-transform:uppercase;color:var(--gold2);
-  border-bottom:1px solid rgba(184,144,30,.3);padding-bottom:2px}
+/* ── TICKER ─────────────────────────────────────── */
+.ticker{overflow:hidden;padding:12px 0;
+  background:linear-gradient(90deg,var(--b0),var(--b1),var(--b0))}
+.ticker-track{display:inline-flex;white-space:nowrap;
+  animation:scroll 60s linear infinite;will-change:transform}
+.ticker-item{font-family:var(--mono);font-size:10px;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(255,255,255,.8);padding:0 28px}
+.ticker-item::after{content:'◆';margin-left:28px;
+  opacity:.35;color:var(--g3)}
+@keyframes scroll{to{transform:translateX(-50%)}}
 
-/* ===================================================
-   FLOW DIAGRAM — PROCESS
-   =================================================== */
-.diagram-flow{padding:100px 0;background:var(--deep);border-top:1px solid rgba(139,26,66,.12)}
-.flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:64px}
-.flow-steps::before{content:'';position:absolute;top:40px;left:12%;right:12%;height:2px;
-  background:linear-gradient(90deg,var(--burg),var(--gold3),var(--burg));z-index:0;
-  animation:flowLine 2s var(--ease) .5s both}
-@keyframes flowLine{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
-.flow-step{padding:28px 20px 36px;position:relative;z-index:1;text-align:center}
-.flow-num{width:80px;height:80px;border-radius:50%;margin:0 auto 24px;
-  display:flex;align-items:center;justify-content:center;position:relative}
-.flow-num::before{content:'';position:absolute;inset:0;border-radius:50%;background:var(--void)}
-.flow-num-inner{position:relative;z-index:1;font-family:var(--serif);font-size:30px;font-weight:300;font-style:italic;line-height:1}
-.fn-1 .flow-num::before{border:2px solid rgba(139,26,66,.5)}.fn-1 .flow-num-inner{color:var(--burg)}
-.fn-2 .flow-num::before{border:2px solid rgba(168,32,88,.5)}.fn-2 .flow-num-inner{color:var(--burg2)}
-.fn-3 .flow-num::before{border:2px solid rgba(184,144,30,.5)}.fn-3 .flow-num-inner{color:var(--gold2)}
-.fn-4 .flow-num::before{border:2px solid rgba(228,200,74,.5);box-shadow:0 0 20px rgba(228,200,74,.15)}.fn-4 .flow-num-inner{color:var(--gold3)}
-.flow-step-icon{font-size:20px;margin-bottom:12px}
-.flow-step-title{font-family:var(--serif);font-size:18px;color:var(--white);font-weight:400;margin-bottom:8px;letter-spacing:-.3px}
-.flow-step-desc{font-size:12px;font-weight:300;color:var(--muted);line-height:1.7}
-.flow-badge{display:inline-block;margin-top:12px;font-family:var(--cond);font-size:8px;font-weight:700;
-  letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:1px}
-.fb-b{color:var(--burg2);border:1px solid rgba(139,26,66,.3)}.fb-g{color:var(--gold2);border:1px solid rgba(184,144,30,.3)}
+/* ── SHARED SECTION STYLES ─────────────────────── */
+.section{position:relative;z-index:2}
+.container{max-width:var(--max);margin:0 auto;padding:0 48px}
+.sec-tag{display:flex;align-items:center;gap:12px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.25em;
+  text-transform:uppercase;color:var(--b4);margin-bottom:16px}
+.sec-tag::before{content:'';width:24px;height:1px;background:currentColor}
+.sec-tag.gld{color:var(--g3)}.sec-tag.gld::before{background:var(--g3)}
+.sec-h{font-family:var(--serif);font-size:clamp(32px,4vw,58px);
+  font-weight:700;line-height:1.0;letter-spacing:-.03em;
+  color:var(--t4);margin-bottom:16px}
+.sec-h em{font-style:italic;color:var(--g4)}
+.sec-h strong{font-style:normal;color:var(--b4)}
+.sec-desc{font-size:15px;font-weight:300;color:var(--t0);
+  line-height:1.85;max-width:520px}
+/* Reveal */
+.rv{opacity:0;transform:translateY(40px);
+  transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.show{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}
+.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
 
-/* ===================================================
-   PATH DECISION TREE
-   =================================================== */
-.diagram-paths{padding:100px 0;background:var(--void);border-top:1px solid var(--rim)}
-.path-tree{margin-top:64px}
-.dt-header{text-align:center;padding:36px 48px;background:var(--surface);border:1px solid var(--border);
-  border-radius:4px 4px 0 0;border-top:3px solid var(--gold2);position:relative}
-.dt-header-q{font-family:var(--serif);font-size:clamp(22px,2.5vw,30px);font-weight:300;
-  color:var(--white);font-style:italic;letter-spacing:-.5px}
-.dt-header-sub{font-family:var(--cond);font-size:10px;font-weight:700;letter-spacing:3px;
-  text-transform:uppercase;color:var(--muted);margin-top:8px}
-.dt-branches{display:grid;grid-template-columns:1fr 1fr;gap:2px}
-.dt-branch-line{height:64px;display:flex;align-items:center;justify-content:center;position:relative}
-.dt-branch-line::before{content:'';position:absolute;top:0;width:1px;height:100%;background:linear-gradient(to bottom,var(--gold2),transparent)}
-.dt-bl-1::before{right:0}.dt-bl-2::before{left:0}
-.dt-branch-label{font-family:var(--cond);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  padding:5px 16px;border-radius:100px}
-.dt-bl-burg{color:var(--burg2);border:1px solid rgba(139,26,66,.35);background:rgba(139,26,66,.07)}
-.dt-bl-gold{color:var(--gold2);border:1px solid rgba(184,144,30,.35);background:rgba(184,144,30,.06)}
-.dt-cards{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border)}
-.dt-card{background:var(--deep);padding:44px;position:relative;overflow:hidden;transition:background .3s}
-.dt-card:hover{background:var(--surface)}
-.dt-card-1::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--burg),var(--burg2))}
-.dt-card-2::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold3))}
-.dt-card-badge{display:inline-block;font-family:var(--cond);font-size:8px;font-weight:700;letter-spacing:3px;
-  text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:24px}
-.dt-cb-1{background:rgba(139,26,66,.1);border:1px solid rgba(139,26,66,.25);color:var(--burg2)}
-.dt-cb-2{background:rgba(184,144,30,.08);border:1px solid rgba(184,144,30,.2);color:var(--gold2)}
-.dt-card-title{font-family:var(--serif);font-size:clamp(24px,2.5vw,30px);font-weight:300;color:var(--white);
-  line-height:1.1;letter-spacing:-.5px;margin-bottom:12px}
-.dt-card-title em{font-style:italic}
-.dt-card-desc{font-size:14px;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:28px}
-.dt-rows{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
-.dt-row{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border-radius:2px;transition:background .2s}
-.dr-1{background:rgba(139,26,66,.06);border:1px solid rgba(139,26,66,.1)}
-.dr-2{background:rgba(184,144,30,.05);border:1px solid rgba(184,144,30,.1)}
-.dt-row:hover{background:rgba(255,255,255,.02)}
-.dt-row-ic{font-size:13px;flex-shrink:0;margin-top:2px}
-.dt-row-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px}
-.dt-row-desc{font-size:11px;font-weight:300;color:var(--muted);line-height:1.5}
-.dt-price{padding:16px 20px;border-radius:2px;margin-bottom:24px}
-.dp-1{background:rgba(139,26,66,.08);border:1px solid rgba(139,26,66,.2)}
-.dp-2{background:rgba(184,144,30,.06);border:1px solid rgba(184,144,30,.18)}
-.dt-price-n{font-family:var(--serif);font-size:26px;font-style:italic}
-.dpn-1{color:var(--burg2)}.dpn-2{color:var(--gold2)}
-.dt-price-sub{font-family:var(--cond);font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:4px}
-.cta-burg,.cta-gold{display:inline-flex;align-items:center;gap:11px;font-family:var(--cond);font-size:11px;
-  font-weight:700;letter-spacing:3px;text-transform:uppercase;border-radius:2px;padding:15px 32px;transition:transform .2s,box-shadow .3s}
-.cta-burg{background:linear-gradient(135deg,var(--burg),var(--burg2));color:var(--white)}
-.cta-burg:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(139,26,66,.45)}
-.cta-gold{background:linear-gradient(135deg,var(--gold),var(--gold3));color:var(--void)}
-.cta-gold:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(184,144,30,.45)}
-.dt-card-note{font-size:11px;color:var(--muted);margin-top:12px;letter-spacing:.5px}
-.dt-unify{text-align:center;padding:36px 48px;background:var(--surface);border:1px solid var(--border);
-  border-radius:0 0 4px 4px;border-top:none}
-.dtu-q{font-family:var(--serif);font-size:20px;font-style:italic;font-weight:300;color:var(--white);margin-bottom:6px;letter-spacing:-.3px}
-.dtu-l{font-family:var(--cond);font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
-
-/* ===================================================
-   REVENUE DIAGRAM — ANIMATED BARS
-   =================================================== */
-.diagram-rev{padding:100px 0;background:var(--deep);border-top:1px solid rgba(184,144,30,.1)}
-.rev-inner{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
-.rev-bars{display:flex;flex-direction:column;gap:14px;margin-top:36px}
-.rev-bar-row{display:flex;align-items:center;gap:16px}
-.rev-bar-label{font-family:var(--cond);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  width:110px;flex-shrink:0;color:var(--dim);text-align:right}
-.rev-bar-track{flex:1;height:40px;background:var(--lift);border-radius:2px;overflow:hidden;position:relative}
-.rev-bar-fill{height:100%;border-radius:2px;display:flex;align-items:center;padding-left:14px;
-  font-family:var(--serif);font-size:17px;font-style:italic;font-weight:700;color:var(--void);
-  transform:scaleX(0);transform-origin:left;transition:transform 1.5s var(--ease)}
-.rb-creator{background:linear-gradient(90deg,var(--gold),var(--gold3));width:80%}
-.rb-clariva{background:linear-gradient(90deg,var(--burg),var(--burg2));width:20%}
-.rb-brand{width:100%;background:rgba(60,22,40,.6);font-family:var(--cond);
-  font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);
-  justify-content:flex-start;padding-left:14px;font-style:normal}
-.rev-bar-pct{font-family:var(--cond);font-size:11px;font-weight:700;width:36px;flex-shrink:0;text-align:right}
-.rev-tiers{display:flex;flex-direction:column;gap:10px;margin-top:36px}
-.rev-tier{padding:20px 24px;border-radius:2px;display:flex;justify-content:space-between;align-items:center;
-  transition:transform .25s var(--ease),padding-left .25s}
-.rev-tier:hover{transform:translateX(8px)}
-.rt-1{background:rgba(255,255,255,.03);border:1px solid var(--border)}
-.rt-2{background:rgba(139,26,66,.08);border:1px solid rgba(139,26,66,.2)}
-.rt-3{background:rgba(184,144,30,.1);border:1px solid rgba(184,144,30,.22)}
-.rt-info strong{display:block;font-size:14px;color:var(--white);margin-bottom:2px}
-.rt-info span{font-size:11px;color:var(--muted)}
-.rt-pct{font-family:var(--serif);font-size:44px;font-style:italic;font-weight:700;line-height:1}
-.rt-1 .rt-pct{color:var(--dim)}.rt-2 .rt-pct{color:var(--burg2)}.rt-3 .rt-pct{color:var(--gold2)}
-.proj-table{margin-top:28px;display:flex;flex-direction:column;gap:8px}
-.proj-row{background:var(--lift);border:1px solid var(--border);border-radius:2px;padding:14px 16px;
-  display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:12px;transition:background .25s,border-color .25s}
-.proj-row:hover{background:var(--surface);border-color:rgba(184,144,30,.2)}
-.pr-f{color:var(--muted)}.pr-p{color:var(--white);font-weight:600}
-.pr-e{color:var(--gold2);font-weight:700;font-family:var(--serif);font-size:18px;font-style:italic}
-.rev-note{margin-top:14px;font-size:11px;color:var(--muted);text-align:center;line-height:1.6}
-
-/* ===================================================
-   GALLERY — GITHUB IMAGES UNCHANGED
-   =================================================== */
-.gallery{padding:100px 0;background:var(--void);border-top:1px solid var(--rim);border-bottom:1px solid var(--rim)}
-.gallery-hd{text-align:center;margin-bottom:56px}.gallery-hd .s-tag{justify-content:center}
-.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:900px;margin:0 auto}
-.gi{position:relative;border-radius:4px;overflow:hidden;border:1px solid rgba(184,144,30,.15);
-  aspect-ratio:1/1;cursor:default;isolation:isolate}
-.gi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease),filter .5s}
-.gi:hover img{transform:scale(1.06);filter:brightness(.75)}
-.gi-overlay{position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:linear-gradient(to top,rgba(4,2,3,.85) 0%,transparent 55%)}
-.gi-border{position:absolute;inset:0;z-index:3;pointer-events:none;
-  border:1px solid rgba(184,144,30,0);border-radius:3px;transition:border-color .4s}
-.gi:hover .gi-border{border-color:rgba(184,144,30,.5)}
-.gi-cap{position:absolute;bottom:20px;left:20px;z-index:4;pointer-events:none}
-.gi-cap-tag{font-family:var(--cond);font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  color:var(--gold2);margin-bottom:4px}
-.gi-cap-text{font-family:var(--serif);font-size:18px;color:var(--white);font-style:italic;font-weight:300;letter-spacing:-.3px}
-
-/* ===================================================
-   APPLY
-   =================================================== */
-.apply{padding:100px 0;background:var(--deep);border-top:1px solid rgba(139,26,66,.15);
+/* ── BRAND STATEMENT ─────────────────────────────── */
+.brand-sect{padding:120px 0;
+  background:var(--v1);
+  border-top:1px solid rgba(125,22,53,.12);
+  border-bottom:1px solid rgba(201,168,76,.08);
   position:relative;overflow:hidden}
-.apply::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:900px;height:900px;border-radius:50%;
-  background:radial-gradient(circle,rgba(139,26,66,.03) 0%,transparent 65%);pointer-events:none}
-.apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:1}
-.apply-steps{display:flex;flex-direction:column;gap:10px;margin:36px 0}
-.astep{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px 22px;
-  transition:border-color .3s,transform .2s;border-left:2px solid transparent}
-.astep:hover{border-color:rgba(139,26,66,.3);border-left-color:var(--burg);transform:translateX(4px)}
-.astep-badge{display:inline-block;font-family:var(--cond);font-size:8px;font-weight:700;letter-spacing:2px;
-  text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:8px}
-.ab-1{background:var(--burg);color:var(--white)}.ab-2{background:var(--gold);color:var(--void)}
-.ab-3{background:rgba(255,255,255,.08);color:var(--text)}
-.astep p{font-size:13px;font-weight:300;color:var(--text);line-height:1.7}
-.who-list{display:flex;flex-direction:column;gap:10px}
-.wi{display:flex;gap:10px}
-.wi-ic{font-size:14px;flex-shrink:0;margin-top:2px}
-.wi-text{font-size:13px;font-weight:300;color:var(--muted);line-height:1.6}
-.wi-text strong{color:var(--text);display:block;margin-bottom:2px;font-weight:600}
-.form-wrap{background:var(--surface);border:1px solid rgba(139,26,66,.22);border-radius:4px;
-  overflow:hidden;position:relative}
-.form-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--burg),var(--gold3),var(--burg2));z-index:5}
-.form-hd{padding:24px 28px;border-bottom:1px solid var(--border)}
-.fh-lbl{font-family:var(--cond);font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
-  color:var(--muted);margin-bottom:5px}
-.fh-title{font-family:var(--serif);font-size:21px;color:var(--white);font-weight:400;font-style:italic}
+.brand-glow{position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:900px;height:600px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(125,22,53,.05) 0%,transparent 65%);
+  pointer-events:none}
+.brand-inner{max-width:900px;margin:0 auto;padding:0 48px;text-align:center;position:relative;z-index:1}
+.brand-quote{font-family:var(--serif);font-size:clamp(20px,3vw,38px);
+  font-weight:400;font-style:italic;color:var(--t4);
+  line-height:1.4;margin-bottom:32px}
+.brand-quote em{color:var(--g4)}.brand-quote strong{font-style:normal;color:var(--b4)}
+.brand-attr{font-family:var(--mono);font-size:9px;letter-spacing:.25em;
+  text-transform:uppercase;color:var(--t0)}
+.brand-attr span{color:var(--g3)}
+.brand-comps{display:flex;align-items:center;justify-content:center;
+  gap:24px;margin-top:52px;flex-wrap:wrap}
+.bcomp{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:default}
+.bcomp:hover .bcomp-name{color:var(--t0);text-shadow:0 0 24px rgba(201,168,76,.4)}
+.bcomp-name{font-family:var(--serif);font-size:20px;font-weight:700;
+  color:var(--v6);transition:all .3s}
+.bcomp-tag{font-family:var(--mono);font-size:7px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--v7)}
+.bcomp-div{width:1px;height:32px;background:var(--v6)}
+.bcomp.clariva .bcomp-name{color:var(--g3)}.bcomp.clariva .bcomp-tag{color:var(--g2)}
+
+/* ── PAINKILLER SECTION ──────────────────────────── */
+.pain-sect{padding:120px 0;background:var(--v0)}
+.pain-headline{text-align:center;margin-bottom:72px}
+.pain-headline .sec-tag{justify-content:center}
+.pain-headline .sec-desc{margin:0 auto;text-align:center}
+/* vs grid */
+.pain-grid{display:grid;grid-template-columns:1fr auto 1fr;
+  gap:28px;align-items:start;margin-bottom:100px}
+.pain-card{border-radius:6px;padding:40px;position:relative;overflow:hidden}
+.pain-old{background:var(--v2);border:1px solid var(--v5)}
+.pain-new{background:var(--v3);border:1px solid rgba(125,22,53,.3)}
+.pain-new::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--b2),var(--g3))}
+.pain-card-title{font-family:var(--mono);font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;margin-bottom:28px;
+  display:flex;align-items:center;gap:10px}
+.pain-old .pain-card-title{color:var(--t0)}
+.pain-new .pain-card-title{color:var(--b4)}
+.pain-item{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start}
+.pi-icon{font-size:15px;flex-shrink:0;margin-top:2px}
+.pi-title{font-size:13px;font-weight:600;color:var(--t3);margin-bottom:3px}
+.pi-body{font-size:12px;font-weight:300;color:var(--t0);line-height:1.65}
+/* vs badge */
+.vs-center{display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding-top:52px;gap:14px}
+.vs-badge{width:54px;height:54px;border-radius:50%;
+  background:linear-gradient(135deg,var(--b2),var(--g2));
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:16px;font-style:italic;
+  font-weight:700;color:var(--v0)}
+.vs-line{width:1px;height:64px;background:linear-gradient(to bottom,var(--b2),var(--g3),transparent)}
+
+/* ── 3×3 MECHANISMS ──────────────────────────────── */
+.mech-wrap{margin-top:0}
+.mech-top{text-align:center;margin-bottom:60px}
+.mech-top .sec-tag{justify-content:center}
+.mech{margin-bottom:56px}
+.mech-header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+.mech-num{font-family:var(--serif);font-size:14px;font-style:italic;
+  color:var(--g3);width:20px;flex-shrink:0}
+.mech-title{font-family:var(--serif);font-size:24px;color:var(--t4);
+  font-weight:400;letter-spacing:-.02em;flex:1}
+.mech-title em{font-style:italic;color:var(--b4)}
+.mech-divider{flex:1;height:1px;
+  background:linear-gradient(90deg,rgba(125,22,53,.3),rgba(201,168,76,.15),transparent)}
+.mech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--v5)}
+.mcard{background:var(--v2);padding:32px 28px;border:1px solid transparent;
+  transition:background .4s,border-color .4s;cursor:default}
+.mcard:hover{background:var(--v3);border-color:rgba(125,22,53,.18)}
+.mcard-stage{font-family:var(--mono);font-size:7.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--t0);margin-bottom:12px}
+.mcard-claim{font-family:var(--serif);font-size:18px;color:var(--t4);
+  font-weight:400;line-height:1.3;margin-bottom:10px;letter-spacing:-.02em}
+.mcard-body{font-size:12px;font-weight:300;color:var(--t0);line-height:1.75}
+.mcard-proof{display:inline-block;margin-top:12px;
+  font-family:var(--mono);font-size:7px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--g3);
+  border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:2px}
+
+/* ── GALLERY — ALL 4 GITHUB IMAGES ──────────────── */
+.gallery-sect{padding:100px 0;background:var(--v1);
+  border-top:1px solid var(--v5);border-bottom:1px solid var(--v5)}
+.gallery-head{text-align:center;margin-bottom:60px}
+.gallery-head .sec-tag{justify-content:center}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);
+  gap:12px;max-width:860px;margin:0 auto}
+.gimg{position:relative;border-radius:6px;overflow:hidden;
+  border:1px solid rgba(201,168,76,.1);aspect-ratio:1;cursor:default;isolation:isolate}
+.gimg img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .6s cubic-bezier(.16,1,.3,1),filter .6s}
+.gimg:hover img{transform:scale(1.07);filter:brightness(.7)}
+.gimg-overlay{position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(to top,rgba(3,2,2,.82) 0%,transparent 50%)}
+.gimg-border{position:absolute;inset:0;z-index:3;pointer-events:none;
+  border:1px solid rgba(201,168,76,0);border-radius:5px;transition:border-color .4s}
+.gimg:hover .gimg-border{border-color:rgba(201,168,76,.45)}
+.gimg-cap{position:absolute;bottom:20px;left:20px;z-index:4;pointer-events:none}
+.gimg-cap-tag{font-family:var(--mono);font-size:8px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--g3);margin-bottom:4px}
+.gimg-cap-text{font-family:var(--serif);font-size:17px;font-style:italic;
+  color:var(--t4);font-weight:400}
+
+/* ── FLOW DIAGRAM ──────────────────────────────── */
+.flow-sect{padding:120px 0;background:var(--v0)}
+.flow-wrap{margin-top:60px;position:relative}
+/* horizontal connector */
+.flow-connector{position:absolute;top:38px;left:calc(12.5%);
+  right:calc(12.5%);height:2px;
+  background:linear-gradient(90deg,var(--b2),var(--g3),var(--b3));z-index:0}
+.flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;z-index:1}
+.fstep{text-align:center;padding:20px 18px 36px}
+.fstep-orb{width:76px;height:76px;border-radius:50%;
+  margin:0 auto 22px;display:flex;align-items:center;justify-content:center;
+  position:relative}
+.fstep-orb::before{content:'';position:absolute;inset:0;border-radius:50%;
+  background:var(--v0)}
+.fstep-num{position:relative;z-index:1;
+  font-family:var(--serif);font-size:30px;font-weight:400;font-style:italic;line-height:1}
+.fs1 .fstep-orb::before{border:2px solid rgba(125,22,53,.5)}.fs1 .fstep-num{color:var(--b2)}
+.fs2 .fstep-orb::before{border:2px solid rgba(155,28,66,.5)}.fs2 .fstep-num{color:var(--b3)}
+.fs3 .fstep-orb::before{border:2px solid rgba(168,136,50,.5)}.fs3 .fstep-num{color:var(--g2)}
+.fs4 .fstep-orb::before{border:2px solid rgba(201,168,76,.5)}.fs4 .fstep-num{color:var(--g3)}
+.fstep-icon{font-size:20px;margin-bottom:12px}
+.fstep-title{font-family:var(--serif);font-size:17px;color:var(--t3);
+  font-weight:400;margin-bottom:10px;letter-spacing:-.01em}
+.fstep-desc{font-size:11.5px;font-weight:300;color:var(--t0);line-height:1.7}
+.fstep-badge{display:inline-block;margin-top:14px;
+  font-family:var(--mono);font-size:7.5px;letter-spacing:.18em;
+  text-transform:uppercase;padding:4px 10px;border-radius:1px}
+.fb-burg{color:var(--b4);border:1px solid rgba(125,22,53,.3)}
+.fb-gold{color:var(--g3);border:1px solid rgba(201,168,76,.3)}
+
+/* ── PATH DECISION TREE ─────────────────────────── */
+.paths-sect{padding:120px 0;background:var(--v1)}
+.paths-sect .sec-tag{margin-bottom:16px}
+.path-tree{margin-top:60px}
+/* top decision box */
+.ptree-top{background:var(--v3);
+  border:1px solid rgba(201,168,76,.2);border-radius:6px 6px 0 0;
+  padding:28px 40px;text-align:center;
+  border-top:3px solid var(--g3)}
+.ptree-q{font-family:var(--serif);font-size:26px;font-weight:400;
+  font-style:italic;color:var(--t4);margin-bottom:6px}
+.ptree-hint{font-family:var(--mono);font-size:9px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--t0)}
+/* branch lines */
+.ptree-branches{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.pbranch{height:60px;display:flex;align-items:center;justify-content:center;position:relative}
+.pbranch::before{content:'';position:absolute;top:0;width:1px;height:100%;
+  background:linear-gradient(to bottom,var(--g3),transparent)}
+.pb-l::before{right:0}.pb-r::before{left:0}
+.pbranch-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;
+  text-transform:uppercase;padding:4px 14px;border-radius:100px}
+.pbl-burg{color:var(--b4);border:1px solid rgba(125,22,53,.35);
+  background:rgba(125,22,53,.07)}
+.pbl-gold{color:var(--g3);border:1px solid rgba(201,168,76,.35);
+  background:rgba(201,168,76,.06)}
+/* path cards */
+.ptree-cards{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--v5)}
+.pcard{background:var(--v2);padding:44px;position:relative;overflow:hidden}
+.pc1::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--b1),var(--b3))}
+.pc2::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--g2),var(--g4))}
+.pc-badge{display:inline-block;font-family:var(--mono);font-size:7.5px;
+  font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  padding:5px 13px;border-radius:100px;margin-bottom:22px}
+.pcb1{background:rgba(125,22,53,.1);border:1px solid rgba(125,22,53,.25);color:var(--b4)}
+.pcb2{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);color:var(--g3)}
+.pc-title{font-family:var(--serif);font-size:26px;font-weight:400;
+  color:var(--t4);line-height:1.1;letter-spacing:-.02em;margin-bottom:12px}
+.pc-title em{font-style:italic}
+.pc-desc{font-size:13px;font-weight:300;color:var(--t0);line-height:1.8;margin-bottom:28px}
+/* rows inside cards */
+.pc-rows{display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+.pc-row{display:flex;align-items:flex-start;gap:12px;
+  padding:11px 14px;border-radius:3px}
+.pcr1{background:rgba(125,22,53,.06);border:1px solid rgba(125,22,53,.12)}
+.pcr2{background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.1)}
+.pc-row-ic{font-size:13px;flex-shrink:0;margin-top:1px}
+.pc-row-title{font-size:12px;font-weight:600;color:var(--t3);margin-bottom:2px}
+.pc-row-desc{font-size:10.5px;font-weight:300;color:var(--t0);line-height:1.5}
+/* price blocks */
+.pc-price{padding:14px 18px;border-radius:3px;margin-bottom:22px}
+.pcp1{background:rgba(125,22,53,.08);border:1px solid rgba(125,22,53,.2)}
+.pcp2{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.18)}
+.pc-price-n{font-family:var(--serif);font-size:24px;font-style:italic;line-height:1}
+.pcpn1{color:var(--b4)}.pcpn2{color:var(--g3)}
+.pc-price-sub{font-family:var(--mono);font-size:8px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--t0);margin-top:4px}
+/* ctas */
+.pc-cta{display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:10px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;
+  border-radius:2px;padding:14px 28px;
+  transition:transform .25s,box-shadow .35s}
+.pcc1{background:linear-gradient(135deg,var(--b1),var(--b2));color:var(--t4)}
+.pcc1:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(125,22,53,.45)}
+.pcc2{background:linear-gradient(135deg,var(--g2),var(--g4));color:var(--v0)}
+.pcc2:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(201,168,76,.4)}
+.pc-note{font-size:10px;color:var(--t0);margin-top:10px;letter-spacing:.05em}
+/* unify bar */
+.ptree-bottom{background:var(--v3);border:1px solid var(--v5);
+  border-radius:0 0 6px 6px;padding:26px 40px;text-align:center;border-top:none}
+.ptb-q{font-family:var(--serif);font-size:18px;font-style:italic;
+  color:var(--t4);margin-bottom:5px}
+.ptb-l{font-family:var(--mono);font-size:8px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--t0)}
+
+/* ── REVENUE DIAGRAM ───────────────────────────── */
+.rev-sect{padding:120px 0;background:var(--v0);
+  border-top:1px solid rgba(201,168,76,.08)}
+.rev-inner{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:start}
+.rev-chart{margin-top:40px}
+.rev-chart-label{font-family:var(--mono);font-size:8px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--t0);margin-bottom:16px}
+.rev-bar-rows{display:flex;flex-direction:column;gap:14px}
+.rev-bar-wrap{display:flex;align-items:center;gap:14px}
+.rev-bar-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--t0);width:104px;flex-shrink:0}
+.rev-bar-track{flex:1;height:38px;background:var(--v3);
+  border-radius:2px;overflow:hidden;position:relative}
+.rev-bar-fill{height:100%;border-radius:2px;
+  display:flex;align-items:center;padding-left:12px;
+  font-family:var(--serif);font-size:16px;font-style:italic;
+  font-weight:700;color:var(--v0);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 1.5s cubic-bezier(.16,1,.3,1)}
+.rbf-creator{background:linear-gradient(90deg,var(--g2),var(--g4));width:80%}
+.rbf-clariva{background:linear-gradient(90deg,var(--b2),var(--b3));width:20%}
+.rev-bar-pct{font-family:var(--mono);font-size:10px;font-weight:500;
+  width:32px;flex-shrink:0;text-align:right}
+.rev-compare{margin-top:24px;padding:18px 22px;background:var(--v3);
+  border:1px solid var(--v5);border-radius:3px;border-left:3px solid var(--g3)}
+.rev-compare-l{font-family:var(--mono);font-size:8px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--t0);margin-bottom:7px}
+.rev-compare-t{font-size:13px;font-weight:300;color:var(--t2);line-height:1.7}
+/* tier cards right */
+.rev-tiers{display:flex;flex-direction:column;gap:9px;margin-top:40px}
+.rtier{display:flex;justify-content:space-between;align-items:center;
+  padding:18px 22px;border-radius:3px;
+  transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.rtier:hover{transform:translateX(8px)}
+.rt1{background:rgba(255,255,255,.025);border:1px solid var(--v5)}
+.rt2{background:rgba(125,22,53,.08);border:1px solid rgba(125,22,53,.2)}
+.rt3{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2)}
+.rtier-info strong{display:block;font-size:13px;color:var(--t3);margin-bottom:2px}
+.rtier-info span{font-size:10px;color:var(--t0)}
+.rtier-pct{font-family:var(--serif);font-size:42px;font-style:italic;font-weight:700;line-height:1}
+.rt1 .rtier-pct{color:var(--t0)}.rt2 .rtier-pct{color:var(--b4)}.rt3 .rtier-pct{color:var(--g3)}
+.rev-note{margin-top:14px;font-size:10.5px;color:var(--t0);text-align:center;line-height:1.6}
+/* projections */
+.proj-rows{display:flex;flex-direction:column;gap:8px;margin-top:32px}
+.proj-lbl{font-family:var(--mono);font-size:8px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--t0);margin-bottom:12px}
+.proj-row{background:var(--v3);border:1px solid var(--v5);border-radius:3px;
+  padding:13px 16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.proj-row.h1{border-color:rgba(125,22,53,.2)}
+.proj-row.h2{border-color:rgba(201,168,76,.2)}
+.proj-f{font-size:11px;color:var(--t0)}.proj-p{font-size:11px;color:var(--t2);font-weight:500}
+.proj-e{font-family:var(--serif);font-size:18px;font-style:italic;color:var(--g3);font-weight:700}
+.proj-foot{font-size:9.5px;color:var(--t0);margin-top:10px;line-height:1.6}
+
+/* ── APPLY ─────────────────────────────────────── */
+.apply-sect{padding:120px 0;background:var(--v1);
+  border-top:1px solid rgba(125,22,53,.12);position:relative;overflow:hidden}
+.apply-glow{position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);width:1000px;height:700px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(125,22,53,.03) 0%,transparent 65%);pointer-events:none}
+.apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;
+  align-items:start;position:relative;z-index:1}
+.apply-steps{display:flex;flex-direction:column;gap:9px;margin:32px 0}
+.astep{background:var(--v3);border:1px solid var(--v5);
+  border-radius:3px;padding:16px 20px;transition:border-color .3s}
+.astep:hover{border-color:rgba(125,22,53,.3)}
+.astep-badge{display:inline-block;font-family:var(--mono);font-size:7.5px;
+  letter-spacing:.18em;text-transform:uppercase;padding:3px 10px;
+  border-radius:100px;margin-bottom:7px}
+.ab1{background:var(--b2);color:var(--t4)}
+.ab2{background:var(--g2);color:var(--v0)}
+.ab3{background:rgba(255,255,255,.07);color:var(--t1)}
+.astep p{font-size:12.5px;font-weight:300;color:var(--t1);line-height:1.7}
+.who-rows{display:flex;flex-direction:column;gap:10px}
+.wrow{display:flex;gap:10px}
+.wrow-ic{font-size:14px;flex-shrink:0;margin-top:2px}
+.wrow-text{font-size:12.5px;font-weight:300;color:var(--t0);line-height:1.6}
+.wrow-text strong{color:var(--t2);display:block;font-weight:600;margin-bottom:2px}
+/* form */
+.fbox{background:var(--v3);border:1px solid rgba(125,22,53,.18);
+  border-radius:6px;overflow:hidden;position:relative}
+.fbox::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--b2),var(--g3),var(--b3));z-index:5}
+.fbox-head{padding:22px 28px;border-bottom:1px solid var(--v5)}
+.fbox-label{font-family:var(--mono);font-size:7.5px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--t0);margin-bottom:4px}
+.fbox-title{font-family:var(--serif);font-size:20px;font-style:italic;color:var(--t4)}
 .gform-wrap{position:relative}
-.gform-sk{position:absolute;inset:0;z-index:2;
-  background:linear-gradient(105deg,rgba(139,26,66,.03) 0%,rgba(226,200,88,.06) 40%,rgba(139,26,66,.03) 80%);
-  background-size:220% 100%;animation:sk 2.5s ease-in-out infinite;transition:opacity .5s}
-.gform-wrap.loaded .gform-sk{opacity:0;pointer-events:none}
-@keyframes sk{0%{background-position:0 50%}100%{background-position:200% 50%}}
-.gform-frame{display:block;width:100%;min-height:680px;border:0;background:var(--deep);
-  opacity:0;transition:opacity .5s;position:relative;z-index:3}
-.gform-wrap.loaded .gform-frame{opacity:1}
+.gsk{position:absolute;inset:0;z-index:2;
+  background:linear-gradient(105deg,rgba(125,22,53,.03) 0%,rgba(201,168,76,.06) 50%,rgba(125,22,53,.03) 100%);
+  background-size:220% 100%;animation:skeletonMove 2.5s ease-in-out infinite;transition:opacity .5s}
+.gform-wrap.loaded .gsk{opacity:0;pointer-events:none}
+@keyframes skeletonMove{0%{background-position:0 50%}100%{background-position:200% 50%}}
+.gframe{display:block;width:100%;min-height:680px;border:0;
+  background:var(--v2);opacity:0;transition:opacity .5s;position:relative;z-index:3}
+.gform-wrap.loaded .gframe{opacity:1}
 
-/* FAQ */
-.faq{padding:100px 0;background:var(--void);border-top:1px solid rgba(139,26,66,.1)}
-.faq-in{max-width:760px;margin:0 auto;padding:0 56px}
-.faq-hd{text-align:center;margin-bottom:52px}.faq-hd .s-tag{justify-content:center}.faq-hd .s-tag::before{display:none}
-.faq-list{display:flex;flex-direction:column;gap:6px}
-.faq-item{background:var(--deep);border:1px solid var(--border);border-radius:3px;
-  overflow:hidden;transition:border-color .25s;border-left:2px solid transparent}
-.faq-item:hover{border-color:rgba(184,144,30,.2);border-left-color:rgba(184,144,30,.3)}
-.faq-item[open]{border-color:rgba(184,144,30,.28);border-left-color:var(--gold)}
-.faq-item summary{list-style:none;cursor:pointer;padding:18px 22px;font-size:14px;font-weight:500;
-  color:var(--white);display:flex;align-items:center;justify-content:space-between;gap:14px;user-select:none}
+/* ── FAQ ─────────────────────────────────────────── */
+.faq-sect{padding:120px 0;background:var(--v0);
+  border-top:1px solid rgba(125,22,53,.1)}
+.faq-inner{max-width:760px;margin:0 auto;padding:0 48px}
+.faq-head{text-align:center;margin-bottom:52px}
+.faq-head .sec-tag{justify-content:center}
+.faq-list{display:flex;flex-direction:column;gap:7px}
+.faq-item{background:var(--v1);border:1px solid var(--v4);
+  border-radius:4px;overflow:hidden;transition:border-color .25s}
+.faq-item:hover{border-color:rgba(201,168,76,.2)}
+.faq-item[open]{border-color:rgba(201,168,76,.3)}
+.faq-item summary{list-style:none;cursor:pointer;padding:18px 22px;
+  font-size:14px;font-weight:500;color:var(--t3);
+  display:flex;justify-content:space-between;align-items:center;
+  gap:12px;user-select:none}
 .faq-item summary::-webkit-details-marker{display:none}
-.faq-ic{width:22px;height:22px;border-radius:50%;flex-shrink:0;background:rgba(184,144,30,.1);
-  border:1px solid rgba(184,144,30,.2);display:flex;align-items:center;justify-content:center;
-  font-size:15px;color:var(--gold2);line-height:1;font-weight:700;transition:transform .3s,background .3s}
-.faq-item[open] .faq-ic{transform:rotate(45deg);background:rgba(184,144,30,.2)}
-.faq-ans{padding:0 22px 18px;font-size:13px;font-weight:300;color:var(--muted);line-height:1.8;
-  border-top:1px solid var(--rim);padding-top:14px;margin:0 22px 18px}
+.faq-ic{width:22px;height:22px;border-radius:50%;flex-shrink:0;
+  background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;color:var(--g3);font-weight:700;
+  transition:transform .3s,background .3s}
+.faq-item[open] .faq-ic{transform:rotate(45deg);background:rgba(201,168,76,.18)}
+.faq-ans{padding:0 22px 18px;font-size:13px;font-weight:300;
+  color:var(--t0);line-height:1.8;border-top:1px solid var(--v4);
+  padding-top:14px;margin:0 22px 18px}
 
-/* FOOTER */
-footer{background:var(--void);border-top:1px solid var(--rim);padding:72px 0 36px}
-.ft-in{max-width:1280px;margin:0 auto;padding:0 56px}
-.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;margin-bottom:52px;
-  padding-bottom:52px;border-bottom:1px solid var(--rim)}
-.ft-brand-t{font-size:14px;font-weight:300;color:var(--muted);line-height:1.8;margin-top:14px;max-width:260px}
-.ft-col-h{font-family:var(--cond);font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  color:var(--muted);margin-bottom:18px}
-.ft-links{list-style:none;display:flex;flex-direction:column;gap:10px}
-.ft-links a{font-size:14px;font-weight:300;color:var(--dim);transition:color .2s}
-.ft-links a:hover{color:var(--gold2)}
-.ft-bot{display:flex;justify-content:space-between;align-items:center}
-.ft-copy,.ft-built{font-size:12px;font-weight:300;color:var(--muted)}
-
-/* FLOAT CTA — "My" = ownership before purchase */
-.float{position:fixed;bottom:24px;right:24px;z-index:800;opacity:0;transform:translateY(12px);
+/* ── FLOATING CTA ──────────────────────────────── */
+.float-cta{position:fixed;bottom:24px;right:24px;z-index:600;
+  opacity:0;transform:translateY(14px);
   transition:opacity .4s,transform .4s;pointer-events:none}
-.float.show{opacity:1;transform:translateY(0);pointer-events:auto}
-.float a{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;
-  background:linear-gradient(135deg,var(--gold),var(--gold3));color:var(--void);
-  font-family:var(--cond);font-size:9px;font-weight:800;letter-spacing:3px;text-transform:uppercase;
-  border-radius:100px;box-shadow:0 8px 32px rgba(184,144,30,.5);
-  animation:fp 3s ease-in-out infinite;transition:transform .2s,box-shadow .3s}
-.float a:hover{animation:none;transform:translateY(-2px);box-shadow:0 14px 44px rgba(184,144,30,.65)}
-@keyframes fp{0%,100%{box-shadow:0 8px 32px rgba(184,144,30,.5)}50%{box-shadow:0 8px 44px rgba(184,144,30,.7),0 0 0 8px rgba(184,144,30,.08)}}
+.float-cta.visible{opacity:1;transform:none;pointer-events:auto}
+.float-cta a{display:inline-flex;align-items:center;gap:8px;
+  padding:12px 20px;border-radius:100px;
+  background:linear-gradient(135deg,var(--g2),var(--g4));
+  color:var(--v0);font-family:var(--mono);font-size:8.5px;
+  font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  box-shadow:0 8px 28px rgba(201,168,76,.45);
+  animation:floatPulse 3s ease-in-out infinite;transition:transform .2s}
+.float-cta a:hover{animation:none;transform:translateY(-2px)}
+@keyframes floatPulse{
+  0%,100%{box-shadow:0 8px 28px rgba(201,168,76,.45)}
+  50%{box-shadow:0 8px 40px rgba(201,168,76,.65),0 0 0 9px rgba(201,168,76,.06)}
+}
 
-/* MOBILE */
+/* ── FOOTER ─────────────────────────────────────── */
+footer{background:var(--v0);border-top:1px solid var(--v4);padding:80px 0 36px}
+.ft-inner{max-width:var(--max);margin:0 auto;padding:0 48px}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;
+  margin-bottom:52px;padding-bottom:52px;border-bottom:1px solid var(--v4)}
+.ft-brand-desc{font-size:13px;font-weight:300;color:var(--t0);
+  line-height:1.8;margin-top:14px;max-width:240px}
+.ft-col-h{font-family:var(--mono);font-size:7.5px;letter-spacing:.25em;
+  text-transform:uppercase;color:var(--t0);margin-bottom:18px}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.ft-links a{font-size:13px;font-weight:300;color:var(--t0);transition:color .2s}
+.ft-links a:hover{color:var(--g3)}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ft-copy{font-size:11px;font-weight:300;color:var(--t0)}
+.ft-sign{font-family:var(--mono);font-size:9px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--v6)}
+
+/* ── RESPONSIVE ────────────────────────────────── */
 @media(max-width:1100px){
   .hero-inner,.rev-inner,.apply-grid{grid-template-columns:1fr}
-  .hero-card-wrap{display:none}.hero-vl{display:none}
-  .mech-pts,.flow-steps{grid-template-columns:1fr 1fr}
-  .flow-steps::before{display:none}
-  .dt-branches,.dt-cards,.inaction-grid{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:1fr 1fr;max-width:600px}
-  .ft-top{grid-template-columns:1fr 1fr;gap:40px}
-  .hook-vs{grid-template-columns:1fr;gap:24px}
-  .vs-divider{flex-direction:row;padding:0}
+  .hero-card-wrap,.hero-ring{display:none}
+  .mech-grid,.flow-steps{grid-template-columns:1fr 1fr}
+  .flow-connector{display:none}
+  .ptree-branches,.ptree-cards{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr;max-width:560px}
+  .ft-top{grid-template-columns:1fr 1fr;gap:36px}
+  .pain-grid{grid-template-columns:1fr;gap:20px}
+  .vs-center{flex-direction:row;padding:0}
   .vs-line{width:60px;height:1px}
 }
 @media(max-width:768px){
-  nav{padding:0 24px}.nav-links,.nav-cta{display:none}.burger{display:flex}
-  .wrap,.faq-in,.ft-in,.hook-inner,.inaction-inner{padding:0 24px}
-  .hero-inner{padding:60px 24px 80px}.statement-inner{padding:0 24px}
-  .mech-pts,.flow-steps,.gallery-grid{grid-template-columns:1fr}
-  .ft-top{grid-template-columns:1fr}.float{bottom:14px;right:14px}
+  nav{padding:0 24px}
+  .nav-links,.nav-apply{display:none}
+  .burger{display:flex}
+  .container,.faq-inner,.ft-inner,.brand-inner{padding:0 24px}
+  .hero-inner{padding:64px 24px 80px}
+  .mech-grid,.flow-steps,.gallery-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+  .float-cta{bottom:16px;right:16px}
 }
-.mob-nav{position:fixed;inset:0;top:72px;background:rgba(4,2,3,.98);backdrop-filter:blur(28px);
-  z-index:950;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px;
-  transform:translateY(-100%);transition:transform .5s var(--ease)}
-.mob-nav.open{transform:translateY(0)}
-.mob-nav a{font-family:var(--serif);font-size:32px;font-style:italic;color:var(--text);transition:color .2s}
-.mob-nav a:hover{color:var(--gold2)}
-.mob-cta{font-family:var(--cond);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  padding:14px 30px;background:linear-gradient(135deg,var(--gold),var(--gold3));color:var(--void);border-radius:2px}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
-  #bgCanvas,#cr,#cr-ring{display:none}
+  #bg{display:none}
 }
 </style>
 </head>
 <body>
-<div id="sp"></div>
-<div id="cr"></div>
-<canvas id="bgCanvas"></canvas>
 
+<div id="progress"></div>
+<div id="cur"></div>
+<canvas id="bg"></canvas>
+<div class="grain"></div>
+
+<!-- NAV -->
 <nav id="nav">
   <a href="#home" class="nav-brand">
-    <div class="nav-mark"><img src="clariva-logo.jpg" alt="CLARIVA"></div>
-    <div><span class="nav-name">Clariva</span><span class="nav-tag">Shadow Operator</span></div>
+    <div class="nav-logo"><img src="clariva-logo.jpg" alt="CLARIVA"></div>
+    <div>
+      <span class="nav-wordmark">Clariva</span>
+      <span class="nav-sub">Shadow Operator</span>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="#why">Why CLARIVA</a></li>
     <li><a href="#process">Process</a></li>
-    <li><a href="#paths">Compare Paths</a></li>
+    <li><a href="#paths">Both Paths</a></li>
     <li><a href="#revenue">Revenue</a></li>
     <li><a href="#apply">Apply</a></li>
   </ul>
-  <a href="#apply" class="nav-cta">Apply to Partner</a>
-  <div class="burger" id="bg"><span></span><span></span><span></span></div>
+  <a href="#apply" class="nav-apply">Apply to Partner</a>
+  <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
-<div class="mob-nav" id="mn">
+<div class="mnav" id="mobileNav">
   <a href="#why" class="ml">Why CLARIVA</a>
   <a href="#process" class="ml">Process</a>
-  <a href="#paths" class="ml">Compare Paths</a>
+  <a href="#paths" class="ml">Both Paths</a>
   <a href="#apply" class="ml">Apply</a>
-  <a href="#apply" class="mob-cta ml">Apply to Partner &#8594;</a>
+  <a href="#apply" class="mcta ml">Apply to Partner →</a>
 </div>
 
 <!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-vl" aria-hidden="true"></div>
-  <div class="hero-grain" aria-hidden="true"></div>
-  <div class="hero-inner wrap">
+<section class="hero section" id="home">
+  <div class="hero-radial"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-inner container">
     <div>
-      <div class="hero-eyebrow">
-        <div class="hero-dot"></div>
-        <span class="hero-eyebrow-t">April 2026</span>
-        <div class="hero-eyebrow-div"></div>
-        <span class="hero-eyebrow-spots">5 Partnership Spots Remaining</span>
+      <div class="hero-chip">
+        <span class="hero-chip-dot"></span>
+        5 Spots Open — April 2026
       </div>
-      <h1 class="hero-title" aria-label="Your Audience Trusts You. Brands Are Collecting It.">
-        <span class="hero-title-line"><span>Your Audience</span></span>
-        <span class="hero-title-line"><span>Trusts You.</span></span>
-        <span class="hero-title-line"><span>Brands Are</span></span>
-        <span class="hero-title-line"><span><strong>Collecting It.</strong></span></span>
+      <h1 class="hero-h1">
+        You Built<br>
+        The <span class="gold">Audience.</span><br>
+        Brands Are<br>
+        <span class="burg">Stealing It.</span>
+        <span class="sm">The painkiller is here. Zero upfront. You keep 80%.</span>
       </h1>
       <div class="hero-rule"></div>
-      <p class="hero-sub">CLARIVA is your <strong>silent partner.</strong> We identify what your audience will invest in, build the product, ghostwrite your launch in your voice &#8212; and earn <strong>only when you do.</strong> Zero upfront. Zero risk.</p>
-      <div class="hero-proof-line">
-        <div class="hpl-item"><div class="hpl-dot hpl-dot-g"></div><span>First launch in 14 days</span></div>
-        <div class="hpl-sep"></div>
-        <div class="hpl-item"><div class="hpl-dot hpl-dot-b"></div><span>You keep 80% of every sale</span></div>
-        <div class="hpl-sep"></div>
-        <div class="hpl-item"><div class="hpl-dot hpl-dot-g"></div><span>$0 upfront. Ever.</span></div>
+      <p class="hero-sub">
+        CLARIVA is your <b>silent partner.</b> We identify the proven gap in your income, build the product that fills it completely, ghostwrite your launch in your exact voice — and earn <b>only after you do.</b>
+      </p>
+      <div class="hero-trigger">
+        <span class="tw">Proven System</span>
+        <span class="tw">Immediate Results</span>
+        <span class="tw">Guaranteed Outcome</span>
+        <span class="tw">Zero Risk</span>
+        <span class="tw">Exclusive Access</span>
+        <span class="tw">No Upfront</span>
       </div>
       <div class="hero-btns">
-        <a href="#apply" class="btn-fire">Apply to Partner <div class="arr"></div></a>
-        <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener" class="btn-outline">Get $99 Blueprint <div class="arr"></div></a>
+        <a href="#apply" class="btn-primary">Apply to Partner <div class="arr-ic"></div></a>
+        <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener" class="btn-secondary">Get $99 Blueprint <div class="arr-ic"></div></a>
       </div>
     </div>
+    <!-- CARD -->
     <div class="hero-card-wrap">
-      <div class="hero-card">
-        <div class="hc-lbl"><div class="hc-live-dot"></div>Live Partnership &#8212; Day 14</div>
-        <div class="hc-creator"><div class="hc-av">J</div><div><div class="hc-name">@creator_partner</div><div class="hc-niche">47K followers &#183; Lifestyle &amp; Wellness</div></div></div>
-        <div class="hc-product"><div class="hc-prod-lbl">Product Built by CLARIVA</div><div class="hc-prod-name">Morning Routine Blueprint</div><div class="hc-prod-price">$49</div></div>
-        <div class="hc-rows">
-          <div class="hc-row"><span class="hc-rl">Units in 14 days</span><span class="hc-rv">214</span></div>
-          <div class="hc-row"><span class="hc-rl">Total revenue</span><span class="hc-rv">$10,486</span></div>
-          <div class="hc-row"><span class="hc-rl">CLARIVA cut (25%)</span><span class="hc-rv gv">$2,621</span></div>
+      <div class="hcard">
+        <div class="hcard-label">Live Partnership — Day 14</div>
+        <div class="hcard-user">
+          <div class="hcard-av">J</div>
+          <div><div class="hcard-name">@creator_partner</div><div class="hcard-niche">47K · Lifestyle & Wellness</div></div>
         </div>
-        <div class="hc-total"><div class="hc-tl">Creator earned</div><div class="hc-tv" id="cnum">$7,865</div></div>
+        <div class="hcard-product">
+          <div class="hcard-plabel">Product Built by CLARIVA</div>
+          <div class="hcard-pname">Morning Routine Blueprint</div>
+          <div class="hcard-pprice">$49</div>
+        </div>
+        <div class="hcard-rows">
+          <div class="hcard-row"><span class="hcard-rl">Units in 14 days</span><span class="hcard-rv">214</span></div>
+          <div class="hcard-row"><span class="hcard-rl">Total revenue</span><span class="hcard-rv">$10,486</span></div>
+          <div class="hcard-row"><span class="hcard-rl">CLARIVA cut (25%)</span><span class="hcard-rv g">$2,621</span></div>
+        </div>
+        <div class="hcard-total">
+          <div class="hcard-tl">Creator earned</div>
+          <div class="hcard-tv" id="countup">$7,865</div>
+        </div>
       </div>
       <div class="hero-minis">
-        <div class="hero-mini"><div class="hm-val">$0</div><div class="hm-lbl">Upfront from the creator. Ever.</div></div>
-        <div class="hero-mini"><div class="hm-val">48h</div><div class="hm-lbl">Free audit after applying.</div></div>
+        <div class="hmini"><div class="hmini-val">$0</div><div class="hmini-lbl">Upfront from creator. Ever.</div></div>
+        <div class="hmini"><div class="hmini-val">48h</div><div class="hmini-lbl">Free audit after applying.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="ticker" aria-hidden="true"><div class="ticker-t">
-  <span class="ticker-i">Zero Upfront</span><span class="ticker-i">Your Product Built</span><span class="ticker-i">Your Voice Always</span><span class="ticker-i">14-Day Launch</span><span class="ticker-i">Shadow Operating</span><span class="ticker-i">Revenue Share Only</span><span class="ticker-i">You Keep 80%</span><span class="ticker-i">The Painkiller Not the Vitamin</span><span class="ticker-i">Zero Upfront</span><span class="ticker-i">Your Product Built</span><span class="ticker-i">Your Voice Always</span><span class="ticker-i">14-Day Launch</span><span class="ticker-i">Shadow Operating</span><span class="ticker-i">Revenue Share Only</span><span class="ticker-i">You Keep 80%</span><span class="ticker-i">The Painkiller Not the Vitamin</span>
-</div></div>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Zero Upfront</span><span class="ticker-item">Your Product Built</span><span class="ticker-item">Your Voice Always</span><span class="ticker-item">14-Day Launch</span><span class="ticker-item">Shadow Operating</span><span class="ticker-item">Revenue Share Only</span><span class="ticker-item">You Keep 80%</span><span class="ticker-item">Painkiller Not Vitamin</span><span class="ticker-item">No Walking Away Empty</span><span class="ticker-item">Proven System</span><span class="ticker-item">Immediate Results</span><span class="ticker-item">Guaranteed Outcome</span><span class="ticker-item">Zero Upfront</span><span class="ticker-item">Your Product Built</span><span class="ticker-item">Your Voice Always</span><span class="ticker-item">14-Day Launch</span><span class="ticker-item">Shadow Operating</span><span class="ticker-item">Revenue Share Only</span><span class="ticker-item">You Keep 80%</span><span class="ticker-item">Painkiller Not Vitamin</span><span class="ticker-item">No Walking Away Empty</span><span class="ticker-item">Proven System</span><span class="ticker-item">Immediate Results</span><span class="ticker-item">Guaranteed Outcome</span>
+  </div>
+</div>
 
 <!-- BRAND STATEMENT -->
-<section class="statement">
-  <div class="statement-inner rv">
-    <p class="statement-quote">"We don&#8217;t build a business.<br>We build a <em>brand.</em><br>A brand is trust, association &#8212;<br><strong>thought about when we are not in the room.</strong>"</p>
-    <p class="statement-attr">&#8212; <span>Emmanuel Maende &#183; Founder, CLARIVA</span></p>
+<section class="brand-sect section">
+  <div class="brand-glow"></div>
+  <div class="brand-inner rv">
+    <p class="brand-quote">
+      "We don't build a business.<br>
+      We build a <em>brand.</em><br>
+      A brand is trust, association —<br>
+      <strong>thought about when we are not in the room.</strong>"
+    </p>
+    <p class="brand-attr">— <span>Emmanuel Maende · Founder, CLARIVA</span></p>
     <div class="brand-comps">
-      <div class="bc"><span class="bc-name">Ferrari</span><span class="bc-tag">Trust</span></div><div class="bc-div"></div>
-      <div class="bc"><span class="bc-name">Apple</span><span class="bc-tag">Association</span></div><div class="bc-div"></div>
-      <div class="bc"><span class="bc-name">Louis Vuitton</span><span class="bc-tag">Identity</span></div><div class="bc-div"></div>
-      <div class="bc clariva"><span class="bc-name">CLARIVA</span><span class="bc-tag">Shadow Operator</span></div>
+      <div class="bcomp"><span class="bcomp-name">Ferrari</span><span class="bcomp-tag">Trust</span></div>
+      <div class="bcomp-div"></div>
+      <div class="bcomp"><span class="bcomp-name">Apple</span><span class="bcomp-tag">Association</span></div>
+      <div class="bcomp-div"></div>
+      <div class="bcomp"><span class="bcomp-name">Hermès</span><span class="bcomp-tag">Exclusivity</span></div>
+      <div class="bcomp-div"></div>
+      <div class="bcomp clariva"><span class="bcomp-name">CLARIVA</span><span class="bcomp-tag">Shadow Operator</span></div>
     </div>
   </div>
 </section>
 
-<!-- COST OF INACTION — NEW CMO WEAPON -->
-<section class="inaction rv" id="inaction">
-  <div class="inaction-inner">
-    <div class="inaction-hd">
-      <div class="s-tag" style="justify-content:center">The Cost of Waiting</div>
-      <h2 class="s-title" style="text-align:center">Every month you post<br>without a product is a month<br><em>someone else earns your income.</em></h2>
-      <p class="s-desc" style="max-width:560px;margin:0 auto 56px;text-align:center">The brand deal model is designed to benefit brands permanently, not creators. Every post you make without your own product sends revenue you generated to a brand&#8217;s balance sheet. This is what that costs you.</p>
+<!-- PAINKILLER vs VITAMIN + 3×3 -->
+<section class="pain-sect section" id="why">
+  <div class="container">
+    <div class="pain-headline rv">
+      <div class="sec-tag">The Transformation</div>
+      <h2 class="sec-h">We sell the <strong>painkiller.</strong><br>Not the <em>vitamin.</em></h2>
+      <p class="sec-desc">A vitamin is something you take when you feel fine. A painkiller is what you reach for when something is actively hurting you right now. Every creator watching brand deals enrich someone else is in pain. We are the only cure.</p>
     </div>
-    <div class="inaction-grid rv d1">
-      <div class="ia-card">
-        <div class="ia-num">1</div>
-        <div class="ia-month">Month Without a Product</div>
-        <div class="ia-loss">$2,400<span style="font-size:.4em;color:var(--muted);font-weight:300;vertical-align:middle"> lost</span></div>
-        <div class="ia-desc">The estimated direct audience revenue a creator with 30K engaged followers leaves on the table each month they post without a product. The audience is buying &#8212; just from someone else.</div>
-        <div class="ia-what">Brand pockets your audience&#8217;s trust</div>
+
+    <div class="pain-grid rv d1">
+      <!-- LEFT: old model -->
+      <div class="pain-card pain-old">
+        <div class="pain-card-title">💊 The Vitamin — Brand Deals</div>
+        <div class="pain-item"><span class="pi-icon">😑</span><div><div class="pi-title">Nice-to-have income that expires</div><div class="pi-body">A one-time fee. The brand keeps the customer permanently. You keep the cheque — once. The relationship ends when the campaign does. Nothing compounds.</div></div></div>
+        <div class="pain-item"><span class="pi-icon">📉</span><div><div class="pi-title">A structural ceiling you cannot break</div><div class="pi-body">The more deals you accept, the less your audience trusts you. Credibility erodes. The ceiling does not move. You are trapped inside a model that punishes growth.</div></div></div>
+        <div class="pain-item"><span class="pi-icon">🔁</span><div><div class="pi-title">You work. They compound.</div><div class="pi-body">Every post you publish sends someone to a brand's checkout. They earn from that customer permanently. You earned once. The cycle repeats and you fall further behind.</div></div></div>
+        <div class="pain-item"><span class="pi-icon">⛓</span><div><div class="pi-title">Dependent on activity — not assets</div><div class="pi-body">Stop posting. Stop earning. There is no product. No recurring income. No asset. Only the next campaign to chase. You are one deal away from zero.</div></div></div>
       </div>
-      <div class="ia-card">
-        <div class="ia-num">6</div>
-        <div class="ia-month">Months Without a Product</div>
-        <div class="ia-loss">$14,400<span style="font-size:.4em;color:var(--muted);font-weight:300;vertical-align:middle"> lost</span></div>
-        <div class="ia-desc">Six months of brand deals = six months of building someone else&#8217;s customer list. Every email captured, every purchase made, every relationship formed &#8212; belongs to the brand.</div>
-        <div class="ia-what">Six months of compound loss</div>
+      <!-- VS -->
+      <div class="vs-center">
+        <div class="vs-line"></div>
+        <div class="vs-badge">vs</div>
+        <div class="vs-line"></div>
       </div>
-      <div class="ia-card">
-        <div class="ia-num">12</div>
-        <div class="ia-month">Months Without a Product</div>
-        <div class="ia-loss">$28,800<span style="font-size:.4em;color:var(--muted);font-weight:300;vertical-align:middle"> lost</span></div>
-        <div class="ia-desc">A year of posting without a product. The brand&#8217;s database grew by thousands of your audience members. The trust you spent years building made someone else over $28,000 this year.</div>
-        <div class="ia-what">A year of someone else&#8217;s growth</div>
+      <!-- RIGHT: CLARIVA -->
+      <div class="pain-card pain-new">
+        <div class="pain-card-title">🚀 The Painkiller — CLARIVA</div>
+        <div class="pain-item"><span class="pi-icon">💰</span><div><div class="pi-title">Recurring direct income — forever</div><div class="pi-body">Your product sells while you sleep. Every sale flows directly to you. The customer relationship belongs to you permanently. Income compounds with every launch.</div></div></div>
+        <div class="pain-item"><span class="pi-icon">📈</span><div><div class="pi-title">No ceiling. Ever.</div><div class="pi-body">One product earns indefinitely. Each subsequent launch earns more. Your audience compounds your income automatically. There is no structural limit.</div></div></div>
+        <div class="pain-item"><span class="pi-icon">🏆</span><div><div class="pi-title">You own the customer. Always.</div><div class="pi-body">Every buyer becomes your customer — not a brand's. That relationship earns you recurring income across every product you ever launch. Permanently.</div></div></div>
+        <div class="pain-item"><span class="pi-icon">⚡</span><div><div class="pi-title">Asset — not activity</div><div class="pi-body">CLARIVA converts your audience into a permanent income-generating asset. An asset earns whether you posted today or not. That is the transformation we deliver.</div></div></div>
       </div>
     </div>
-    <div class="inaction-close rv d2">
-      <div class="ic-q">The question is not whether to launch.</div>
-      <div class="ic-a">The question is how many more months you are willing to watch someone else collect what your audience trusts you enough to pay you directly. CLARIVA removes every barrier. Zero upfront.</div>
-      <a href="#apply" class="ic-cta">Stop The Bleed &#8212; Apply Now <div class="arr" style="width:13px;height:13px"></div></a>
+
+    <!-- 3×3 MECHANISMS -->
+    <div class="mech-wrap rv d2">
+      <div class="mech-top">
+        <div class="sec-tag gld">The Three Mechanisms</div>
+        <h2 class="sec-h" style="text-align:center">Why it works.<br><em>Every single time.</em></h2>
+      </div>
+      <div class="mech">
+        <div class="mech-header"><span class="mech-num">I</span><h3 class="mech-title">The Brand Deal Has a <em>Permanent Ceiling.</em></h3><div class="mech-divider"></div></div>
+        <div class="mech-grid">
+          <div class="mcard"><div class="mcard-stage">Set Up</div><div class="mcard-claim">Brands keep every customer you send them</div><div class="mcard-body">Every brand deal builds their database, not yours. You deliver the audience. They keep the relationship. You keep the fee — once.</div><span class="mcard-proof">The Ceiling Is Permanent</span></div>
+          <div class="mcard"><div class="mcard-stage">Amplify</div><div class="mcard-claim">Your audience trusts you more than the brand</div><div class="mcard-body">The conversion happens because of you. The brand earns permanently from trust you built over years. You earned the fee. They earned the customer.</div><span class="mcard-proof">Trust Is Already Yours</span></div>
+          <div class="mcard"><div class="mcard-stage">Inevitable</div><div class="mcard-claim">A product earns that trust directly — forever</div><div class="mcard-body">When your audience buys your product, you keep the customer, the relationship, the compounding income. The brand deal was a ceiling. The product is a foundation.</div><span class="mcard-proof">Compounding Begins</span></div>
+        </div>
+      </div>
+      <div class="mech">
+        <div class="mech-header"><span class="mech-num">II</span><h3 class="mech-title">Your Audience Is Already <em>Ready to Buy.</em></h3><div class="mech-divider"></div></div>
+        <div class="mech-grid">
+          <div class="mcard"><div class="mcard-stage">Set Up</div><div class="mcard-claim">The comments prove the demand exists right now</div><div class="mcard-body">Every "can you make a guide?" is a buyer raising their hand. The demand is not theoretical. It is proven. It simply has nowhere to go — yet.</div><span class="mcard-proof">Demand Already Exists</span></div>
+          <div class="mcard"><div class="mcard-stage">Amplify</div><div class="mcard-claim">Loyal audiences convert at 3–5× cold traffic</div><div class="mcard-body">A creator's own audience is the highest-converting sales channel in digital commerce. No ads. No cold traffic. No persuasion. Just trust converting into income.</div><span class="mcard-proof">Highest Conversion Rate</span></div>
+          <div class="mcard"><div class="mcard-stage">Inevitable</div><div class="mcard-claim">The only missing piece is the product</div><div class="mcard-body">The traffic exists. The trust exists. The demand exists. The only gap between your current income and permanent direct revenue is a product. CLARIVA builds it completely.</div><span class="mcard-proof">We Build It. Completely.</span></div>
+        </div>
+      </div>
+      <div class="mech">
+        <div class="mech-header"><span class="mech-num">III</span><h3 class="mech-title">14 Days Is Enough. <em>When The System Is Right.</em></h3><div class="mech-divider"></div></div>
+        <div class="mech-grid">
+          <div class="mcard"><div class="mcard-stage">Set Up</div><div class="mcard-claim">Most creators stall on execution — not strategy</div><div class="mcard-body">The information about how to launch exists everywhere. What stops creators is execution — building, writing, maintaining the sequence daily. We remove all of it.</div><span class="mcard-proof">Execution Is The Only Gap</span></div>
+          <div class="mcard"><div class="mcard-stage">Amplify</div><div class="mcard-claim">CLARIVA removes every barrier simultaneously</div><div class="mcard-body">Product built. Launch written in your voice. Sequence mapped. DM scripts ready. 6 months of work delivered in 14 days. You post. That is your only job.</div><span class="mcard-proof">Done For You. Completely.</span></div>
+          <div class="mcard"><div class="mcard-stage">Inevitable</div><div class="mcard-claim">Day 14 looks like a notification while you sleep</div><div class="mcard-body">The sequence completes. Sales accumulate. You wake up to revenue from a product your audience wanted. Zero upfront. We earned our cut. You earned the rest.</div><span class="mcard-proof">The Result Is Real</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PAINKILLER vs VITAMIN -->
-<section class="hook" id="why">
-  <div class="hook-inner">
-    <div class="hook-top rv">
-      <div class="s-tag">Why Creators Choose CLARIVA</div>
-      <h2 class="s-title">We sell the <strong>painkiller.</strong><br>Not the <em>vitamin.</em></h2>
-      <p class="s-desc">A vitamin is nice to have. A painkiller solves something actively hurting you. Every creator watching brand deals enrich someone else is in pain right now. CLARIVA is the cure.</p>
+<!-- GALLERY -->
+<section class="gallery-sect section">
+  <div class="container">
+    <div class="gallery-head rv">
+      <div class="sec-tag gld">The CLARIVA Standard</div>
+      <h2 class="sec-h">Built for creators who are<br><em>ready to be selected.</em></h2>
     </div>
-    <div class="hook-vs rv d1">
-      <div class="hook-side hook-pain">
-        <div class="hook-pain-title">&#128138; Brand Deals &#8212; The Vitamin</div>
-        <div class="hook-item"><span class="hook-icon">&#128565;</span><div class="hook-item-body"><strong>Nice-to-have income</strong><p>A one-time fee that expires. The brand keeps the customer. You keep the cheque. The relationship ends when the campaign does.</p></div></div>
-        <div class="hook-item"><span class="hook-icon">&#128201;</span><div class="hook-item-body"><strong>Income ceiling built in</strong><p>The more deals you take, the less your audience trusts you. The ceiling is structural. You cannot grow past it without losing credibility.</p></div></div>
-        <div class="hook-item"><span class="hook-icon">&#128257;</span><div class="hook-item-body"><strong>You work, they compound</strong><p>Every post sends someone to a brand&#8217;s checkout. The brand earns from that relationship permanently. You earned once.</p></div></div>
-        <div class="hook-item"><span class="hook-icon">&#9200;</span><div class="hook-item-body"><strong>Time-dependent income</strong><p>If you stop posting, you stop earning. There is no asset. There is no product. There is only the next deal &#8212; which may never come.</p></div></div>
-      </div>
-      <div class="vs-divider"><div class="vs-line"></div><div class="vs-circle">vs</div><div class="vs-line"></div></div>
-      <div class="hook-side hook-kill">
-        <div class="hook-kill-title">&#128640; CLARIVA &#8212; The Painkiller</div>
-        <div class="hook-item"><span class="hook-icon">&#128176;</span><div class="hook-item-body"><strong>Recurring direct income</strong><p>Your product sells while you sleep. Every sale goes to you. The relationship between you and your audience compounds permanently.</p></div></div>
-        <div class="hook-item"><span class="hook-icon">&#128200;</span><div class="hook-item-body"><strong>No ceiling &#8212; ever</strong><p>A product earns indefinitely. One launch generates income for months. Each subsequent launch generates more. The asset compounds without a cap.</p></div></div>
-        <div class="hook-item"><span class="hook-icon">&#127942;</span><div class="hook-item-body"><strong>You keep the customer</strong><p>Every person who buys your product is now your customer &#8212; not a brand&#8217;s. That relationship earns you recurring income forever.</p></div></div>
-        <div class="hook-item"><span class="hook-icon">&#9889;</span><div class="hook-item-body"><strong>Asset not activity</strong><p>You built an audience. CLARIVA converts it into an asset. An asset earns regardless of whether you posted today. That is the difference.</p></div></div>
-      </div>
+    <div class="gallery-grid rv d1">
+      <div class="gimg"><img src="another-one.png" alt="Another One" loading="lazy"><div class="gimg-overlay"></div><div class="gimg-border"></div><div class="gimg-cap"><div class="gimg-cap-tag">The Result</div><div class="gimg-cap-text">Another one.</div></div></div>
+      <div class="gimg"><img src="blueprint-hands.jpg" alt="Blueprint" loading="lazy"><div class="gimg-overlay"></div><div class="gimg-border"></div><div class="gimg-cap"><div class="gimg-cap-tag">The Guarantee</div><div class="gimg-cap-text">Every launch performed.</div></div></div>
+      <div class="gimg"><img src="envelope.png" alt="By Invitation" loading="lazy"><div class="gimg-overlay"></div><div class="gimg-border"></div><div class="gimg-cap"><div class="gimg-cap-tag">The Standard</div><div class="gimg-cap-text">By invitation only.</div></div></div>
+      <div class="gimg"><img src="portfolio.jpg" alt="Portfolio" loading="lazy"><div class="gimg-overlay"></div><div class="gimg-border"></div><div class="gimg-cap"><div class="gimg-cap-tag">The Preparation</div><div class="gimg-cap-text">By selection only.</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- 3x3 MECHANISMS -->
-<section class="mech-wrap" id="mechanisms">
-  <div class="wrap">
-    <div class="mech-hd rv"><div class="s-tag" style="justify-content:center">Three Mechanisms</div><h2 class="s-title" style="text-align:center">Why it works.<br><em>Every time.</em></h2></div>
-    <div class="mech rv"><div class="mech-hdr"><span class="mech-num">I</span><h3 class="mech-name">The Brand Deal Model Has a <em>Permanent Ceiling.</em></h3><div class="mech-line"></div></div><div class="mech-pts"><div class="mp"><div class="mp-setup">Set Up</div><div class="mp-po">Brands keep every customer you send them</div><div class="mp-td">Every brand deal builds their database, not yours. You deliver the audience. They keep the relationship. You keep the fee &#8212; once.</div><span class="mp-proof">The Ceiling Is Real</span></div><div class="mp"><div class="mp-setup">Pay Off</div><div class="mp-po">Your audience trusts you more than the brand</div><div class="mp-td">The conversion happens because of you. The brand earns permanently from trust you built over years of consistent posting.</div><span class="mp-proof">Trust Is Yours</span></div><div class="mp"><div class="mp-setup">Tie Down</div><div class="mp-po">A digital product earns that trust directly &#8212; forever</div><div class="mp-td">When your audience buys your product, you keep the customer, the relationship, the recurring income. The brand deal was a ceiling. The product is a foundation.</div><span class="mp-proof">Compounding Income</span></div></div></div>
-    <div class="mech rv"><div class="mech-hdr"><span class="mech-num">II</span><h3 class="mech-name">Your Audience Is Already <em>Ready to Buy.</em></h3><div class="mech-line"></div></div><div class="mech-pts"><div class="mp"><div class="mp-setup">Set Up</div><div class="mp-po">The comments prove the demand exists</div><div class="mp-td">Every &#8220;can you make a guide?&#8221; in your comments is a buyer raising their hand. The demand exists. It simply has nowhere to go.</div><span class="mp-proof">Demand Already There</span></div><div class="mp"><div class="mp-setup">Pay Off</div><div class="mp-po">Loyal audiences convert at 3&#8211;5&#215; cold traffic</div><div class="mp-td">A creator&#8217;s own audience is the highest-converting sales channel in digital commerce. No ads. No cold traffic. Just trust converting into income.</div><span class="mp-proof">Highest Conversion Rate</span></div><div class="mp"><div class="mp-setup">Tie Down</div><div class="mp-po">The only missing piece is the product itself</div><div class="mp-td">The traffic exists. The trust exists. The demand exists. The only thing standing between your current income and direct revenue is a product. CLARIVA builds it completely.</div><span class="mp-proof">We Build It For You</span></div></div></div>
-    <div class="mech rv"><div class="mech-hdr"><span class="mech-num">III</span><h3 class="mech-name">14 Days Is Enough. <em>If The System Is Right.</em></h3><div class="mech-line"></div></div><div class="mech-pts"><div class="mp"><div class="mp-setup">Set Up</div><div class="mp-po">Most creators stall on execution, not strategy</div><div class="mp-td">The information about how to launch a digital product exists everywhere. What stops creators is execution &#8212; building, writing, maintaining the sequence for 14 days.</div><span class="mp-proof">Execution Is The Gap</span></div><div class="mp"><div class="mp-setup">Pay Off</div><div class="mp-po">CLARIVA removes every execution barrier simultaneously</div><div class="mp-td">Product built. Launch written in your voice. Sequence mapped. DM scripts ready. What would take 6 months of evenings is delivered in 14 days. You post. That is your only job.</div><span class="mp-proof">Done For You. Completely.</span></div><div class="mp"><div class="mp-setup">Tie Down</div><div class="mp-po">Day 14 looks like a Whop notification while you sleep</div><div class="mp-td">The sequence completes. Sales accumulate. You wake up to revenue from a product your audience wanted. Zero upfront. We earned our cut. You earned the rest.</div><span class="mp-proof">The Result Is Real</span></div></div></div>
-  </div>
-</section>
-
-<!-- FLOW DIAGRAM -->
-<section class="diagram-flow" id="process">
-  <div class="wrap">
-    <div class="rv"><div class="s-tag gld">Process Diagram</div><h2 class="s-title">Four steps. <em>Zero execution</em><br>required from you.</h2><p class="s-desc">Every step is completed by CLARIVA. Your one role: post the content we write in your voice.</p></div>
-    <div class="flow-steps rv d1">
-      <div class="flow-step fn-1"><div class="flow-num"><span class="flow-num-inner">01</span></div><div class="flow-step-icon">&#9673;</div><div class="flow-step-title">Free Creator Audit</div><div class="flow-step-desc">We study your content, audience behaviour and engagement. We identify what your followers are already willing to invest in &#8212; before you create anything.</div><span class="flow-badge fb-b">Free &#183; 48 hours</span></div>
-      <div class="flow-step fn-2"><div class="flow-num"><span class="flow-num-inner">02</span></div><div class="flow-step-icon">&#9672;</div><div class="flow-step-title">Product Built For You</div><div class="flow-step-desc">Ebook, course, coaching offer, Notion template &#8212; priced for your audience, designed around your unique value zone. You write zero words of it.</div><span class="flow-badge fb-b">Built from scratch</span></div>
-      <div class="flow-step fn-3"><div class="flow-num"><span class="flow-num-inner">03</span></div><div class="flow-step-icon">&#9671;</div><div class="flow-step-title">Launch Written In Your Voice</div><div class="flow-step-desc">Every caption, story, DM written in your voice. Your audience never knows we exist. The content sounds exactly like you. The income comes to you.</div><span class="flow-badge fb-g">Your voice. Our system.</span></div>
-      <div class="flow-step fn-4"><div class="flow-num"><span class="flow-num-inner">04</span></div><div class="flow-step-icon">&#9670;</div><div class="flow-step-title">14-Day Launch Sequence</div><div class="flow-step-desc">Every day mapped. 11 psychological buy buttons that move your audience from curious to invested. You post. Income arrives. We split after you earn.</div><span class="flow-badge fb-g">Revenue share begins</span></div>
+<!-- PROCESS FLOW DIAGRAM -->
+<section class="flow-sect section" id="process">
+  <div class="container">
+    <div class="rv">
+      <div class="sec-tag gld">Process Diagram</div>
+      <h2 class="sec-h">Four steps. <em>Zero execution</em><br>required from you.</h2>
+      <p class="sec-desc">Every step is completed by CLARIVA. Your single role: post the content we write in your voice. That is all we ask.</p>
+    </div>
+    <div class="flow-wrap rv d1">
+      <div class="flow-connector"></div>
+      <div class="flow-steps">
+        <div class="fstep fs1"><div class="fstep-orb"><span class="fstep-num">01</span></div><div class="fstep-icon">◉</div><div class="fstep-title">Free Creator Audit</div><div class="fstep-desc">We study your content, audience behaviour and engagement patterns. We identify what your followers are already willing to invest in — before you create a single thing.</div><span class="fstep-badge fb-burg">Free · 48 hours</span></div>
+        <div class="fstep fs2"><div class="fstep-orb"><span class="fstep-num">02</span></div><div class="fstep-icon">◈</div><div class="fstep-title">Product Built For You</div><div class="fstep-desc">Ebook, course, coaching offer, Notion workspace — priced specifically for your audience, designed around your unique authority zone. You write zero words of it.</div><span class="fstep-badge fb-burg">Built from scratch</span></div>
+        <div class="fstep fs3"><div class="fstep-orb"><span class="fstep-num">03</span></div><div class="fstep-icon">◇</div><div class="fstep-title">Launch Ghostwritten</div><div class="fstep-desc">Every caption, story, DM scripted in your voice. Your audience never knows CLARIVA exists. The content sounds exactly like you. The income comes directly to you.</div><span class="fstep-badge fb-gold">Your voice. Always.</span></div>
+        <div class="fstep fs4"><div class="fstep-orb"><span class="fstep-num">04</span></div><div class="fstep-icon">◆</div><div class="fstep-title">14-Day Sequence</div><div class="fstep-desc">Every day mapped. 11 psychological buy triggers that move your audience from aware to invested. You post. Income arrives. Revenue share begins only after you earn.</div><span class="fstep-badge fb-gold">Revenue share begins</span></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- PATH DECISION TREE -->
-<section class="diagram-paths" id="paths">
-  <div class="wrap">
-    <div class="rv"><div class="s-tag">Path Comparison</div><h2 class="s-title">Which path is<br><em>right for you?</em></h2><p class="s-desc">Both paths deliver the same product standard. Choose the entry point that matches where you are.</p></div>
+<section class="paths-sect section" id="paths">
+  <div class="container">
+    <div class="rv">
+      <div class="sec-tag">Path Decision Diagram</div>
+      <h2 class="sec-h">Two doors.<br><em>No empty hands.</em></h2>
+      <p class="sec-desc">You came here for a reason. Every creator who reads this page leaves with something — a partner or a blueprint. There is no third option.</p>
+    </div>
     <div class="path-tree rv d1">
-      <div class="dt-header"><div class="dt-header-q">&#8220;Do I want CLARIVA to run the entire launch for me?&#8221;</div><div class="dt-header-sub">Choose the path that matches your situation</div></div>
-      <div class="dt-branches"><div class="dt-branch-line dt-bl-1"><span class="dt-branch-label dt-bl-burg">YES &#8212; Do it for me</span></div><div class="dt-branch-line dt-bl-2"><span class="dt-branch-label dt-bl-gold">NO &#8212; I&#8217;ll run it myself</span></div></div>
-      <div class="dt-cards">
-        <div class="dt-card dt-card-1">
-          <span class="dt-card-badge dt-cb-1">Path One &#8212; Full Partnership</span>
-          <h3 class="dt-card-title">Launch with CLARIVA.<br><em>Zero upfront. Ever.</em></h3>
-          <p class="dt-card-desc">We carry the full risk. We build your product. We write every word of your launch. We run the 14-day sequence. You post. We split only after you earn.</p>
-          <div class="dt-rows">
-            <div class="dt-row dr-1"><span class="dt-row-ic">&#10003;</span><div><div class="dt-row-title">Zero upfront</div><div class="dt-row-desc">We invest time before you invest anything. If you earn nothing, we earn nothing.</div></div></div>
-            <div class="dt-row dr-1"><span class="dt-row-ic">&#10003;</span><div><div class="dt-row-title">Product built completely</div><div class="dt-row-desc">Title, chapters, pricing, platform &#8212; every word written for you by CLARIVA.</div></div></div>
-            <div class="dt-row dr-1"><span class="dt-row-ic">&#10003;</span><div><div class="dt-row-title">Ghostwritten launch</div><div class="dt-row-desc">Every caption, DM, story in your voice. Your audience never knows we exist.</div></div></div>
-            <div class="dt-row dr-1"><span class="dt-row-ic">&#10003;</span><div><div class="dt-row-title">You keep 80%</div><div class="dt-row-desc">We earn only after your account does. Our success is permanently tied to yours.</div></div></div>
+      <!-- top -->
+      <div class="ptree-top">
+        <div class="ptree-q">"Do I want CLARIVA to run the entire launch for me?"</div>
+        <div class="ptree-hint">Choose the path that matches your situation right now</div>
+      </div>
+      <!-- branches -->
+      <div class="ptree-branches">
+        <div class="pbranch pb-l"><span class="pbranch-label pbl-burg">YES — Do it for me completely</span></div>
+        <div class="pbranch pb-r"><span class="pbranch-label pbl-gold">NO — I will run it myself</span></div>
+      </div>
+      <!-- cards -->
+      <div class="ptree-cards">
+        <div class="pcard pc1">
+          <span class="pc-badge pcb1">Path One — Full Partnership</span>
+          <h3 class="pc-title">Launch with CLARIVA.<br><em>Zero upfront. Ever.</em></h3>
+          <p class="pc-desc">We carry every risk. We build your product. We write every word of your launch in your voice. We run the entire 14-day sequence. You post. We earn only after you earn.</p>
+          <div class="pc-rows">
+            <div class="pc-row pcr1"><span class="pc-row-ic">✓</span><div><div class="pc-row-title">Zero upfront from you</div><div class="pc-row-desc">We invest time and expertise before you invest a single dollar. Our skin is in the game first.</div></div></div>
+            <div class="pc-row pcr1"><span class="pc-row-ic">✓</span><div><div class="pc-row-title">Product built completely for you</div><div class="pc-row-desc">Title, chapters, pricing, platform — every word written by CLARIVA. You approve. We build.</div></div></div>
+            <div class="pc-row pcr1"><span class="pc-row-ic">✓</span><div><div class="pc-row-title">Ghostwritten launch in your voice</div><div class="pc-row-desc">Every caption, DM, story scripted in your exact voice. Your audience never sees the seam.</div></div></div>
+            <div class="pc-row pcr1"><span class="pc-row-ic">✓</span><div><div class="pc-row-title">You keep 80% of every sale</div><div class="pc-row-desc">We earn only after your account earns. Our success is permanently and completely tied to yours.</div></div></div>
           </div>
-          <div class="dt-price dp-1"><div class="dt-price-n dpn-1">$0 upfront</div><div class="dt-price-sub">Revenue share only &#8212; after you earn</div></div>
-          <a href="#apply" class="cta-burg">Apply for Partnership <div class="arr"></div></a>
-          <p class="dt-card-note">By selection only. 5 spots per month.</p>
+          <div class="pc-price pcp1">
+            <div class="pc-price-n pcpn1">$0 upfront</div>
+            <div class="pc-price-sub">Revenue share only — after you earn. Never before.</div>
+          </div>
+          <a href="#apply" class="pc-cta pcc1">Apply for Partnership <div class="arr-ic"></div></a>
+          <p class="pc-note">By selection only. 5 spots per month.</p>
         </div>
-        <div class="dt-card dt-card-2">
-          <span class="dt-card-badge dt-cb-2">Path Two &#8212; Blueprint</span>
-          <h3 class="dt-card-title">Launch yourself.<br><em>Own every cent.</em></h3>
-          <p class="dt-card-desc">You run the launch. We build everything you need &#8212; personalised product, roadmap, and 14-day sequence. Never a template. Built for your audience specifically.</p>
-          <div class="dt-rows">
-            <div class="dt-row dr-2"><span class="dt-row-ic">&#10003;</span><div><div class="dt-row-title">Your digital product built</div><div class="dt-row-desc">Title, chapters, pricing &#8212; designed specifically for your audience, not recycled.</div></div></div>
-            <div class="dt-row dr-2"><span class="dt-row-ic">&#10003;</span><div><div class="dt-row-title">Personalised launch roadmap</div><div class="dt-row-desc">Day by day. Never templated. Built around your specific audience and content style.</div></div></div>
-            <div class="dt-row dr-2"><span class="dt-row-ic">&#10003;</span><div><div class="dt-row-title">Revenue projection included</div><div class="dt-row-desc">Specific numbers for your follower count, engagement rate and price point.</div></div></div>
-            <div class="dt-row dr-2"><span class="dt-row-ic">&#10003;</span><div><div class="dt-row-title">Delivered in 24 hours</div><div class="dt-row-desc">Pay once. Own everything. Keep 100% of every sale you generate. Forever.</div></div></div>
+        <div class="pcard pc2">
+          <span class="pc-badge pcb2">Path Two — The Blueprint</span>
+          <h3 class="pc-title">Launch yourself.<br><em>Own every cent.</em></h3>
+          <p class="pc-desc">You run the launch. We build everything you need to win it — personalised product, roadmap, 14-day sequence. Never a template. Built for your specific audience, your specific voice.</p>
+          <div class="pc-rows">
+            <div class="pc-row pcr2"><span class="pc-row-ic">✓</span><div><div class="pc-row-title">Your digital product built for you</div><div class="pc-row-desc">Title, chapters, pricing — designed specifically for your audience. Never recycled. Never templated.</div></div></div>
+            <div class="pc-row pcr2"><span class="pc-row-ic">✓</span><div><div class="pc-row-title">Personalised 14-day launch roadmap</div><div class="pc-row-desc">Day by day. Built around your content style, your audience behaviour, your specific product.</div></div></div>
+            <div class="pc-row pcr2"><span class="pc-row-ic">✓</span><div><div class="pc-row-title">Revenue projection included</div><div class="pc-row-desc">Specific earnings forecast for your follower count, engagement rate, and product price point.</div></div></div>
+            <div class="pc-row pcr2"><span class="pc-row-ic">✓</span><div><div class="pc-row-title">Delivered in 24 hours. Keep 100%.</div><div class="pc-row-desc">Pay once. Own everything permanently. Keep 100% of every sale you generate. No ceiling.</div></div></div>
           </div>
-          <div class="dt-price dp-2"><div class="dt-price-n dpn-2">$99 &#8212; one payment</div><div class="dt-price-sub">Delivered to your inbox within 24 hours</div></div>
-          <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener" class="cta-gold">Get My Blueprint Now <div class="arr"></div></a>
-          <p class="dt-card-note">Secure payment via Paystack.</p>
+          <div class="pc-price pcp2">
+            <div class="pc-price-n pcpn2">$99 — one payment</div>
+            <div class="pc-price-sub">Premium Notion workspace delivered within 24 hours</div>
+          </div>
+          <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener" class="pc-cta pcc2">Get My Blueprint Now <div class="arr-ic"></div></a>
+          <p class="pc-note">Secure payment via Paystack. Instant access.</p>
         </div>
       </div>
-      <div class="dt-unify"><p class="dtu-q">&#8220;Either way &#8212; CLARIVA builds it for you.&#8221;</p><p class="dtu-l">The operator behind both paths. The result is the same.</p></div>
+      <!-- unify -->
+      <div class="ptree-bottom">
+        <p class="ptb-q">"Either way — CLARIVA builds it for you."</p>
+        <p class="ptb-l">The operator behind both paths. The standard never changes.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- REVENUE DIAGRAM -->
-<section class="diagram-rev" id="revenue">
-  <div class="wrap">
+<section class="rev-sect section" id="revenue">
+  <div class="container">
     <div class="rev-inner">
       <div class="rv">
-        <div class="s-tag gld">Revenue Diagram</div>
-        <h2 class="s-title">We only get paid<br><em>when you get paid.</em></h2>
-        <p class="s-desc">No retainers. No fees. No risk. Every agency that charges upfront is telling you they are not confident enough to wait for their own results. We wait. Because we are certain.</p>
-        <div class="rev-bars" id="rev-bars">
-          <div style="font-family:var(--cond);font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:12px">CLARIVA PARTNERSHIP &#8212; REVENUE SPLIT</div>
-          <div class="rev-bar-row"><span class="rev-bar-label">You Keep</span><div class="rev-bar-track"><div class="rev-bar-fill rb-creator" id="b1">80%</div></div><span class="rev-bar-pct" style="color:var(--gold2)">80%</span></div>
-          <div class="rev-bar-row"><span class="rev-bar-label">CLARIVA</span><div class="rev-bar-track"><div class="rev-bar-fill rb-clariva" id="b2">20%</div></div><span class="rev-bar-pct" style="color:var(--burg2)">20%</span></div>
-          <div style="font-family:var(--cond);font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin:20px 0 10px">BRAND DEAL MODEL &#8212; WHAT YOU LOSE</div>
-          <div class="rev-bar-row"><span class="rev-bar-label">Your Fee</span><div class="rev-bar-track"><div class="rev-bar-fill rb-creator" id="b3" style="width:15%;background:linear-gradient(90deg,rgba(139,26,66,.5),rgba(139,26,66,.7))">15%</div></div><span class="rev-bar-pct" style="color:var(--burg2)">15%</span></div>
-          <div class="rev-bar-row"><span class="rev-bar-label">Brand Keeps</span><div class="rev-bar-track"><div class="rev-bar-fill rb-brand" id="b4" style="width:85%">Brand keeps the customer. Forever.</div></div><span class="rev-bar-pct" style="color:var(--muted)">&#8734;</span></div>
-        </div>
-        <div style="margin-top:20px;padding:18px 22px;background:var(--lift);border:1px solid var(--border);border-left:3px solid var(--gold2);border-radius:2px">
-          <div style="font-family:var(--cond);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px">The real comparison</div>
-          <div style="font-size:13px;font-weight:300;color:var(--text);line-height:1.7">Brand deal: you earn the fee once. They keep the customer forever.<br>CLARIVA: you earn 80% of every sale. <em style="color:var(--gold2)">You keep the customer forever.</em></div>
+        <div class="sec-tag gld">Revenue Diagram</div>
+        <h2 class="sec-h">We earn nothing<br>until <em>you earn.</em></h2>
+        <p class="sec-desc">No retainers. No monthly fees. No upfront risk. Every operator who charges before results is telling you they don't believe enough in their own work to wait for it. We wait. Because we are certain.</p>
+        <div class="rev-chart" id="revChart">
+          <div class="rev-chart-label">CLARIVA partnership — revenue split</div>
+          <div class="rev-bar-rows">
+            <div class="rev-bar-wrap">
+              <span class="rev-bar-lbl">You Keep</span>
+              <div class="rev-bar-track"><div class="rev-bar-fill rbf-creator" id="bar1">80%</div></div>
+              <span class="rev-bar-pct" style="color:var(--g3)">80%</span>
+            </div>
+            <div class="rev-bar-wrap">
+              <span class="rev-bar-lbl">CLARIVA</span>
+              <div class="rev-bar-track"><div class="rev-bar-fill rbf-clariva" id="bar2">20%</div></div>
+              <span class="rev-bar-pct" style="color:var(--b4)">20%</span>
+            </div>
+            <div class="rev-bar-wrap">
+              <span class="rev-bar-lbl">Brand Deal</span>
+              <div class="rev-bar-track" style="display:flex;align-items:center;padding-left:14px">
+                <span style="font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--t0)">Brand keeps 100% of every customer you send them</span>
+              </div>
+              <span class="rev-bar-pct" style="color:var(--t0)">—</span>
+            </div>
+          </div>
+          <div class="rev-compare">
+            <div class="rev-compare-l">The real difference</div>
+            <div class="rev-compare-t">Brand deal: you earn the fee once. They keep the customer forever.<br>CLARIVA: you earn 80% of every sale. You keep the customer forever.</div>
+          </div>
         </div>
       </div>
       <div class="rv d2">
-        <div style="font-family:var(--cond);font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:20px">SLIDING SCALE &#8212; CLARIVA CUT</div>
+        <div style="font-family:var(--mono);font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--t0);margin-bottom:22px">Sliding Scale — CLARIVA Cut</div>
         <div class="rev-tiers">
-          <div class="rev-tier rt-1"><div class="rt-info"><strong>Starter Launch</strong><span>Under $3,000</span></div><div class="rt-pct">20%</div></div>
-          <div class="rev-tier rt-2"><div class="rt-info"><strong>Growth Launch</strong><span>$3,000 &#8211; $10,000</span></div><div class="rt-pct">25%</div></div>
-          <div class="rev-tier rt-3"><div class="rt-info"><strong>Scale Launch</strong><span>$10,000+</span></div><div class="rt-pct">30%</div></div>
+          <div class="rtier rt1"><div class="rtier-info"><strong>Starter Launch</strong><span>Under $3,000</span></div><div class="rtier-pct">20%</div></div>
+          <div class="rtier rt2"><div class="rtier-info"><strong>Growth Launch</strong><span>$3,000 – $10,000</span></div><div class="rtier-pct">25%</div></div>
+          <div class="rtier rt3"><div class="rtier-info"><strong>Scale Launch</strong><span>$10,000+</span></div><div class="rtier-pct">30%</div></div>
         </div>
-        <div class="rev-note">The bigger the launch &#8212; the more we both earn. Alignment by design.</div>
-        <div class="proj-table" style="margin-top:28px">
-          <div style="font-family:var(--cond);font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:12px">WHAT YOUR AUDIENCE COULD GENERATE</div>
-          <div class="proj-row"><div class="pr-f">25K followers</div><div class="pr-p">$49 guide</div><div class="pr-e">$3,675</div></div>
-          <div class="proj-row"><div class="pr-f">50K followers</div><div class="pr-p">$97 course</div><div class="pr-e">$10,185</div></div>
-          <div class="proj-row"><div class="pr-f">100K followers</div><div class="pr-p">$147 coaching</div><div class="pr-e">$30,870</div></div>
+        <div class="rev-note">The bigger your launch — the more we both earn. Alignment by design.</div>
+        <div class="proj-rows">
+          <div class="proj-lbl">What your audience could generate</div>
+          <div class="proj-row"><div class="proj-f">25K followers</div><div class="proj-p">$49 guide</div><div class="proj-e">$3,675</div></div>
+          <div class="proj-row h1"><div class="proj-f">50K followers</div><div class="proj-p">$97 course</div><div class="proj-e">$10,185</div></div>
+          <div class="proj-row h2"><div class="proj-f">100K followers</div><div class="proj-p">$147 coaching</div><div class="proj-e">$30,870</div></div>
         </div>
-        <p style="font-size:10px;color:var(--muted);margin-top:10px;line-height:1.6">Illustrative examples. Results vary by audience, offer and execution.</p>
+        <p class="proj-foot">Illustrative projections based on industry-standard creator conversion rates. Results vary by audience, offer and execution.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY — GITHUB IMAGES PRESERVED -->
-<section class="gallery">
-  <div class="wrap">
-    <div class="gallery-hd rv"><div class="s-tag gld">The CLARIVA Standard</div><h2 class="s-title">Built for creators who are<br><em>ready to be selected.</em></h2></div>
-    <div class="gallery-grid rv">
-      <div class="gi"><img src="another-one.png" alt="Another One" loading="lazy"><div class="gi-overlay"></div><div class="gi-border"></div><div class="gi-cap"><div class="gi-cap-tag">The Result</div><div class="gi-cap-text">Another one.</div></div></div>
-      <div class="gi"><img src="blueprint-hands.jpg" alt="Blueprint" loading="lazy"><div class="gi-overlay"></div><div class="gi-border"></div><div class="gi-cap"><div class="gi-cap-tag">The Guarantee</div><div class="gi-cap-text">Every launch performed.</div></div></div>
-      <div class="gi"><img src="envelope.png" alt="By Invitation" loading="lazy"><div class="gi-overlay"></div><div class="gi-border"></div><div class="gi-cap"><div class="gi-cap-tag">The Standard</div><div class="gi-cap-text">By invitation only.</div></div></div>
-      <div class="gi"><img src="portfolio.jpg" alt="Portfolio" loading="lazy"><div class="gi-overlay"></div><div class="gi-border"></div><div class="gi-cap"><div class="gi-cap-tag">The Preparation</div><div class="gi-cap-text">By selection only.</div></div></div>
     </div>
   </div>
 </section>
 
 <!-- APPLY -->
-<section class="apply" id="apply">
-  <div class="wrap">
+<section class="apply-sect section" id="apply">
+  <div class="apply-glow"></div>
+  <div class="container">
     <div class="apply-grid">
       <div>
-        <div class="rv"><div class="s-tag">Partner Application</div><h2 class="s-title">Your audience is ready.<br><em>Are you?</em></h2><p class="s-desc">We partner with <strong style="color:var(--burg2)">5 new creators per month.</strong> We personally review every application and respond within 24 hours.</p></div>
-        <div class="apply-steps rv d1">
-          <div class="astep"><span class="astep-badge ab-1">Within 24 hours</span><p>We review your account and send a free creator audit &#8212; what your audience is worth and what your first launch could generate.</p></div>
-          <div class="astep"><span class="astep-badge ab-2">Discovery Call</span><p>30 minutes showing exactly what is possible. You leave with a clear picture of your first launch and its earnings potential.</p></div>
-          <div class="astep"><span class="astep-badge ab-3">Blueprint Call</span><p>Your complete launch roadmap built on a shared screen. Product finalised. 14-day sequence mapped. You know exactly what the next 14 days look like.</p></div>
+        <div class="rv">
+          <div class="sec-tag">Partner Application</div>
+          <h2 class="sec-h">Your audience is ready.<br><em>Are you?</em></h2>
+          <p class="sec-desc">We partner with <strong style="color:var(--b4)">5 creators per month.</strong> Personally reviewed. 24-hour response. No commitment until you say go.</p>
         </div>
-        <div class="who-list rv d2">
-          <div class="wi"><span class="wi-ic">&#10003;</span><div class="wi-text"><strong>20,000 &#8211; 600,000+ followers</strong>Instagram, TikTok, YouTube &#8212; any platform</div></div>
-          <div class="wi"><span class="wi-ic">&#10003;</span><div class="wi-text"><strong>Any niche</strong>Fashion, lifestyle, fitness, beauty, food, wellness, motherhood, faith, business</div></div>
-          <div class="wi"><span class="wi-ic">&#10003;</span><div class="wi-text"><strong>No product needed</strong>We build it completely. You bring the audience.</div></div>
-          <div class="wi"><span class="wi-ic" style="color:rgba(255,255,255,.3)">&#10007;</span><div class="wi-text"><strong style="color:rgba(255,255,255,.3)">Purchased followers or fake engagement</strong>We verify authentic trust before every partnership</div></div>
+        <div class="apply-steps rv d1">
+          <div class="astep"><span class="astep-badge ab1">Within 24 hours</span><p>We personally review your account and send a free creator audit — exactly what your audience is worth and what your first launch could generate. Zero commitment.</p></div>
+          <div class="astep"><span class="astep-badge ab2">Discovery Call</span><p>A 30-minute call showing exactly what is possible. You leave with a complete picture of your first launch and a specific earnings projection.</p></div>
+          <div class="astep"><span class="astep-badge ab3">Blueprint Call</span><p>Your product and full 14-day sequence mapped on a shared screen. You leave knowing every single day. Then we begin — or we don't. Your call.</p></div>
+        </div>
+        <div class="who-rows rv d2">
+          <div class="wrow"><span class="wrow-ic">✅</span><div class="wrow-text"><strong>20,000 – 600,000+ followers</strong>Instagram, TikTok, YouTube — any platform</div></div>
+          <div class="wrow"><span class="wrow-ic">✅</span><div class="wrow-text"><strong>Any niche</strong>Fashion, lifestyle, beauty, fitness, food, wellness, faith, motherhood, business</div></div>
+          <div class="wrow"><span class="wrow-ic">✅</span><div class="wrow-text"><strong>No product needed</strong>We build it completely. You bring the audience and the trust.</div></div>
+          <div class="wrow"><span class="wrow-ic">❌</span><div class="wrow-text"><strong>No purchased followers or fake engagement</strong>We verify authentic trust before every single partnership</div></div>
         </div>
       </div>
       <div class="rv d2">
-        <div class="form-wrap"><div class="form-hd"><div class="fh-lbl">Partner Application</div><div class="fh-title">Apply for your spot</div></div>
-        <div class="gform-wrap" id="gw"><div class="gform-sk"></div><iframe src="https://docs.google.com/forms/d/1je7jKC3Qlqr_pwbEPMsxzCyKCwB6o4qnFljygIQxFUM/viewform?embedded=true" id="gf" class="gform-frame" title="CLARIVA partner application" width="100%" height="720" frameborder="0" marginheight="0" marginwidth="0" loading="eager">Loading&#8230;</iframe></div></div>
+        <div class="fbox">
+          <div class="fbox-head">
+            <div class="fbox-label">Partner Application</div>
+            <div class="fbox-title">Apply for your spot</div>
+          </div>
+          <div class="gform-wrap" id="gw">
+            <div class="gsk"></div>
+            <iframe src="https://docs.google.com/forms/d/1je7jKC3Qlqr_pwbEPMsxzCyKCwB6o4qnFljygIQxFUM/viewform?embedded=true"
+              id="gf" class="gframe" title="CLARIVA Partner Application"
+              width="100%" height="720" frameborder="0"
+              marginheight="0" marginwidth="0" loading="eager">Loading…</iframe>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="faq-in">
-    <div class="faq-hd rv"><div class="s-tag gld">Quick Answers</div><h2 class="s-title">Straight questions.<br><em>Clear terms.</em></h2></div>
+<section class="faq-sect section" id="faq">
+  <div class="faq-inner">
+    <div class="faq-head rv">
+      <div class="sec-tag gld">Quick Answers</div>
+      <h2 class="sec-h">Straight questions.<br><em>Clear terms.</em></h2>
+    </div>
     <div class="faq-list rv">
-      <details class="faq-item"><summary>How does CLARIVA earn on the partnership path?<span class="faq-ic">+</span></summary><p class="faq-ans">Zero upfront from you on Path One. We earn through revenue share only after you earn &#8212; 20% on starter launches under $3K, 25% on growth $3K&#8211;$10K, 30% on scale $10K+. If you earn nothing, we earn nothing. That alignment is the whole model.</p></details>
-      <details class="faq-item"><summary>What is included in the $99 blueprint?<span class="faq-ic">+</span></summary><p class="faq-ans">A premium Notion workspace &#8212; not a PDF. Your complete digital product, personalised 14-day launch roadmap, revenue projection, DM scripts, launch tracker, and voice guide. Delivered within 24 hours. You keep 100% of every sale. Forever.</p></details>
-      <details class="faq-item"><summary>Does my audience ever find out CLARIVA exists?<span class="faq-ic">+</span></summary><p class="faq-ans">No. That is why we are called the Shadow Operator. Every word we write sounds exactly like you. We study your content, match your vocabulary, sentence length, emotional register. Your audience invests in you. Your credibility stays intact. We exist only in the background.</p></details>
-      <details class="faq-item"><summary>Why is zero upfront such a big deal?<span class="faq-ic">+</span></summary><p class="faq-ans">Every agency that charges upfront is telling you they are not confident enough in their own results to wait for them. When we put $0 upfront &#8212; we are telling you we are so certain this works that we risk our time and expertise before you risk a single dollar. That is not a feature. That is proof.</p></details>
-      <details class="faq-item"><summary>Who is the right fit for CLARIVA?<span class="faq-ic">+</span></summary><p class="faq-ans">Creators with 20,000 to 600,000+ followers across any platform who post consistently with genuine engagement. Any niche. No product needed. We do not work with purchased followers or fake engagement. We verify authentic trust before every partnership.</p></details>
+      <details class="faq-item"><summary>How does CLARIVA earn on the partnership path?<span class="faq-ic">+</span></summary><p class="faq-ans">Zero upfront from you. We earn through revenue share only after you earn — 20% on launches under $3K, 25% on $3K–$10K, 30% on $10K+. If you earn nothing, we earn nothing. That alignment is the whole model.</p></details>
+      <details class="faq-item"><summary>What exactly is included in the $99 blueprint?<span class="faq-ic">+</span></summary><p class="faq-ans">A premium Notion workspace — not a PDF. Your complete digital product (title, chapters, pricing, platform), a personalised 14-day launch roadmap, revenue projection for your specific audience, DM scripts, story prompts, and a launch tracker. Delivered within 24 hours. You keep 100% of every sale forever.</p></details>
+      <details class="faq-item"><summary>Will my audience ever know CLARIVA exists?<span class="faq-ic">+</span></summary><p class="faq-ans">Never. That is why we are called the Shadow Operator. Every word we write sounds exactly like you. We study your content, match your vocabulary, your sentence length, your humour, your emotional register. Your audience invests in you. Your credibility stays completely intact.</p></details>
+      <details class="faq-item"><summary>Why does zero upfront actually matter?<span class="faq-ic">+</span></summary><p class="faq-ans">Every agency that charges upfront is telling you they aren't confident enough in their results to wait for them. When CLARIVA puts $0 upfront — we are telling you we are so certain this works that we risk our time and expertise before you risk a single dollar. That alignment is everything.</p></details>
+      <details class="faq-item"><summary>Who is the right fit for CLARIVA?<span class="faq-ic">+</span></summary><p class="faq-ans">Creators with 20,000 to 600,000+ followers across any platform who post consistently with genuine engagement. Any niche. No product needed. We do not work with purchased followers or fake engagement. We build on authentic trust only.</p></details>
+      <details class="faq-item"><summary>What is the 14-day sequence exactly?<span class="faq-ic">+</span></summary><p class="faq-ans">A complete day-by-day launch system: 14 posts, story sequences, DM scripts, and email prompts — all ghostwritten in your voice. It uses 11 proven psychological buy triggers that move your audience from aware to committed. Every day is planned. Every word is written. You post. Income arrives.</p></details>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <div class="ft-in">
+  <div class="ft-inner">
     <div class="ft-top">
-      <div><a href="#home" class="nav-brand"><div class="nav-mark"><img src="clariva-logo.jpg" alt="CLARIVA"></div><div><span class="nav-name">Clariva</span><span class="nav-tag">Shadow Operator</span></div></a><p class="ft-brand-t">The silent partner behind creator monetisation. We build it. You post it. We split what it generates &#8212; after you earn.</p></div>
-      <div><div class="ft-col-h">Navigate</div><ul class="ft-links"><li><a href="#why">Why CLARIVA</a></li><li><a href="#process">Process</a></li><li><a href="#paths">Compare Paths</a></li><li><a href="#revenue">Revenue</a></li><li><a href="#apply">Apply</a></li></ul></div>
-      <div><div class="ft-col-h">Partner</div><ul class="ft-links"><li><a href="#apply">Apply Now</a></li><li><a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener">Get $99 Blueprint</a></li><li><a href="https://instagram.com/clariva.tech" target="_blank" rel="noopener">@clariva.tech</a></li></ul></div>
-      <div><div class="ft-col-h">Contact</div><ul class="ft-links"><li><a href="mailto:emmanuelmaende@gmail.com">emmanuelmaende@gmail.com</a></li><li><span style="color:var(--muted);font-size:13px;font-weight:300">Response within 24 hours</span></li></ul></div>
+      <div>
+        <a href="#home" class="nav-brand">
+          <div class="nav-logo"><img src="clariva-logo.jpg" alt="CLARIVA"></div>
+          <div><span class="nav-wordmark">Clariva</span><span class="nav-sub">Shadow Operator</span></div>
+        </a>
+        <p class="ft-brand-desc">The silent partner behind creator monetisation. We build it. You post it. We split what it generates — after you earn.</p>
+      </div>
+      <div>
+        <div class="ft-col-h">Navigate</div>
+        <ul class="ft-links">
+          <li><a href="#why">Why CLARIVA</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#paths">Both Paths</a></li>
+          <li><a href="#revenue">Revenue</a></li>
+          <li><a href="#apply">Apply</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-h">Partner</div>
+        <ul class="ft-links">
+          <li><a href="#apply">Apply Now</a></li>
+          <li><a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener">Get $99 Blueprint</a></li>
+          <li><a href="https://instagram.com/clariva.tech" target="_blank" rel="noopener">@clariva.tech</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-h">Contact</div>
+        <ul class="ft-links">
+          <li><a href="mailto:emmanuelmaende@gmail.com">emmanuelmaende@gmail.com</a></li>
+          <li><span style="color:var(--t0);font-size:12px">Response within 24 hours</span></li>
+        </ul>
+      </div>
     </div>
-    <div class="ft-bot"><p class="ft-copy">&#169; 2026 CLARIVA. All rights reserved.</p><p class="ft-built">We don&#8217;t sell vitamins. We sell the painkiller.</p></div>
+    <div class="ft-bottom">
+      <span class="ft-copy">© 2026 CLARIVA. All rights reserved.</span>
+      <span class="ft-sign">We don't sell vitamins. We sell the painkiller.</span>
+    </div>
   </div>
 </footer>
 
-<div class="float" id="fl">
-  <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener">Get My Blueprint &#8212; $99 &#8594;</a>
+<!-- FLOATING CTA -->
+<div class="float-cta" id="floatCta">
+  <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener">
+    Get My Blueprint — $99 →
+  </a>
 </div>
 
 <script>
 (function(){
 "use strict";
 
-/* ANIMATED BACKGROUND CANVAS */
-(function(){
-  const canvas=document.getElementById('bgCanvas');
-  if(!canvas||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-  const ctx=canvas.getContext('2d');
-  let W,H,pts=[];
-  const dpr=Math.min(window.devicePixelRatio||1,2);
-  const COLS=['rgba(139,26,66,','rgba(184,144,30,','rgba(100,18,50,','rgba(140,110,20,'];
-
-  function resize(){
-    W=window.innerWidth;H=window.innerHeight;
-    canvas.width=Math.floor(W*dpr);canvas.height=Math.floor(H*dpr);
-    canvas.style.width=W+'px';canvas.style.height=H+'px';
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-  }
-  function init(){
-    pts=[];
-    const n=Math.min(60,Math.floor((W*H)/16000));
-    for(let i=0;i<n;i++)pts.push({
+/* ═══ ANIMATED BACKGROUND ════════════════════════════════════ */
+const canvas=document.getElementById('bg');
+const ctx=canvas.getContext('2d');
+let W,H,orbs=[];
+const COLS=['rgba(125,22,53,','rgba(100,18,40,','rgba(180,130,30,','rgba(90,15,36,'];
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+function spawnOrbs(){
+  orbs=[];
+  const n=Math.min(52,Math.floor(W*H/16000));
+  for(let i=0;i<n;i++){
+    orbs.push({
       x:Math.random()*W,y:Math.random()*H,
-      vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.2,
-      r:Math.random()*180+60,a:Math.random()*.07+.02,
+      vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.22,
+      r:Math.random()*180+70,
+      a:Math.random()*.07+.02,
       c:COLS[Math.floor(Math.random()*COLS.length)],
-      tw:Math.random()*Math.PI*2,ts:Math.random()*.003+.001
+      θ:Math.random()*Math.PI*2,
+      ω:Math.random()*.003+.0008
     });
   }
-
-  let running=!document.hidden;
-  function draw(){
-    if(!running)return;
-    ctx.clearRect(0,0,W,H);
-    pts.forEach(p=>{
-      p.tw+=p.ts;
-      p.x+=p.vx+Math.sin(p.tw)*.18;
-      p.y+=p.vy+Math.cos(p.tw*.7)*.12;
-      if(p.x<-p.r)p.x=W+p.r;if(p.x>W+p.r)p.x=-p.r;
-      if(p.y<-p.r)p.y=H+p.r;if(p.y>H+p.r)p.y=-p.r;
-      const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r);
-      g.addColorStop(0,p.c+p.a+')');
-      g.addColorStop(0.5,p.c+(p.a*.35)+')');
-      g.addColorStop(1,p.c+'0)');
-      ctx.fillStyle=g;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
-    });
-    requestAnimationFrame(draw);
-  }
-  document.addEventListener('visibilitychange',()=>{running=!document.hidden;if(running)requestAnimationFrame(draw)});
-  resize();init();requestAnimationFrame(draw);
-  window.addEventListener('resize',()=>{resize();init()},{passive:true});
-})();
-
-/* CURSOR */
-const cr=document.getElementById('cr');
-if(cr&&window.matchMedia('(hover:hover)').matches){
-  let mx=-200,my=-200,rx=-200,ry=-200;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cr.style.left=mx+'px';cr.style.top=my+'px'});
-  document.querySelectorAll('a,button,.mp,.flow-step,.rev-tier,.gi,.bc,.dt-row,.ia-card,.astep').forEach(el=>{
-    el.addEventListener('mouseenter',()=>cr.classList.add('lg'));
-    el.addEventListener('mouseleave',()=>cr.classList.remove('lg'));
-  });
 }
+function frame(){
+  ctx.clearRect(0,0,W,H);
+  orbs.forEach(o=>{
+    o.θ+=o.ω;
+    o.x+=o.vx+Math.sin(o.θ)*.18;
+    o.y+=o.vy+Math.cos(o.θ*.8)*.12;
+    if(o.x<-o.r)o.x=W+o.r;else if(o.x>W+o.r)o.x=-o.r;
+    if(o.y<-o.r)o.y=H+o.r;else if(o.y>H+o.r)o.y=-o.r;
+    const g=ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,o.r);
+    g.addColorStop(0,o.c+o.a+')');
+    g.addColorStop(1,o.c+'0)');
+    ctx.fillStyle=g;
+    ctx.beginPath();ctx.arc(o.x,o.y,o.r,0,Math.PI*2);ctx.fill();
+  });
+  requestAnimationFrame(frame);
+}
+resize();spawnOrbs();frame();
+window.addEventListener('resize',()=>{resize();spawnOrbs();},{passive:true});
 
-/* PROGRESS + NAV + FLOAT */
-const sp=document.getElementById('sp'),nav=document.getElementById('nav'),fl=document.getElementById('fl');
+/* ═══ CURSOR ══════════════════════════════════════════════════ */
+const cur=document.getElementById('cur');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+},{passive:true});
+document.querySelectorAll('a,button,.mcard,.fstep,.rtier,.gimg,.bcomp,.pc-row').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cur.classList.add('big'));
+  el.addEventListener('mouseleave',()=>cur.classList.remove('big'));
+});
+
+/* ═══ SCROLL PROGRESS + NAV + FLOAT ══════════════════════════ */
+const prog=document.getElementById('progress');
+const nav=document.getElementById('nav');
+const flt=document.getElementById('floatCta');
 window.addEventListener('scroll',()=>{
   const h=document.documentElement.scrollHeight-window.innerHeight;
-  sp.style.width=(h>0?(window.scrollY/h)*100:100)+'%';
-  nav.classList.toggle('scrolled',window.scrollY>40);
-  fl.classList.toggle('show',window.scrollY>600);
+  prog.style.width=(h>0?(scrollY/h)*100:100)+'%';
+  nav.classList.toggle('opaque',scrollY>50);
+  flt.classList.toggle('visible',scrollY>700);
 },{passive:true});
 
-/* MOBILE NAV */
-const bg=document.getElementById('bg'),mn=document.getElementById('mn');
-let navOpen=false;
-bg.addEventListener('click',()=>{
-  navOpen=!navOpen;mn.classList.toggle('open',navOpen);
-  document.body.style.overflow=navOpen?'hidden':'';
-  const ss=bg.querySelectorAll('span');
-  if(navOpen){ss[0].style.transform='translateY(7px) rotate(45deg)';ss[1].style.opacity='0';ss[2].style.transform='translateY(-7px) rotate(-45deg)'}
-  else{ss.forEach(s=>{s.style.transform='';s.style.opacity=''})}
+/* ═══ MOBILE NAV ══════════════════════════════════════════════ */
+const btn=document.getElementById('burgerBtn');
+const mnav=document.getElementById('mobileNav');
+let open=false;
+btn.addEventListener('click',()=>{
+  open=!open;mnav.classList.toggle('open',open);
+  document.body.style.overflow=open?'hidden':'';
 });
-document.querySelectorAll('.ml').forEach(a=>a.addEventListener('click',()=>{
-  navOpen=false;mn.classList.remove('open');document.body.style.overflow='';
-  bg.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity=''});
+mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  open=false;mnav.classList.remove('open');document.body.style.overflow='';
 }));
 
-/* SCROLL REVEAL */
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}});
-},{threshold:.06,rootMargin:'0px 0px -28px 0px'});
-document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+/* ═══ SCROLL REVEAL ═══════════════════════════════════════════ */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});
+},{threshold:.06,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
-/* HERO COUNT UP */
-const cn=document.getElementById('cnum');
-if(cn){
-  const no=new IntersectionObserver(entries=>{
+/* ═══ HERO COUNT-UP ═══════════════════════════════════════════ */
+const cu=document.getElementById('countup');
+if(cu){
+  const cio=new IntersectionObserver(entries=>{
     if(entries[0].isIntersecting){
-      const s=performance.now();
-      const r=t=>{const p=Math.min((t-s)/1800,1);const e=1-Math.pow(1-p,3);cn.textContent='$'+Math.round(7865*e).toLocaleString();if(p<1)requestAnimationFrame(r)};
-      requestAnimationFrame(r);no.disconnect();
+      const start=performance.now();
+      (function tick(t){
+        const p=Math.min((t-start)/1900,1);
+        const ease=1-Math.pow(1-p,3);
+        cu.textContent='$'+Math.round(7865*ease).toLocaleString();
+        if(p<1)requestAnimationFrame(tick);
+      })(start);
+      cio.disconnect();
     }
-  },{threshold:.5});
-  no.observe(cn);
+  },{threshold:.4});
+  cio.observe(cu);
 }
 
-/* ANIMATED BARS */
-const barObs=new IntersectionObserver(entries=>{
-  if(entries[0].isIntersecting){
-    setTimeout(()=>{
-      const b1=document.getElementById('b1'),b2=document.getElementById('b2');
-      const b3=document.getElementById('b3'),b4=document.getElementById('b4');
-      if(b1)b1.style.transform='scaleX(1)';
-      if(b2)b2.style.transform='scaleX(1)';
-      if(b3)b3.style.transform='scaleX(1)';
-      if(b4)b4.style.transform='scaleX(1)';
-    },120);
-    barObs.disconnect();
-  }
-},{threshold:.25});
-const rb=document.getElementById('rev-bars');if(rb)barObs.observe(rb);
+/* ═══ BAR CHART ANIMATION ════════════════════════════════════ */
+const rc=document.getElementById('revChart');
+if(rc){
+  const bio=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting){
+      setTimeout(()=>{
+        document.getElementById('bar1').style.transform='scaleX(1)';
+      },100);
+      setTimeout(()=>{
+        document.getElementById('bar2').style.transform='scaleX(1)';
+      },300);
+      bio.disconnect();
+    }
+  },{threshold:.3});
+  bio.observe(rc);
+}
 
-/* FORM */
+/* ═══ FORM LOAD ═══════════════════════════════════════════════ */
 const gf=document.getElementById('gf'),gw=document.getElementById('gw');
-if(gf){gf.addEventListener('load',()=>gw.classList.add('loaded'));setTimeout(()=>gw.classList.add('loaded'),8000)}
+if(gf){
+  gf.addEventListener('load',()=>gw.classList.add('loaded'));
+  setTimeout(()=>gw.classList.add('loaded'),9000);
+}
 
-/* FAQ */
+/* ═══ FAQ — SINGLE OPEN ══════════════════════════════════════ */
 document.querySelectorAll('.faq-item').forEach(d=>{
-  d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('.faq-item').forEach(o=>{if(o!==d)o.open=false})});
+  d.addEventListener('toggle',()=>{
+    if(d.open)document.querySelectorAll('.faq-item').forEach(o=>{if(o!==d)o.open=false;});
+  });
 });
 
-/* BC HOVER */
-document.querySelectorAll('.bc').forEach(b=>{
-  b.addEventListener('mouseenter',()=>b.querySelector('.bc-name').style.textShadow='0 0 24px rgba(184,144,30,.35)');
-  b.addEventListener('mouseleave',()=>b.querySelector('.bc-name').style.textShadow='');
+/* ═══ BRAND COMPARISON HOVER ════════════════════════════════ */
+document.querySelectorAll('.bcomp').forEach(b=>{
+  const name=b.querySelector('.bcomp-name');
+  if(!name)return;
+  b.addEventListener('mouseenter',()=>name.style.textShadow='0 0 24px rgba(201,168,76,.45)');
+  b.addEventListener('mouseleave',()=>name.style.textShadow='');
 });
 
 })();
