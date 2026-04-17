@@ -201,9 +201,9 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 :root {
-  --bg: #05020A;
-  --burgundy: #D4145A;
-  --gold: #F5C842;
+  --bg: #020305;
+  --burgundy: #0A2E2B;
+  --gold: #D4AF37;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -230,26 +230,26 @@ h1,h2,h3 { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: no
 }
 
 .cursor, .cursor-dot { position: fixed; top:0; left:0; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); mix-blend-mode: screen; }
-.cursor { width: 40px; height: 40px; border: 1px solid rgba(245,200,66,0.5); border-radius: 50%; transition: width .2s, height .2s, border-color .2s; }
+.cursor { width: 40px; height: 40px; border: 1px solid rgba(212,175,55,0.5); border-radius: 50%; transition: width .2s, height .2s, border-color .2s; }
 .cursor-dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold); }
-.cursor.hover { width: 60px; height: 60px; border-color: var(--burgundy); background: rgba(212,20,90,0.1); }
+.cursor.hover { width: 60px; height: 60px; border-color: var(--burgundy); background: rgba(10,46,43,0.1); }
 @media (max-width: 768px) { .cursor, .cursor-dot { display: none; } }
 
 .holo {
   position: relative;
   background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-  border: 1px solid rgba(245,200,66,0.18);
+  border: 1px solid rgba(212,175,55,0.18);
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   overflow: hidden;
 }
 .holo::before {
   content:''; position: absolute; inset: -200%;
-  background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(212,20,90,0.4) 60deg, transparent 120deg, rgba(245,200,66,0.5) 180deg, transparent 240deg, rgba(212,20,90,0.4) 300deg, transparent 360deg);
+  background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(10,46,43,0.4) 60deg, transparent 120deg, rgba(212,175,55,0.5) 180deg, transparent 240deg, rgba(10,46,43,0.4) 300deg, transparent 360deg);
   animation: spin 12s linear infinite; opacity: 0.6;
 }
 .holo::after {
   content:''; position: absolute; inset: 1px; border-radius: inherit;
-  background: radial-gradient(800px circle at var(--mx,50%) var(--my,50%), rgba(245,200,66,0.08), transparent 40%), #080510;
+  background: radial-gradient(800px circle at var(--mx,50%) var(--my,50%), rgba(212,175,55,0.08), transparent 40%), #080510;
 }
 .holo > * { position: relative; z-index: 2; }
 @keyframes spin { to { transform: rotate(360deg); } }
@@ -268,6 +268,18 @@ h1,h2,h3 { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: no
 @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 .ticker-fade { mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent); }
+
+  .clariva-bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: #020305; perspective: 1000px; }
+  .clariva-bg__inner { position: absolute; inset: -20%; width: 140%; height: 140%; transform-style: preserve-3d; animation: clariva-rotate 220s linear infinite; }
+  .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.7; mix-blend-mode: screen; will-change: transform; }
+  .orb--emerald { width: 720px; height: 720px; left: 5%; top: 10%; background: radial-gradient(circle at 35% 30%, #1a5d55 0%, #0A2E2B 55%, transparent 70%); animation: orb1 32s ease-in-out infinite; }
+  .orb--gold { width: 800px; height: 800px; left: 60%; top: 5%; background: radial-gradient(circle at 60% 40%, #f6e27f 0%, #D4AF37 45%, #8f7320 65%, transparent 70%); animation: orb2 28s ease-in-out infinite; }
+  .orb--sage { width: 650px; height: 650px; left: 20%; top: 55%; background: radial-gradient(circle at 50% 50%, #cfe3da 0%, #A7C4B8 50%, transparent 70%); animation: orb3 35s ease-in-out infinite; }
+  @keyframes clariva-rotate { from { transform: rotateZ(0deg) rotateX(7deg) rotateY(-5deg); } to { transform: rotateZ(360deg) rotateX(7deg) rotateY(-5deg); } }
+  @keyframes orb1 { 0%{transform:translate3d(0,0,0) scale(1)} 20%{transform:translate3d(50vw,20vh,200px) scale(1.3)} 40%{transform:translate3d(25vw,50vh,-150px) scale(0.85)} 60%{transform:translate3d(-20vw,25vh,120px) scale(1.15)} 80%{transform:translate3d(65vw,-20vh,-80px) scale(0.95)} 100%{transform:translate3d(0,0,0) scale(1)} }
+  @keyframes orb2 { 0%{transform:translate3d(0,0,0) scale(1.1)} 25%{transform:translate3d(-55vw,35vh,-120px) scale(0.9)} 50%{transform:translate3d(-70vw,-25vh,180px) scale(1.25)} 75%{transform:translate3d(-25vw,-40vh,60px) scale(0.85)} 100%{transform:translate3d(0,0,0) scale(1.1)} }
+  @keyframes orb3 { 0%{transform:translate3d(0,0,0) scale(1)} 22%{transform:translate3d(45vw,-30vh,150px) scale(1.25)} 44%{transform:translate3d(60vw,25vh,-100px) scale(0.9)} 66%{transform:translate3d(-35vw,35vh,170px) scale(1.2)} 88%{transform:translate3d(-50vw,-20vh,-70px) scale(0.95)} 100%{transform:translate3d(0,0,0) scale(1)} }
+
 </style>
 
 <style id="definitive-fixes">
@@ -295,7 +307,16 @@ p, span, div, li {
 .timeline-note::after { content: "14 days"; }
 </style>
 </head>
-<body class="antialiased selection:bg-[#D4145A]/30 selection:text-[#F5C842]">
+<body class="antialiased selection:bg-[#0A2E2B]/30 selection:text-[#D4AF37]">
+<!-- GUARANTEED 3D MOTION BACKGROUND -->
+<div class="clariva-bg" aria-hidden="true">
+  <div class="clariva-bg__inner">
+    <div class="orb orb--emerald"></div>
+    <div class="orb orb--gold"></div>
+    <div class="orb orb--sage"></div>
+  </div>
+</div>
+
 
 <!-- INTRO -->
 <div id="intro" class="fixed inset-0 z-[10000] bg-[#05020A] flex items-center justify-center transition-opacity duration-800">
@@ -303,13 +324,13 @@ p, span, div, li {
     <canvas id="intro-canvas" class="w-full h-full opacity-40"></canvas>
   </div>
   <div class="relative z-10 text-center px-6">
-    <div class="mb-8 inline-block p-[2px] rounded-3xl bg-gradient-to-b from-[#F5C842]/50 to-[#D4145A]/50">
+    <div class="mb-8 inline-block p-[2px] rounded-3xl bg-gradient-to-b from-[#D4AF37]/50 to-[#0A2E2B]/50">
       <div class="bg-black/80 rounded-3xl p-4 backdrop-blur-xl">
         <img src="data:image/jpeg;base64,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" alt="CLARIVA" class="w-20 h-20 md:w-28 md:h-28 object-contain rounded-2xl">
       </div>
     </div>
     <h1 class="text-5xl md:text-7xl font-black mb-4" style="font-family:'Syne',sans-serif;">
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4145A] via-[#F5C842] to-[#D4145A]">CLARIVA</span>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0A2E2B] via-[#D4AF37] to-[#0A2E2B]">CLARIVA</span>
     </h1>
     <p class="text-white/70 text-lg mb-12">Welcome to the inner circle. Only 5 creators monthly.</p>
     
@@ -319,7 +340,7 @@ p, span, div, li {
         <!-- Dash outline -->
         <div class="absolute inset-0 rounded-full border border-white/20 bg-black/40 backdrop-blur-sm overflow-hidden">
           <!-- Liquid fill -->
-          <div id="loadbar" class="h-full w-0 relative overflow-hidden" style="background: linear-gradient(90deg, #D4145A 0%, #F5C842 50%, #D4145A 100%); box-shadow: 0 0 30px rgba(245,200,66,0.6), inset 0 0 20px rgba(255,255,255,0.2); transition: width 0.1s linear;">
+          <div id="loadbar" class="h-full w-0 relative overflow-hidden" style="background: linear-gradient(90deg, #0A2E2B 0%, #D4AF37 50%, #0A2E2B 100%); box-shadow: 0 0 30px rgba(212,175,55,0.6), inset 0 0 20px rgba(255,255,255,0.2); transition: width 0.1s linear;">
             <!-- Liquid wave effect -->
             <div class="absolute inset-0 opacity-60" style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); animation: liquid-flow 1.5s infinite;"></div>
             <!-- Shimmer -->
@@ -327,7 +348,7 @@ p, span, div, li {
           </div>
         </div>
         <!-- Glow under dash -->
-        <div class="absolute -inset-2 rounded-full blur-xl opacity-50" style="background: linear-gradient(90deg, #D4145A, #F5C842);"></div>
+        <div class="absolute -inset-2 rounded-full blur-xl opacity-50" style="background: linear-gradient(90deg, #0A2E2B, #D4AF37);"></div>
       </div>
     </div>
     
@@ -347,9 +368,9 @@ p, span, div, li {
 
 <!-- BACKGROUND -->
 <div class="fixed inset-0 pointer-events-none">
-  <div class="absolute -top-60 -left-60 w-[700px] h-[700px] rounded-full blur-[160px] opacity-[0.18]" style="background: radial-gradient(circle, #D4145A, transparent 60%);"></div>
-  <div class="absolute top-[20%] -right-60 w-[600px] h-[600px] rounded-full blur-[140px] opacity-[0.22]" style="background: radial-gradient(circle, #F5C842, transparent 60%);"></div>
-  <div class="absolute -bottom-40 left-1/4 w-[800px] h-[800px] rounded-full blur-[180px] opacity-[0.15]" style="background: radial-gradient(circle, #D4145A, transparent 60%);"></div>
+  <div class="absolute -top-60 -left-60 w-[700px] h-[700px] rounded-full blur-[160px] opacity-[0.18]" style="background: radial-gradient(circle, #0A2E2B, transparent 60%);"></div>
+  <div class="absolute top-[20%] -right-60 w-[600px] h-[600px] rounded-full blur-[140px] opacity-[0.22]" style="background: radial-gradient(circle, #D4AF37, transparent 60%);"></div>
+  <div class="absolute -bottom-40 left-1/4 w-[800px] h-[800px] rounded-full blur-[180px] opacity-[0.15]" style="background: radial-gradient(circle, #0A2E2B, transparent 60%);"></div>
 </div>
 <canvas id="mesh" class="fixed inset-0 w-full h-full pointer-events-none opacity-[0.15]"></canvas>
 <canvas id="particles" class="fixed inset-0 w-full h-full pointer-events-none"></canvas>
@@ -364,14 +385,14 @@ p, span, div, li {
 <nav class="fixed top-0 w-full z-40 border-b border-white/[0.06] bg-[#05020A]/70 backdrop-blur-2xl">
   <div class="max-w-[1200px] mx-auto px-6 h-[74px] flex items-center justify-between">
     <div class="flex items-center gap-3">
-      <img src="data:image/jpeg;base64,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" class="w-9 h-9 rounded-xl object-cover ring-1 ring-[#F5C842]/20" alt="">
+      <img src="data:image/jpeg;base64,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" class="w-9 h-9 rounded-xl object-cover ring-1 ring-[#D4AF37]/20" alt="">
       <span class="text-xl tracking-[0.18em] font-bold">CLARIVA</span>
     </div>
     <div class="flex items-center gap-3">
-      <span class="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F5C842]/10 border border-[#F5C842]/20 text-[11px] tracking-widest font-medium text-[#F5C842]"><span class="w-1.5 h-1.5 rounded-full bg-[#F5C842] animate-pulse"></span>5 CREATORS MONTHLY</span>
+      <span class="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[11px] tracking-widest font-medium text-[#D4AF37]"><span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse"></span>5 CREATORS MONTHLY</span>
       <a href="#apply" class="group relative px-5 py-2.5 rounded-full bg-white text-black font-medium text-sm overflow-hidden hover:translate-y-[-1px] transition">
         <span class="relative z-10">Apply Now</span>
-        <span class="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition bg-gradient-to-r from-[#D4145A] to-[#F5C842] duration-500"></span>
+        <span class="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition bg-gradient-to-r from-[#0A2E2B] to-[#D4AF37] duration-500"></span>
       </a>
     </div>
   </div>
@@ -382,14 +403,14 @@ p, span, div, li {
 <section class="relative pt-44 pb-24 px-6">
   <div class="max-w-[1200px] mx-auto">
     <div class="text-center max-w-5xl mx-auto">
-      <div class="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-[#D4145A]/30 bg-[#D4145A]/[0.08] backdrop-blur">
-        <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4145A] opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-[#D4145A]"></span></span>
+      <div class="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-[#0A2E2B]/30 bg-[#0A2E2B]/[0.08] backdrop-blur">
+        <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0A2E2B] opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-[#0A2E2B]"></span></span>
         <span class="text-xs tracking-[0.2em] font-medium text-white/80">5 CREATORS MONTHLY</span>
       </div>
       
       <h1 class="text-[clamp(40px,8vw,96px)] leading-[0.85] font-black tracking-[-0.03em]">
         You Built The<br>
-        <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(100deg, #D4145A 0%, #F5C842 50%, #D4145A 100%);">Audience.</span><br>
+        <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(100deg, #0A2E2B 0%, #D4AF37 50%, #0A2E2B 100%);">Audience.</span><br>
         We Install The Trademark.
       </h1>
       
@@ -401,7 +422,7 @@ p, span, div, li {
         <a href="#apply" class="holo shimmer group w-full sm:w-auto px-8 py-4 rounded-2xl font-semibold text-[15px] tracking-wide hover:scale-[1.02] transition">
           <span class="flex items-center justify-center gap-2">Partner: $0 upfront <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="group-hover:translate-x-0.5 transition"><path d="M7 3l5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg></span>
         </a>
-        <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-4 rounded-2xl font-semibold text-[15px] tracking-wide border border-white/15 hover:border-[#F5C842]/50 hover:bg-white/5 transition backdrop-blur">
+        <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-4 rounded-2xl font-semibold text-[15px] tracking-wide border border-white/15 hover:border-[#D4AF37]/50 hover:bg-white/5 transition backdrop-blur">
           Blueprint: $99
         </a>
       </div>
@@ -411,7 +432,30 @@ p, span, div, li {
         <div class="holo rounded-2xl p-[1px]"><div class="rounded-2xl bg-black/40 px-4 py-5 text-center"><div class="text-[11px] uppercase tracking-widest text-white/50">Followers</div><div class="mt-1 font-semibold">30K – 600K+</div></div></div>
         <div class="holo rounded-2xl p-[1px]"><div class="rounded-2xl bg-black/40 px-4 py-5 text-center"><div class="text-[11px] uppercase tracking-widest text-white/50">Partner</div><div class="mt-1 font-semibold">$0 upfront</div></div></div>
         <div class="holo rounded-2xl p-[1px]"><div class="rounded-2xl bg-black/40 px-4 py-5 text-center"><div class="text-[11px] uppercase tracking-widest text-white/50">Your Split</div><div class="mt-1 font-semibold">70-80%</div></div></div>
-        <div class="holo rounded-2xl p-[1px]"><div class="rounded-2xl bg-black/40 px-4 py-5 text-center"><div class="text-[11px] uppercase tracking-widest text-white/50">Blueprint</div><div class="mt-1 font-semibold text-[#F5C842]">$99</div></div></div>
+        <div class="holo rounded-2xl p-[1px]"><div class="rounded-2xl bg-black/40 px-4 py-5 text-center"><div class="text-[11px] uppercase tracking-widest text-white/50">Blueprint</div><div class="mt-1 font-semibold text-[#D4AF37]">$99</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- MANIFESTO - For Wealthy Clients -->
+<section id="manifesto" class="relative py-24 px-6" style="z-index:10">
+  <div class="max-w-[1000px] mx-auto">
+    <div class="relative rounded-[32px] overflow-hidden">
+      <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(10,46,43,0.15), rgba(0,0,0,0.6)); backdrop-filter: blur(24px);"></div>
+      <div class="relative border border-white/10 rounded-[32px] p-12 md:p-20 text-center">
+        <div class="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/5">
+          <span class="w-1 h-1 rounded-full bg-[#D4AF37]"></span>
+          <span class="text-[11px] tracking-[0.2em] text-[#D4AF37] font-medium">CLARIVA PRIVATE</span>
+        </div>
+        <h2 class="text-[clamp(36px,6vw,72px)] font-black tracking-[-0.02em] mb-12" style="font-family:'Syne',sans-serif;">MANIFESTO</h2>
+        <div class="max-w-3xl mx-auto space-y-8">
+          <p class="text-[22px] md:text-[28px] leading-[1.4] font-light">Followers are <span class="text-white">attention.</span><br>Trademarks are <span class="text-[#D4AF37]">assets.</span></p>
+          <div class="h-[1px] w-24 mx-auto bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+          <p class="text-[17px] md:text-[19px] leading-relaxed text-white/80">We work with women who have already built influence.<br>Not to chase more, but to preserve what they've earned.</p>
+          <p class="text-[17px] md:text-[19px] leading-relaxed text-white/70">This is wealth preservation for creators.<br><span class="text-white/90 font-medium">Legacy, not likes.</span></p>
+        </div>
       </div>
     </div>
   </div>
@@ -422,27 +466,27 @@ p, span, div, li {
   <div class="flex marquee whitespace-nowrap py-4">
     <div class="flex items-center gap-12 px-6">
       <span class="text-[13px] tracking-[0.2em] text-white/60">FOR CREATORS 30K – 600K+</span>
-      <span class="w-1 h-1 rounded-full bg-[#D4145A]"></span>
+      <span class="w-1 h-1 rounded-full bg-[#0A2E2B]"></span>
       <span class="text-[13px] tracking-[0.2em] text-white/60">YOU KEEP 70-80%, CLARIVA EARNS 20-30% ONLY AFTER LAUNCH</span>
-      <span class="w-1 h-1 rounded-full bg-[#F5C842]"></span>
+      <span class="w-1 h-1 rounded-full bg-[#D4AF37]"></span>
       <span class="text-[13px] tracking-[0.2em] text-white/60">PARTNER: $0 UPFRONT</span>
-      <span class="w-1 h-1 rounded-full bg-[#D4145A]"></span>
+      <span class="w-1 h-1 rounded-full bg-[#0A2E2B]"></span>
       <span class="text-[13px] tracking-[0.2em] text-white/60">BLUEPRINT: $99</span>
-      <span class="w-1 h-1 rounded-full bg-[#F5C842]"></span>
+      <span class="w-1 h-1 rounded-full bg-[#D4AF37]"></span>
       <span class="text-[13px] tracking-[0.2em] text-white/60">5 CREATORS MONTHLY</span>
-      <span class="w-1 h-1 rounded-full bg-[#D4145A]"></span>
+      <span class="w-1 h-1 rounded-full bg-[#0A2E2B]"></span>
     </div>
     <div class="flex items-center gap-12 px-6" aria-hidden="true">
       <span class="text-[13px] tracking-[0.2em] text-white/60">FOR CREATORS 30K – 600K+</span>
-      <span class="w-1 h-1 rounded-full bg-[#D4145A]"></span>
+      <span class="w-1 h-1 rounded-full bg-[#0A2E2B]"></span>
       <span class="text-[13px] tracking-[0.2em] text-white/60">YOU KEEP 70-80%, CLARIVA EARNS 20-30% ONLY AFTER LAUNCH</span>
-      <span class="w-1 h-1 rounded-full bg-[#F5C842]"></span>
+      <span class="w-1 h-1 rounded-full bg-[#D4AF37]"></span>
       <span class="text-[13px] tracking-[0.2em] text-white/60">PARTNER: $0 UPFRONT</span>
-      <span class="w-1 h-1 rounded-full bg-[#D4145A]"></span>
+      <span class="w-1 h-1 rounded-full bg-[#0A2E2B]"></span>
       <span class="text-[13px] tracking-[0.2em] text-white/60">BLUEPRINT: $99</span>
-      <span class="w-1 h-1 rounded-full bg-[#F5C842]"></span>
+      <span class="w-1 h-1 rounded-full bg-[#D4AF37]"></span>
       <span class="text-[13px] tracking-[0.2em] text-white/60">5 CREATORS MONTHLY</span>
-      <span class="w-1 h-1 rounded-full bg-[#D4145A]"></span>
+      <span class="w-1 h-1 rounded-full bg-[#0A2E2B]"></span>
     </div>
   </div>
 </section>
@@ -451,7 +495,7 @@ p, span, div, li {
 <section class="px-6 py-24 md:py-32">
   <div class="max-w-5xl mx-auto text-center">
     <div class="inline-block mb-8">
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="mx-auto opacity-30"><path d="M16 12H8v12h8V12zm20 0h-8v12h8V12z" fill="url(#g)"/><defs><linearGradient id="g" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#D4145A"/><stop offset="1" stop-color="#F5C842"/></linearGradient></defs></svg>
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="mx-auto opacity-30"><path d="M16 12H8v12h8V12zm20 0h-8v12h8V12z" fill="url(#g)"/><defs><linearGradient id="g" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#0A2E2B"/><stop offset="1" stop-color="#D4AF37"/></linearGradient></defs></svg>
     </div>
     <blockquote class="text-[32px] md:text-[52px] leading-[1.15] font-bold tracking-tight">
       Welcome to the inner circle.<br><span class="text-white/60">Only 5 creators monthly.</span>
@@ -468,9 +512,9 @@ p, span, div, li {
       <p class="text-lg text-white/70 leading-relaxed">You have 30K – 600K+ followers but revenue is unpredictable. Brand deals ghost. Followers scroll. No system owns the category.</p>
       
       <div class="mt-10 space-y-4">
-        <div class="flex gap-4 items-start"><div class="mt-1 w-5 h-5 rounded-full bg-[#D4145A]/20 border-[#D4145A]/40 flex items-center justify-center flex-shrink-0"><span class="text-[10px] text-[#D4145A]">✕</span></div><div><p class="font-medium">Deals over assets</p><p class="text-sm text-white/60">Income stops when posting stops</p></div></div>
-        <div class="flex gap-4 items-start"><div class="mt-1 w-5 h-5 rounded-full bg-[#D4145A]/20 border border-[#D4145A]/40 flex items-center justify-center flex-shrink-0"><span class="text-[10px] text-[#D4145A]">✕</span></div><div><p class="font-medium">Content without framework</p><p class="text-sm text-white/60">No trademarkable method followers buy</p></div></div>
-        <div class="flex gap-4 items-start"><div class="mt-1 w-5 h-5 rounded-full bg-[#D4145A]/20 border border-[#D4145A]/40 flex items-center justify-center flex-shrink-0"><span class="text-[10px] text-[#D4145A]">✕</span></div><div><p class="font-medium">Audience, no offer</p><p class="text-sm text-white/60">30K – 600K+ watching, nothing to own</p></div></div>
+        <div class="flex gap-4 items-start"><div class="mt-1 w-5 h-5 rounded-full bg-[#0A2E2B]/20 border-[#0A2E2B]/40 flex items-center justify-center flex-shrink-0"><span class="text-[10px] text-[#0A2E2B]">✕</span></div><div><p class="font-medium">Deals over assets</p><p class="text-sm text-white/60">Income stops when posting stops</p></div></div>
+        <div class="flex gap-4 items-start"><div class="mt-1 w-5 h-5 rounded-full bg-[#0A2E2B]/20 border border-[#0A2E2B]/40 flex items-center justify-center flex-shrink-0"><span class="text-[10px] text-[#0A2E2B]">✕</span></div><div><p class="font-medium">Content without framework</p><p class="text-sm text-white/60">No trademarkable method followers buy</p></div></div>
+        <div class="flex gap-4 items-start"><div class="mt-1 w-5 h-5 rounded-full bg-[#0A2E2B]/20 border border-[#0A2E2B]/40 flex items-center justify-center flex-shrink-0"><span class="text-[10px] text-[#0A2E2B]">✕</span></div><div><p class="font-medium">Audience, no offer</p><p class="text-sm text-white/60">30K – 600K+ watching, nothing to own</p></div></div>
       </div>
     </div>
     <div class="lg:col-span-6">
@@ -478,12 +522,12 @@ p, span, div, li {
         <div class="rounded-[28px] bg-[#07050c] p-8 md:p-10">
           <div class="flex items-center justify-between mb-8">
             <h3 class="text-xl font-bold">The CLARIVA Shift</h3>
-            <span class="text-[10px] px-2.5 py-1 rounded-full bg-[#F5C842]/10 border border-[#F5C842]/20 text-[#F5C842] tracking-widest">INSTALLATION</span>
+            <span class="text-[10px] px-2.5 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[#D4AF37] tracking-widest">INSTALLATION</span>
           </div>
           <div class="space-y-6">
-            <div class="flex gap-4"><div class="w-8 h-8 rounded-xl bg-[#F5C842]/15 border border-[#F5C842]/30 flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M11.5 3.5L5.75 9.25L2.5 6" stroke="#F5C842" stroke-width="1.5"/></svg></div><div><p class="font-medium text-white">From creator to category</p><p class="text-sm text-white/60 mt-1">We engineer your Trademark Identity, Method, and Offer stack</p></div></div>
-            <div class="flex gap-4"><div class="w-8 h-8 rounded-xl bg-[#F5C842]/15 border border-[#F5C842]/30 flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M11.5 3.5L5.75 9.25L2.5 6" stroke="#F5C842" stroke-width="1.5"/></svg></div><div><p class="font-medium text-white">You keep 70-80%</p><p class="text-sm text-white/60 mt-1">CLARIVA earns 20-30% only after launch — Partner: $0 upfront</p></div></div>
-            <div class="flex gap-4"><div class="w-8 h-8 rounded-xl bg-[#F5C842]/15 border border-[#F5C842]/30 flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M11.5 3.5L5.75 9.25L2.5 6" stroke="#F5C842" stroke-width="1.5"/></svg></div><div><p class="font-medium text-white">Or start with Blueprint: $99</p><p class="text-sm text-white/60 mt-1">Full audit, positioning, and 14-day trademark map</p></div></div>
+            <div class="flex gap-4"><div class="w-8 h-8 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M11.5 3.5L5.75 9.25L2.5 6" stroke="#D4AF37" stroke-width="1.5"/></svg></div><div><p class="font-medium text-white">From creator to category</p><p class="text-sm text-white/60 mt-1">We engineer your Trademark Identity, Method, and Offer stack</p></div></div>
+            <div class="flex gap-4"><div class="w-8 h-8 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M11.5 3.5L5.75 9.25L2.5 6" stroke="#D4AF37" stroke-width="1.5"/></svg></div><div><p class="font-medium text-white">You keep 70-80%</p><p class="text-sm text-white/60 mt-1">CLARIVA earns 20-30% only after launch — Partner: $0 upfront</p></div></div>
+            <div class="flex gap-4"><div class="w-8 h-8 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M11.5 3.5L5.75 9.25L2.5 6" stroke="#D4AF37" stroke-width="1.5"/></svg></div><div><p class="font-medium text-white">Or start with Blueprint: $99</p><p class="text-sm text-white/60 mt-1">Full audit, positioning, and 14-day trademark map</p></div></div>
           </div>
         </div>
       </div>
@@ -501,7 +545,7 @@ p, span, div, li {
     <div class="grid md:grid-cols-3 gap-6">
       <div class="holo rounded-[28px] p-[1px] group hover:scale-[1.01] transition">
         <div class="rounded-[28px] bg-[#07050c]/90 p-8 h-full">
-          <div class="w-12 h-12 rounded-2xl mb-6 flex items-center justify-center" style="background: radial-gradient(circle at 30% 30%, rgba(212,20,90,0.4), rgba(212,20,90,0.05)); border:1px solid rgba(212,20,90,0.3);"><span class="text-xl font-bold text-[#D4145A]">I</span></div>
+          <div class="w-12 h-12 rounded-2xl mb-6 flex items-center justify-center" style="background: radial-gradient(circle at 30% 30%, rgba(10,46,43,0.4), rgba(10,46,43,0.05)); border:1px solid rgba(10,46,43,0.3);"><span class="text-xl font-bold text-[#0A2E2B]">I</span></div>
           <h3 class="text-2xl font-bold mb-3">Trademark Identity</h3>
           <p class="text-white/70 leading-relaxed">Category name, POV, visual language. You stop being "another creator" with 30K – 600K+ and become the name.</p>
           <div class="mt-6 pt-6 border-t border-white/5">
@@ -511,7 +555,7 @@ p, span, div, li {
       </div>
       <div class="holo rounded-[28px] p-[1px] group hover:scale-[1.01] transition">
         <div class="rounded-[28px] bg-[#07050c]/90 p-8 h-full">
-          <div class="w-12 h-12 rounded-2xl mb-6 flex items-center justify-center" style="background: radial-gradient(circle at 30% 30%, rgba(245,200,66,0.4), rgba(245,200,66,0.05)); border:1px solid rgba(245,200,66,0.3);"><span class="text-xl font-bold text-[#F5C842]">II</span></div>
+          <div class="w-12 h-12 rounded-2xl mb-6 flex items-center justify-center" style="background: radial-gradient(circle at 30% 30%, rgba(212,175,55,0.4), rgba(212,175,55,0.05)); border:1px solid rgba(212,175,55,0.3);"><span class="text-xl font-bold text-[#D4AF37]">II</span></div>
           <h3 class="text-2xl font-bold mb-3">Signature Framework</h3>
           <p class="text-white/70 leading-relaxed">Your proprietary method. Named, packaged, and proven. The asset followers pay for beyond content.</p>
           <div class="mt-6 pt-6 border-t border-white/5">
@@ -521,7 +565,7 @@ p, span, div, li {
       </div>
       <div class="holo rounded-[28px] p-[1px] group hover:scale-[1.01] transition">
         <div class="rounded-[28px] bg-[#07050c]/90 p-8 h-full">
-          <div class="w-12 h-12 rounded-2xl mb-6 flex items-center justify-center" style="background: radial-gradient(circle at 30% 30%, rgba(212,20,90,0.3), rgba(245,200,66,0.3)); border:1px solid rgba(245,200,66,0.3);"><span class="text-xl font-bold" style="background: linear-gradient(90deg,#D4145A,#F5C842); -webkit-background-clip:text; color:transparent;">III</span></div>
+          <div class="w-12 h-12 rounded-2xl mb-6 flex items-center justify-center" style="background: radial-gradient(circle at 30% 30%, rgba(10,46,43,0.3), rgba(212,175,55,0.3)); border:1px solid rgba(212,175,55,0.3);"><span class="text-xl font-bold" style="background: linear-gradient(90deg,#0A2E2B,#D4AF37); -webkit-background-clip:text; color:transparent;">III</span></div>
           <h3 class="text-2xl font-bold mb-3">Monetization Engine</h3>
           <p class="text-white/70 leading-relaxed">Offer architecture, launch system, retention. Built so you keep 70-80%, CLARIVA earns 20-30% only after launch.</p>
           <div class="mt-6 pt-6 border-t border-white/5">
@@ -566,38 +610,38 @@ p, span, div, li {
       <p class="mt-3 text-white/60">For creators with 30K – 600K+ — clear timeline, human contact.</p>
     </div>
     <div class="relative">
-      <div class="absolute left-[22px] md:left-1/2 top-8 bottom-8 w-[2px] bg-gradient-to-b from-[#D4145A]/50 via-[#F5C842]/50 to-transparent md:-translate-x-[1px]"></div>
+      <div class="absolute left-[22px] md:left-1/2 top-8 bottom-8 w-[2px] bg-gradient-to-b from-[#0A2E2B]/50 via-[#D4AF37]/50 to-transparent md:-translate-x-[1px]"></div>
       <div class="space-y-12">
         <div class="relative grid md:grid-cols-2 gap-8 items-center">
           <div class="md:text-right md:pr-16 order-2 md:order-1">
-            <div class="inline-block px-3 py-1 rounded-full bg-[#D4145A]/15 border border-[#D4145A]/30 text-[11px] tracking-widest mb-3">24 HOURS</div>
+            <div class="inline-block px-3 py-1 rounded-full bg-[#0A2E2B]/15 border border-[#0A2E2B]/30 text-[11px] tracking-widest mb-3">24 HOURS</div>
             <h3 class="text-2xl font-bold mb-2">Free audit delivered privately to your email</h3>
             <p class="text-white/70">We analyze your 30K – 600K+ audience, positioning gaps, and trademark opportunity. Sent directly to your inbox.</p>
           </div>
           <div class="order-1 md:order-2 relative">
-            <div class="absolute left-0 md:-left-[41px] top-3 w-[44px] h-[44px] rounded-full bg-[#05020A] border-2 border-[#D4145A] flex items-center justify-center z-10"><span class="w-2 h-2 rounded-full bg-[#D4145A] animate-pulse"></span></div>
+            <div class="absolute left-0 md:-left-[41px] top-3 w-[44px] h-[44px] rounded-full bg-[#05020A] border-2 border-[#0A2E2B] flex items-center justify-center z-10"><span class="w-2 h-2 rounded-full bg-[#0A2E2B] animate-pulse"></span></div>
             <div class="ml-16 md:ml-0 holo rounded-2xl p-[1px]"><div class="rounded-2xl bg-[#0a0612] p-6"><p class="font-mono text-sm text-white/70">audit@clariva → you@creator.com</p></div></div>
           </div>
         </div>
         <div class="relative grid md:grid-cols-2 gap-8 items-center">
           <div class="relative">
-            <div class="absolute left-0 md:left-auto md:-right-[41px] top-3 w-[44px] h-[44px] rounded-full bg-[#05020A] border-2 border-[#F5C842] flex items-center justify-center z-10"><span class="w-2 h-2 rounded-full bg-[#F5C842] animate-pulse"></span></div>
+            <div class="absolute left-0 md:left-auto md:-right-[41px] top-3 w-[44px] h-[44px] rounded-full bg-[#05020A] border-2 border-[#D4AF37] flex items-center justify-center z-10"><span class="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse"></span></div>
             <div class="ml-16 md:ml-0 md:mr-0 holo rounded-2xl p-[1px]"><div class="rounded-2xl bg-[#0a0612] p-6"><p class="font-mono text-sm text-white/70">Google Meet invitation sent</p></div></div>
           </div>
           <div class="md:pl-16">
-            <div class="inline-block px-3 py-1 rounded-full bg-[#F5C842]/15 border border-[#F5C842]/30 text-[11px] tracking-widest mb-3 text-[#F5C842]">48 HOURS</div>
+            <div class="inline-block px-3 py-1 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[11px] tracking-widest mb-3 text-[#D4AF37]">48 HOURS</div>
             <h3 class="text-2xl font-bold mb-2">Discovery call — we reach out personally via Google Meet</h3>
             <p class="text-white/70">Human conversation. We determine fit for the 5 monthly slots. No forms. No bots.</p>
           </div>
         </div>
         <div class="relative grid md:grid-cols-2 gap-8 items-center">
           <div class="md:text-right md:pr-16 order-2 md:order-1">
-            <div class="inline-block px-3 py-1 rounded-full bg-[#D4145A]/15 border border-[#D4145A]/30 text-[11px] tracking-widest mb-3">72 HOURS</div>
+            <div class="inline-block px-3 py-1 rounded-full bg-[#0A2E2B]/15 border border-[#0A2E2B]/30 text-[11px] tracking-widest mb-3">72 HOURS</div>
             <h3 class="text-2xl font-bold mb-2">Blueprint call — we reach out personally via Google Meet</h3>
             <p class="text-white/70">If accepted, we map your trademark installation. Choose Partner: $0 upfront or Blueprint: $99.</p>
           </div>
           <div class="order-1 md:order-2 relative">
-            <div class="absolute left-0 md:-left-[41px] top-3 w-[44px] h-[44px] rounded-full bg-[#05020A] border-2 border-[#D4145A] flex items-center justify-center z-10"><span class="w-2 h-2 rounded-full bg-[#D4145A] animate-pulse"></span></div>
+            <div class="absolute left-0 md:-left-[41px] top-3 w-[44px] h-[44px] rounded-full bg-[#05020A] border-2 border-[#0A2E2B] flex items-center justify-center z-10"><span class="w-2 h-2 rounded-full bg-[#0A2E2B] animate-pulse"></span></div>
             <div class="ml-16 md:ml-0 holo rounded-2xl p-[1px]"><div class="rounded-2xl bg-[#0a0612] p-6"><p class="font-mono text-sm text-white/70">Trademark roadmap locked</p></div></div>
           </div>
         </div>
@@ -618,14 +662,14 @@ p, span, div, li {
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] tracking-widest mb-4">PARTNERSHIP</div>
               <h3 class="text-[32px] font-bold leading-none">Partner: $0 upfront</h3>
             </div>
-            <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#D4145A]/30 to-[#F5C842]/30 border border-white/10 flex items-center justify-center"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3v12M3 9h12" stroke="white" stroke-opacity="0.8"/></svg></div>
+            <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#0A2E2B]/30 to-[#D4AF37]/30 border border-white/10 flex items-center justify-center"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3v12M3 9h12" stroke="white" stroke-opacity="0.8"/></svg></div>
           </div>
           <p class="text-white/70 mb-8">For creators with 30K – 600K+ ready to install now. We build with you. We only win after launch.</p>
           <div class="space-y-3 mb-10 text-[15px]">
-            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#F5C842" stroke-width="1.5"/></svg><span>Full trademark installation (Identity, Framework, Engine)</span></div>
-            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#F5C842" stroke-width="1.5"/></svg><span>You keep 70-80%, CLARIVA earns 20-30% only after launch</span></div>
-            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#F5C842" stroke-width="1.5"/></svg><span>Private build team, launch ops, retention</span></div>
-            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#F5C842" stroke-width="1.5"/></svg><span>Only 5 creators monthly</span></div>
+            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#D4AF37" stroke-width="1.5"/></svg><span>Full trademark installation (Identity, Framework, Engine)</span></div>
+            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#D4AF37" stroke-width="1.5"/></svg><span>You keep 70-80%, CLARIVA earns 20-30% only after launch</span></div>
+            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#D4AF37" stroke-width="1.5"/></svg><span>Private build team, launch ops, retention</span></div>
+            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#D4AF37" stroke-width="1.5"/></svg><span>Only 5 creators monthly</span></div>
           </div>
           <div class="mt-auto">
             <a href="#apply" class="block w-full text-center py-4 rounded-2xl font-semibold bg-white text-black hover:translate-y-[-1px] transition">Apply for Partnership</a>
@@ -637,20 +681,20 @@ p, span, div, li {
         <div class="rounded-[32px] bg-[#07050c] p-8 md:p-10 h-full flex flex-col">
           <div class="flex items-start justify-between mb-8">
             <div>
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5C842]/15 border border-[#F5C842]/30 text-[11px] tracking-widest mb-4 text-[#F5C842]">SELF-START</div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[11px] tracking-widest mb-4 text-[#D4AF37]">SELF-START</div>
               <h3 class="text-[32px] font-bold leading-none">Blueprint: $99</h3>
             </div>
-            <div class="w-10 h-10 rounded-2xl bg-[#F5C842]/15 border border-[#F5C842]/30 flex items-center justify-center"><span class="text-[#F5C842] font-bold">$</span></div>
+            <div class="w-10 h-10 rounded-2xl bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center"><span class="text-[#D4AF37] font-bold">$</span></div>
           </div>
           <p class="text-white/70 mb-8">Get the exact trademark map we'd use for your 30K – 600K+ audience. Implement solo or upgrade later.</p>
           <div class="space-y-3 mb-10 text-[15px]">
-            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#F5C842" stroke-width="1.5"/></svg><span>Private audit + 14-day installation plan</span></div>
-            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#F5C842" stroke-width="1.5"/></svg><span>Category positioning & offer architecture</span></div>
-            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#F5C842" stroke-width="1.5"/></svg><span>Signature framework naming kit</span></div>
-            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#F5C842" stroke-width="1.5"/></svg><span>Credited toward partnership if you join</span></div>
+            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#D4AF37" stroke-width="1.5"/></svg><span>Private audit + 14-day installation plan</span></div>
+            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#D4AF37" stroke-width="1.5"/></svg><span>Category positioning & offer architecture</span></div>
+            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#D4AF37" stroke-width="1.5"/></svg><span>Signature framework naming kit</span></div>
+            <div class="flex gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="mt-0.5 flex-shrink-0"><path d="M14 5L7.5 11.5L4 8" stroke="#D4AF37" stroke-width="1.5"/></svg><span>Credited toward partnership if you join</span></div>
           </div>
           <div class="mt-auto">
-            <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener" class="block w-full text-center py-4 rounded-2xl font-semibold border border-[#F5C842]/40 text-[#F5C842] hover:bg-[#F5C842]/10 transition">Get Blueprint: $99</a>
+            <a href="https://paystack.shop/pay/q4npk5cfqy" target="_blank" rel="noopener" class="block w-full text-center py-4 rounded-2xl font-semibold border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#D4AF37]/10 transition">Get Blueprint: $99</a>
             <p class="text-center text-[12px] text-white/40 mt-3">Instant access after application review.</p>
           </div>
         </div>
@@ -670,7 +714,7 @@ p, span, div, li {
         <div class="mt-10 flex flex-wrap justify-center gap-3">
           <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm">30K – 600K+ Only</span>
           <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm">5 Creators Monthly</span>
-          <span class="px-4 py-2 rounded-full bg-[#F5C842]/10 border border-[#F5C842]/20 text-sm text-[#F5C842]">Blueprint: $99</span>
+          <span class="px-4 py-2 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-sm text-[#D4AF37]">Blueprint: $99</span>
         </div>
       </div>
     </div>
@@ -687,15 +731,15 @@ p, span, div, li {
         
         <div class="space-y-6">
           <div class="flex gap-4">
-            <div class="w-8 h-8 rounded-full bg-[#D4145A]/20 border border-[#D4145A]/40 flex items-center justify-center flex-shrink-0 text-sm font-mono text-[#D4145A]">1</div>
+            <div class="w-8 h-8 rounded-full bg-[#0A2E2B]/20 border border-[#0A2E2B]/40 flex items-center justify-center flex-shrink-0 text-sm font-mono text-[#0A2E2B]">1</div>
             <div><p class="font-medium">Submit application</p><p class="text-sm text-white/60">Takes 3 minutes. Private.</p></div>
           </div>
           <div class="flex gap-4">
-            <div class="w-8 h-8 rounded-full bg-[#F5C842]/20 border border-[#F5C842]/40 flex items-center justify-center flex-shrink-0 text-sm font-mono text-[#F5C842]">2</div>
+            <div class="w-8 h-8 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/40 flex items-center justify-center flex-shrink-0 text-sm font-mono text-[#D4AF37]">2</div>
             <div><p class="font-medium">Receive free audit</p><p class="text-sm text-white/60">24 Hours: Free audit delivered privately to your email</p></div>
           </div>
           <div class="flex gap-4">
-            <div class="w-8 h-8 rounded-full bg-[#D4145A]/20 border border-[#D4145A]/40 flex items-center justify-center flex-shrink-0 text-sm font-mono text-[#D4145A]">3</div>
+            <div class="w-8 h-8 rounded-full bg-[#0A2E2B]/20 border border-[#0A2E2B]/40 flex items-center justify-center flex-shrink-0 text-sm font-mono text-[#0A2E2B]">3</div>
             <div><p class="font-medium">Book your calls</p><p class="text-sm text-white/60">48 Hours: Discovery call — we reach out personally via Google Meet<br>72 Hours: Blueprint call — we reach out personally via Google Meet</p></div>
           </div>
         </div>
@@ -710,7 +754,7 @@ p, span, div, li {
           <div class="rounded-[28px] bg-[#05020A] overflow-hidden">
             <div class="px-6 py-4 border-b border-white/5 flex items-center justify-between bg-white/[0.02]">
               <span class="text-sm font-medium tracking-wide">APPLICATION FORM</span>
-              <span class="text-[11px] px-2 py-1 rounded-full bg-[#F5C842]/10 text-[#F5C842] border border-[#F5C842]/20">SECURE</span>
+              <span class="text-[11px] px-2 py-1 rounded-full bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/20">SECURE</span>
             </div>
             <iframe src="https://docs.google.com/forms/d/1je7jKC3Qlqr_pwbEPMsxzCyKCwB6o4qnFljygIQxFUM/viewform?embedded=true" width="100%" height="720" frameborder="0" marginheight="0" marginwidth="0" class="bg-[#0a0612]">Loading…</iframe>
           </div>
@@ -804,7 +848,7 @@ function drawI(){
     const x = ic.width*(0.3+i*0.2)+Math.sin(it*0.001+i)*100;
     const y = ic.height*0.5+Math.cos(it*0.0015+i)*80;
     const g = ictx.createRadialGradient(x,y,0,x,y,300);
-    g.addColorStop(0, i%2 ? 'rgba(212,20,90,0.3)' : 'rgba(245,200,66,0.25)');
+    g.addColorStop(0, i%2 ? 'rgba(10,46,43,0.3)' : 'rgba(212,175,55,0.25)');
     g.addColorStop(1, 'transparent');
     ictx.fillStyle=g; ictx.beginPath(); ictx.arc(x,y,300,0,Math.PI*2); ictx.fill();
   }
@@ -825,7 +869,7 @@ const mesh = document.getElementById('mesh');
 const mctx = mesh.getContext('2d');
 function rm(){ mesh.width=innerWidth; mesh.height=innerHeight; }
 rm(); addEventListener('resize', rm);
-const blobs = [{x:0.2,y:0.3,r:400,c1:'#D4145A',c2:'transparent'},{x:0.8,y:0.2,r:350,c1:'#F5C842',c2:'transparent'},{x:0.5,y:0.8,r:500,c1:'#D4145A',c2:'transparent'}];
+const blobs = [{x:0.2,y:0.3,r:400,c1:'#0A2E2B',c2:'transparent'},{x:0.8,y:0.2,r:350,c1:'#D4AF37',c2:'transparent'},{x:0.5,y:0.8,r:500,c1:'#0A2E2B',c2:'transparent'}];
 let mt=0;
 function drawM(){
   mctx.clearRect(0,0,mesh.width,mesh.height);
@@ -888,6 +932,23 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
+
+
+<!-- CLARIVA CONTACT INFO - GUARANTEED VISIBLE -->
+<div style="position:relative;z-index:9999;background:#020305;border-top:1px solid rgba(255,255,255,0.1);padding:32px 20px;text-align:center;font-family:Inter,sans-serif">
+  <div style="margin-bottom:12px">
+    <a href="https://instagram.com/clariva.tech" target="_blank" style="color:#D4AF37;font-weight:600;margin:0 20px;text-decoration:none;font-size:18px">@clariva.tech</a>
+    <span style="color:rgba(255,255,255,0.3);margin:0 10px">|</span>
+    <a href="mailto:emmanuelmaende@gmail.com" style="color:rgba(255,255,255,0.8);margin:0 20px;text-decoration:none;font-size:18px">emmanuelmaende@gmail.com</a>
+  </div>
+  <div style="color:rgba(255,255,255,0.4);font-size:13px;margin-top:16px">
+    © 2026 Clariva &nbsp;&nbsp; All rights reserved. &nbsp;&nbsp;
+    <a href="#" style="color:rgba(255,255,255,0.5);text-decoration:none;margin:0 8px">Privacy Policy</a>
+    <span style="margin:0 4px">|</span>
+    <a href="#" style="color:rgba(255,255,255,0.5);text-decoration:none;margin:0 8px">Terms & Conditions</a>
+  </div>
+</div>
 
 </body>
 </html>
